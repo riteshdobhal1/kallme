@@ -1,0 +1,2000 @@
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.58 - - [04/Jun/2017 01:12:39] "GET / HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/__init__.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/apps/restserver/app/__init__.py", line 5, in <module>
+    app.config.from_object('config')
+NameError: name 'app' is not defined
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.58 - - [04/Jun/2017 05:36:18] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 9, in index
+    conn = mysql.connect()
+NameError: name 'mysql' is not defined
+106.51.138.58 - - [04/Jun/2017 05:36:18] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:36:18] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:36:19] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.58 - - [04/Jun/2017 05:38:56] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:38:57] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:38:57] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.58 - - [04/Jun/2017 05:46:15] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 9, in index
+    conn = mysql.connect()
+NameError: name 'mysql' is not defined
+106.51.138.58 - - [04/Jun/2017 05:46:16] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:46:16] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:46:55] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:46:55] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 9, in index
+    conn = mysql.connect()
+NameError: name 'mysql' is not defined
+106.51.138.58 - - [04/Jun/2017 05:46:56] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:46:56] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:46:56] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:46:58] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:46:58] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:49:42] "GET /agent/ HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:49:42] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 9, in index
+    conn = mysql.connect()
+NameError: name 'mysql' is not defined
+106.51.138.58 - - [04/Jun/2017 05:49:43] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:49:44] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:49:44] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:49:45] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.58 - - [04/Jun/2017 05:49:46] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.58 - - [04/Jun/2017 05:50:30] "GET / HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/agent/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.58 - - [04/Jun/2017 06:45:24] "GET / HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/apps/restserver/app/__init__.py", line 4, in <module>
+    from app.user.controllers import user
+  File "/var/www/apps/restserver/app/user/controllers.py", line 13
+    return "user" 
+                 ^
+TabError: inconsistent use of tabs and spaces in indentation
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/apps/restserver/app/__init__.py", line 4, in <module>
+    from app.user.controllers import user
+  File "/var/www/apps/restserver/app/user/controllers.py", line 3, in <module>
+    from . models import *
+  File "/var/www/apps/restserver/app/user/models.py", line 8
+    return "test"	
+                 ^
+TabError: inconsistent use of tabs and spaces in indentation
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/apps/restserver/app/__init__.py", line 4, in <module>
+    from app.user.controllers import user
+  File "/var/www/apps/restserver/app/user/controllers.py", line 3, in <module>
+    from . models import *
+  File "/var/www/apps/restserver/app/user/models.py", line 8
+    return "test"	
+                 ^
+TabError: inconsistent use of tabs and spaces in indentation
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.96.138 - - [10/Jun/2017 02:32:25] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+103.227.96.138 - - [10/Jun/2017 02:32:26] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:32:26] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:32:27] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:32:29] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:32:30] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+test
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.96.138 - - [10/Jun/2017 02:35:35] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+103.227.96.138 - - [10/Jun/2017 02:35:35] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+103.227.96.138 - - [10/Jun/2017 02:35:36] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:35:37] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:35:38] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:35:40] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:35:41] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.96.138 - - [10/Jun/2017 02:37:18] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+103.227.96.138 - - [10/Jun/2017 02:37:20] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:37:20] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:37:21] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:37:22] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:37:33] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:37:37] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/connection.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.96.138 - - [10/Jun/2017 02:42:50] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+103.227.96.138 - - [10/Jun/2017 02:42:51] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:42:51] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:42:52] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:42:53] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:42:54] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.96.138 - - [10/Jun/2017 02:44:00] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+103.227.96.138 - - [10/Jun/2017 02:44:01] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:44:03] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:44:03] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:44:04] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:44:05] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:44:07] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.96.138 - - [10/Jun/2017 02:45:02] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+103.227.96.138 - - [10/Jun/2017 02:45:03] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:04] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:04] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:05] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:06] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:10] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 9, in index
+    adduser()
+  File "/var/www/apps/restserver/app/user/models.py", line 7, in adduser
+    cur = cursor.execute("INSERT INTO user VALUES('ritesh','demo','ritesh.dobhal@glassbeam.com','Ritesh','Dobhal')")
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+103.227.96.138 - - [10/Jun/2017 02:45:11] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:11] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:13] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:15] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:15] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:17] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:23] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 9, in index
+    adduser()
+  File "/var/www/apps/restserver/app/user/models.py", line 7, in adduser
+    cur = cursor.execute("INSERT INTO user VALUES('ritesh','demo','ritesh.dobhal@glassbeam.com','Ritesh','Dobhal')")
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+103.227.96.138 - - [10/Jun/2017 02:45:24] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:25] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:25] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:27] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:28] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:45:30] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+User added
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.96.138 - - [10/Jun/2017 02:47:20] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+103.227.96.138 - - [10/Jun/2017 02:47:21] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:47:21] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:47:23] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:47:24] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:47:24] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:47:32] "GET /user/adduser HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 9, in index
+    adduser()
+  File "/var/www/apps/restserver/app/user/models.py", line 7, in adduser
+    cur = cursor.execute("INSERT INTO user VALUES('ritesh','demo','ritesh.dobhal@glassbeam.com','Ritesh','Dobhal')")
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+103.227.96.138 - - [10/Jun/2017 02:47:33] "GET /user/adduser?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:47:33] "GET /user/adduser?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+User added
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.96.138 - - [10/Jun/2017 02:48:23] "GET /user/adduser?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:48:24] "GET /user/adduser?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:48:25] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:48:26] "GET /user/adduser?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+103.227.96.138 - - [10/Jun/2017 02:48:53] "GET /user/adduser HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/run.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/run.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/config.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/connection.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/apps/restserver/app/__init__.py", line 4, in <module>
+    from app.user.controllers import user
+  File "/var/www/apps/restserver/app/user/controllers.py", line 3, in <module>
+    from . models import *
+  File "/var/www/apps/restserver/app/user/models.py", line 3, in <module>
+    from db import *
+ImportError: No module named 'db'
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/apps/restserver/app/__init__.py", line 4, in <module>
+    from app.user.controllers import user
+  File "/var/www/apps/restserver/app/user/controllers.py", line 3, in <module>
+    from . models import *
+  File "/var/www/apps/restserver/app/user/models.py", line 8
+    "INSERT INTO account_holder (email,username,phone,password) VALUES (?,?,?,?)", (email,username,phone,password))
+                                                                                                                  ^
+SyntaxError: invalid syntax
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:18:01] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 8, in adddb
+    cur = cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",('ritesh','demo','ritesh.dobhal@glassbeam.com',username,'Dobhal'))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:18:03] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 8, in adddb
+    cur = cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",('ritesh','demo','ritesh.dobhal@glassbeam.com',username,'Dobhal'))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:18:04] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:18:04] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:18:04] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:18:05] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:18:06] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:18:06] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:19:09] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:21:02] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 12, in adddb
+    cur = cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:21:03] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:03] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:04] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:04] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:05] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:06] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:09] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 12, in adddb
+    cur = cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:21:09] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:09] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:11] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:11] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:12] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:13] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:21:49] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cur = cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:21:50] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:21:50] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:03] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:03] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cur = cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:22:04] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:04] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:05] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:06] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:06] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:07] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:14] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cur = cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:22:14] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:14] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:22:46] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:47] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:47] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:48] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:22:48] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:23:04] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:04] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:04] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:04] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:23:05] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:05] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:06] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:07] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:08] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:09] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:11] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:23:11] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:11] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:12] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:13] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:14] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:23:14] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:25:34] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:25:36] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:25:36] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:25:37] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:25:38] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:25:38] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:25:39] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:26:14] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:26:15] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:26:15] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:26:16] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:26:16] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password)VALUES(?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:26:17] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:26:17] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:26:17] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:26:18] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:26:19] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:26:20] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:27:39] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:27:40] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:27:40] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:27:40] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:27:42] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:27:43] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:27:44] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:28:34] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (?,?,?,?,?)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 164, in execute
+    query = self.mogrify(query, args)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 143, in mogrify
+    query = query % self._escape_args(args, conn)
+TypeError: not all arguments converted during string formatting
+106.51.138.236 - - [10/Jun/2017 07:28:35] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:28:35] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:28:35] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:28:37] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:28:38] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:31:32] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:32:10] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:32:10] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:32:11] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:32:11] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:32:13] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:32:13] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:32:14] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:32:15] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:32:19] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:32:20] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:32:20] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:33:14] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:33:14] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:33:15] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:33:51] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:33:52] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:33:52] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:33:52] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:33:53] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:33:54] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:33:55] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:22] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:34:23] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:23] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:24] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:25] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:26] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:26] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:45] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:34:46] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:48] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:48] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:48] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:49] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:34:50] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:36:04] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:36:56] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:36:59] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:36:59] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:01] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:01] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:02] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:03] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:03] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:05] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:37:07] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:07] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:08] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:09] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:10] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:11] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:21] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:37:21] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:23] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:38] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:38] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:37:39] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:39] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:39] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:42] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:44] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:37:44] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:38:21] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:01] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:40:04] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:40:05] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:06] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:06] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:08] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:08] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:09] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:40:41] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:43] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:40:44] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:44] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:45] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:46] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:47] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:47] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:49] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 13, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:40:50] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:50] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:51] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:52] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:53] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:40:54] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/config.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/db.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.138.236 - - [10/Jun/2017 07:44:31] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:33] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 14, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:44:34] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:35] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:45] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:45] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 14, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:44:46] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:46] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:47] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:48] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:48] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:49] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:51] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 14, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.138.236 - - [10/Jun/2017 07:44:52] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:53] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:53] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:54] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:55] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.138.236 - - [10/Jun/2017 07:44:56] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.141.48 - - [10/Jun/2017 07:49:50] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/apps/restserver/app/user/controllers.py", line 10, in add
+    adddb(params)
+  File "/var/www/apps/restserver/app/user/models.py", line 14, in adddb
+    cursor.execute("INSERT INTO user (firstname,lastname,email,username,password) VALUES (%s,%s,%s,%s,%s)",(firstname,password,email,username,lastname))
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 855, in query
+    self._execute_command(COMMAND.COM_QUERY, sql)
+  File "/home/kallme/.local/lib/python3.5/site-packages/pymysql/connections.py", line 1071, in _execute_command
+    raise err.InterfaceError("(0, '')")
+pymysql.err.InterfaceError: (0, '')
+106.51.141.48 - - [10/Jun/2017 07:49:52] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.141.48 - - [10/Jun/2017 07:49:52] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.141.48 - - [10/Jun/2017 07:49:52] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.141.48 - - [10/Jun/2017 07:49:55] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.141.48 - - [10/Jun/2017 07:49:56] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.141.48 - - [10/Jun/2017 07:49:57] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.241.237 - - [10/Jun/2017 07:52:14] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+106.51.241.237 - - [10/Jun/2017 07:52:14] "GET /user/add?username=ritesh HTTP/1.1" 500 -
