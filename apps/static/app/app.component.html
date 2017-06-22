@@ -5,14 +5,15 @@
         </button>
         <div class="container">
             <a class="navbar-brand" href="#"><img src="../img/KallMeLogo-alt.png" alt="KALL ME"/></a>
+	    <a href="tel:+911234567890" id="phoneNumber"><i class="material-icons hidden-md-down">call</i> +91-1234567890</a>
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
-		     <li class="nav-item">
-      			 <form class="form-inline ">
+		     <!-- <li class="nav-item">
+      			 <!-- <form class="form-inline ">
         <input class="form-control" type="text" placeholder="Search">
         <button class="btn btn-outline-success" type="submit">{{search}}</button>
-      </form>
-    </li>
+      </form> 
+    </li> -->
                     <li class="nav-item active">
                         <a class="nav-link" href="#home">{{home}}<span class="sr-only">(current)</span></a>
                     </li>
@@ -36,15 +37,97 @@
             </div>
         </div>
     </nav>
-
+    <section>
     <header class="masthead" id="home">
+    	<div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-muted">&nbsp;&nbsp;</h3>
+                </div>
+            </div>
         <div class="overlay">
             <div class="container">
                 <h1 class="display-1 text-white">{{home_img_title1}}</h1>
-                <h2 class="display-4 text-white">{{home_img_title2}}</h2>
+                <h2 class="display-4 text-white">
+        <input class="form-control" type="text" placeholder="Search">
+      </h2>
             </div>
         </div>
     </header>
+    </section>
+     <section id="categorySection">
+     	<div>
+        <div class="container" id="categories">
+            <div class="row">
+                <div class="col-md-2">
+                    <h6>Home Services</h6>
+                    <ul>
+                        <li><a href="#">Pest Control</a></li>
+                        <li><a href="#">Electrician</a></li>
+                        <li><a href="#">Plumbers</a></li>
+                        <li><a href="#">Carpenter</a></li>
+                        <li><a href="#">Pest Control</a></li>
+                        <li><a href="#">View More</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Electronics</h6>
+                    <ul>
+                        <li><a href="#">Mobile</a></li>
+                        <li><a href="#">Television</a></li>
+                        <li><a href="#">Washing Machine</a></li>
+                        <li><a href="#">Air Condition</a></li>
+                        <li><a href="#">Laptop</a></li>
+                        <li><a href="#">View More</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Travel</h6>
+                    <ul>
+                        <li><a href="#">Flights</a></li>
+                        <li><a href="#">Taxi Booking</a></li>
+                        <li><a href="#">Bus Tickets</a></li>
+                        <li><a href="#">Train Tickets</a></li>
+                        <li><a href="#">Hotel</a></li>
+                        <li><a href="#">View More</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Automobiles</h6>
+                    <ul>
+                        <li><a href="#">New Cars</a></li>
+                        <li><a href="#">Used Cars</a></li>
+                        <li><a href="#">Bikes</a></li>
+                        <li><a href="#">Car Service</a></li>
+                        <li><a href="#">Car Wash</a></li>
+                        <li><a href="#">View More</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Personal Care</h6>
+                    <ul>
+                        <li><a href="#">Beauty Parlours</a></li>
+                        <li><a href="#">Spas</a></li>
+                        <li><a href="#">Salons</a></li>
+                        <li><a href="#">Beauty Services</a></li>
+                        <li><a href="#">Message Parlours</a></li>
+                        <li><a href="#">View More</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6>Real Estate</h6>
+                    <ul>
+                        <li><a href="#">Buy</a></li>
+                        <li><a href="#">Sell</a></li>
+                        <li><a href="#">Residential Rentals</a></li>
+                        <li><a href="#">PG Accomodation</a></li>
+                        <li><a href="#">Apartments</a></li>
+                        <li><a href="#">View More</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       </div>
+    </section>
     <hr/>
     <section>
         <div class="container" id="services">
@@ -226,5 +309,4 @@ However common in major corporations and government agencies, arrogance is an un
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript -->
