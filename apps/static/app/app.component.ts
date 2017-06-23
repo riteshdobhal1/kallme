@@ -1,28 +1,33 @@
-import { Component } from '@angular/core';
+import { Category } from './category'
+import { AppService } from './app.service';
+
 import * as global from './shared/global';
 @Component({
   selector: 'my-app',
-  templateUrl:'./app/app.component.html'
+  templateUrl:'./app/app.component.html',
+  providers: [AppService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+	 categoryItems:CategoryData[] = [];
 	 home : string;
 	 contact : string;
 	 about : string;
-         services: string;
+     services: string;
 	 login_signup: string;
 	 search: string;
 	 home_img_title1 : string;
 	 home_img_title2 : string;
 	 services_header : string;
    	 aboutus_header : string;
-	  aboutus_title: string;
-	address_header : string;
-	phone : string;
-	email : string;
-	copyright: string;
-	address_description;
-    constructor(){
-        this.home = global.home;
+	 aboutus_title: string;
+	 address_header : string;
+	 phone : string;
+	 email : string;
+	 copyright: string;
+	 address_description;
+	 
+     constructor(private appService:AppService){
+     this.home = global.home;
 	this.contact = global.contact;
 	this.about = global.about;
 	this.services = global.services;
@@ -38,6 +43,14 @@ export class AppComponent {
 	this.email = global.email;
 	this.copyright = global.copyright;
 	this.address_description = global.address_description;
-    };
+	};
+	
+	ngOnInit(): void {
+        this.getCategoryItems();
+   }
+	getCategoryItems():void{
+		
+		this.categoryItems = this.appService.getCategory();
+	}
 	
 }
