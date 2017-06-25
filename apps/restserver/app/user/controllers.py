@@ -1,5 +1,7 @@
 from flask import Blueprint
 from flask import request
+from flask import Response
+from flask import jsonify
 from . models import *
 user = Blueprint('user', __name__)
 
@@ -12,6 +14,7 @@ def add():
 		params = request.args
 
 	adduser(params)
+	app.logger.debug("test")
 	return request.args['username']
 
 @user.route('/delete', methods=['POST'])
@@ -26,5 +29,5 @@ def update():
 
 @user.route('/list', methods=['GET'])
 def list():
-        listuser()
-        return "User list"
+       return jsonify(listuser())
+        #return "User list"

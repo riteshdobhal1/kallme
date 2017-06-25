@@ -3,6 +3,7 @@ System.config({
     map: {
         app:"app",
         '@angular/core': 'node_modules/@angular/core/bundles/core.umd.js',
+	'@angular/http': 'node_modules/@angular/http/bundles/http.umd.js',
         '@angular/common': 'node_modules/@angular/common/bundles/common.umd.js',
         '@angular/compiler': 'node_modules/@angular/compiler/bundles/compiler.umd.js',
         '@angular/platform-browser': 

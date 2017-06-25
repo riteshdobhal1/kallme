@@ -1998,3 +1998,219 @@ pymysql.err.InterfaceError: (0, '')
  * Debugger PIN: 135-965-059
 106.51.241.237 - - [10/Jun/2017 07:52:14] "GET /user/add?username=ritesh HTTP/1.1" 200 -
 106.51.241.237 - - [10/Jun/2017 07:52:14] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.232.42 - - [12/Jun/2017 08:48:09] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+--------------------------------------------------------------------------------
+INFO in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+testing info log
+--------------------------------------------------------------------------------
+106.51.232.42 - - [12/Jun/2017 08:49:55] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.232.42 - - [12/Jun/2017 08:56:19] "GET /user/add?username=ritesh HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kallme/.local/lib/python3.5/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/var/www/kallme/apps/restserver/app/user/controllers.py", line 15, in add
+    user.logger.info("test")
+AttributeError: 'Blueprint' object has no attribute 'logger'
+106.51.232.42 - - [12/Jun/2017 08:56:20] "GET /user/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+106.51.232.42 - - [12/Jun/2017 08:56:20] "GET /user/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+106.51.232.42 - - [12/Jun/2017 08:56:21] "GET /user/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+106.51.232.42 - - [12/Jun/2017 08:56:22] "GET /user/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+106.51.232.42 - - [12/Jun/2017 08:56:22] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+106.51.232.42 - - [12/Jun/2017 08:56:23] "GET /user/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+--------------------------------------------------------------------------------
+INFO in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+106.51.232.42 - - [12/Jun/2017 08:57:25] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/run.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+--------------------------------------------------------------------------------
+INFO in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+106.51.232.42 - - [12/Jun/2017 09:04:58] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+INFO in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+106.51.232.42 - - [12/Jun/2017 09:05:17] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/run.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+--------------------------------------------------------------------------------
+INFO in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+106.51.232.42 - - [12/Jun/2017 09:12:36] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+--------------------------------------------------------------------------------
+DEBUG in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+106.51.232.42 - - [12/Jun/2017 09:14:02] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+DEBUG in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+106.51.232.42 - - [12/Jun/2017 09:14:12] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+DEBUG in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+106.51.232.42 - - [12/Jun/2017 09:14:14] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+DEBUG in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+64.233.172.184 - - [12/Jun/2017 21:26:06] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+64.233.172.182 - - [12/Jun/2017 21:26:06] "GET /favicon.ico HTTP/1.1" 404 -
+185.127.27.186 - - [13/Jun/2017 14:26:05] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+185.127.27.186 - - [13/Jun/2017 14:26:05] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+185.127.27.186 - - [13/Jun/2017 15:06:02] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+185.127.27.186 - - [13/Jun/2017 15:06:02] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+185.127.27.186 - - [13/Jun/2017 15:46:04] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+185.127.27.186 - - [13/Jun/2017 15:46:04] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+--------------------------------------------------------------------------------
+DEBUG in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+66.102.6.116 - - [13/Jun/2017 21:56:41] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+66.102.6.116 - - [13/Jun/2017 21:56:42] "GET /favicon.ico HTTP/1.1" 404 -
+--------------------------------------------------------------------------------
+DEBUG in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+106.51.37.161 - - [13/Jun/2017 22:50:03] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+--------------------------------------------------------------------------------
+DEBUG in controllers [/var/www/kallme/apps/restserver/app/user/controllers.py:15]:
+test
+--------------------------------------------------------------------------------
+106.51.37.161 - - [13/Jun/2017 22:50:24] "GET /user/add?username=ritesh HTTP/1.1" 200 -
+91.197.234.40 - - [14/Jun/2017 04:27:17] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+91.197.234.40 - - [14/Jun/2017 04:27:17] "  ,'à     Cookie: mstshash=eltons" HTTPStatus.BAD_REQUEST -
+168.1.128.53 - - [14/Jun/2017 22:26:45] "GET / HTTP/1.1" 404 -
+168.1.128.53 - - [14/Jun/2017 22:26:45] "GET / HTTP/1.1" 404 -
+196.52.43.51 - - [15/Jun/2017 09:46:16] "GET / HTTP/1.1" 404 -
+146.185.239.25 - - [16/Jun/2017 14:15:34] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+146.185.239.25 - - [16/Jun/2017 14:15:34] "  *%à     Cookie: mstshash=Test" HTTPStatus.BAD_REQUEST -
+146.185.239.25 - - [16/Jun/2017 14:15:35] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+146.185.239.25 - - [16/Jun/2017 14:15:35] "  *%à     Cookie: mstshash=Test" HTTPStatus.BAD_REQUEST -
+46.17.98.64 - - [19/Jun/2017 02:32:28] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+46.17.98.64 - - [19/Jun/2017 02:32:28] "  *%à     Cookie: mstshash=Test" HTTPStatus.BAD_REQUEST -
+46.17.98.64 - - [19/Jun/2017 02:32:29] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+46.17.98.64 - - [19/Jun/2017 02:32:29] "  *%à     Cookie: mstshash=Test" HTTPStatus.BAD_REQUEST -
+196.52.43.62 - - [19/Jun/2017 15:42:31] "GET / HTTP/1.1" 404 -
+91.197.235.10 - - [19/Jun/2017 22:25:55] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+91.197.235.10 - - [19/Jun/2017 22:25:55] "  ,'à     Cookie: mstshash=eltons" HTTPStatus.BAD_REQUEST -
+168.1.128.35 - - [20/Jun/2017 16:47:46] "GET / HTTP/1.1" 404 -
+109.248.203.179 - - [21/Jun/2017 03:07:53] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+109.248.203.179 - - [21/Jun/2017 03:07:53] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+109.248.203.179 - - [21/Jun/2017 03:52:33] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+109.248.203.179 - - [21/Jun/2017 03:52:33] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+109.248.203.179 - - [21/Jun/2017 04:37:02] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+109.248.203.179 - - [21/Jun/2017 04:37:02] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+158.85.81.126 - - [21/Jun/2017 10:58:08] "GET / HTTP/1.1" 404 -
+212.7.208.111 - - [21/Jun/2017 13:00:24] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+212.7.208.111 - - [21/Jun/2017 13:00:24] "  *%à     Cookie: mstshash=Test" HTTPStatus.BAD_REQUEST -
+212.7.208.111 - - [21/Jun/2017 13:00:25] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+212.7.208.111 - - [21/Jun/2017 13:00:25] "  *%à     Cookie: mstshash=Test" HTTPStatus.BAD_REQUEST -
+91.218.114.146 - - [21/Jun/2017 15:54:32] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00&!à\x00\x00\x00\x00\x00Cookie:')
+91.218.114.146 - - [21/Jun/2017 15:54:32] "  &!à     Cookie: mstshash=" HTTPStatus.BAD_REQUEST -
+ * Detected change in '/var/www/kallme/apps/restserver/run.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+169.53.184.5 - - [22/Jun/2017 22:28:57] "GET / HTTP/1.1" 404 -
+ * Detected change in '/var/www/kallme/apps/restserver/run.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+5.188.11.104 - - [23/Jun/2017 00:48:56] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+5.188.11.104 - - [23/Jun/2017 00:48:56] "  ,'à     Cookie: mstshash=eltons" HTTPStatus.BAD_REQUEST -
+196.52.43.58 - - [23/Jun/2017 17:44:26] "GET / HTTP/1.1" 404 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.242.87 - - [24/Jun/2017 06:21:00] "GET / HTTP/1.1" 404 -
+106.51.242.87 - - [24/Jun/2017 06:21:00] "GET /favicon.ico HTTP/1.1" 404 -

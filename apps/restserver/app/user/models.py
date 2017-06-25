@@ -16,3 +16,12 @@ def adduser(data):
 	cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[1] + "," + tbl_user_dtls.get('columns')[2]+ "," + tbl_user_dtls.get('columns')[3] + "," + tbl_user_dtls.get('columns')[4] + "," + tbl_user_dtls.get('columns')[5] + "," + tbl_user_dtls.get('columns')[6]+") VALUES (%s,%s,%s,%s,%s,%s,%s)",(firstname,lastname,username,password,email,phone,usertype))
 	conn.commit()
 	conn.close()
+	
+	
+def listuser():
+	conn = mysql.connect()
+	cursor =conn.cursor()
+	cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name'))
+	results = cursor.fetchall()
+	conn.close()
+	return results	

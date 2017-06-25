@@ -1,10 +1,11 @@
 <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+
+     <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="../img/KallMeLogo-alt.png" alt="KALL ME"/></a>
+            <a class="navbar-brand" ><img src="../img/KallMeLogo-alt.png" alt="KALL ME"/></a>
 	    <a href="tel:+911234567890" id="phoneNumber"><i class="material-icons hidden-md-down">call</i> +91-1234567890</a>
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
@@ -12,14 +13,15 @@
       			 <!-- <form class="form-inline ">
         <input class="form-control" type="text" placeholder="Search">
         <button class="btn btn-outline-success" type="submit">{{search}}</button>
-      </form> 
+      <!-- </form> 
     </li> -->
                     <li class="nav-item active">
-                        <a class="nav-link" href="#home">{{home}}<span class="sr-only">(current)</span></a>
+                    	
+                        <a class="nav-link" href="#home" >{{home}}<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#services">{{services}}</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="#about">{{about}}</a>
                     </li>
@@ -54,115 +56,94 @@
         </div>
     </header>
     </section>
-     <section id="categorySection">
-     	<div>
-        <div class="container" id="categories">
-            <div class="row">
-                <div class="col-md-2">
-                    <h6>Home Services</h6>
-                    <ul>
-                        <li><a href="#">Pest Control</a></li>
-                        <li><a href="#">Electrician</a></li>
-                        <li><a href="#">Plumbers</a></li>
-                        <li><a href="#">Carpenter</a></li>
-                        <li><a href="#">Pest Control</a></li>
-                        <li><a href="#">View More</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h6>Electronics</h6>
-                    <ul>
-                        <li><a href="#">Mobile</a></li>
-                        <li><a href="#">Television</a></li>
-                        <li><a href="#">Washing Machine</a></li>
-                        <li><a href="#">Air Condition</a></li>
-                        <li><a href="#">Laptop</a></li>
-                        <li><a href="#">View More</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h6>Travel</h6>
-                    <ul>
-                        <li><a href="#">Flights</a></li>
-                        <li><a href="#">Taxi Booking</a></li>
-                        <li><a href="#">Bus Tickets</a></li>
-                        <li><a href="#">Train Tickets</a></li>
-                        <li><a href="#">Hotel</a></li>
-                        <li><a href="#">View More</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h6>Automobiles</h6>
-                    <ul>
-                        <li><a href="#">New Cars</a></li>
-                        <li><a href="#">Used Cars</a></li>
-                        <li><a href="#">Bikes</a></li>
-                        <li><a href="#">Car Service</a></li>
-                        <li><a href="#">Car Wash</a></li>
-                        <li><a href="#">View More</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h6>Personal Care</h6>
-                    <ul>
-                        <li><a href="#">Beauty Parlours</a></li>
-                        <li><a href="#">Spas</a></li>
-                        <li><a href="#">Salons</a></li>
-                        <li><a href="#">Beauty Services</a></li>
-                        <li><a href="#">Message Parlours</a></li>
-                        <li><a href="#">View More</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h6>Real Estate</h6>
-                    <ul>
-                        <li><a href="#">Buy</a></li>
-                        <li><a href="#">Sell</a></li>
-                        <li><a href="#">Residential Rentals</a></li>
-                        <li><a href="#">PG Accomodation</a></li>
-                        <li><a href="#">Apartments</a></li>
-                        <li><a href="#">View More</a></li>
-                    </ul>
+    <section id="categorySection">
+        <div class="container" id="categories" >
+            <div class="row" >
+            	<div class="col-md-2" *ngFor="let item of categoryItems">
+                   <div > <h6>{{item.name}}</h6></div>
+                    <div ><ul *ngFor="let itemData of item.data" >
+                    	<li><a href="#">{{itemData}}</a></li>
+                        </ul>
+                   </div>
                 </div>
             </div>
         </div>
-       </div>
     </section>
     <hr/>
     <section>
         <div class="container" id="services">
-            <div class="row">
+        	
+        	<!--- <div id="myCarousel" class="carousel slide" data-ride="carousel"> </div> -->
+  <!-- Indicators -->
+	<!-- 	  			<ol class="carousel-indicators">
+			    		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			    		<li data-target="#myCarousel" data-slide-to="1"></li>
+			    		<li data-target="#myCarousel" data-slide-to="2"></li>
+		  			</ol>
+
+  
+  					<div class="carousel-inner">
+	    				<div class="item active">
+	      					<img class="first" src="../img/about1.jpg" width="450px" alt="">
+	    				</div>
+
+			    		<div class="item">
+			      			<img src="../img/about2.jpg" width="450px" alt="">
+			    		</div>
+
+			    		<div class="item">
+			      			<img src="../img/about3.jpg" width="450px" alt="">
+			    		</div>
+			  		</div> ---->
+
+  <!-- Left and right controls -->
+					  <!--- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+			</div> --->
+        	
+            <!-- <div class="row">
                 <div class="col-md-12">
                     <h3 class="text-muted">{{services_header}}</h3>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
+            </div> 
+            <div class="row"> -->
+            	<div class="photobanner"> 
+                <!-- <div class="col-md-4">
                     <div class="p-3">
-                        <img class="img-fluid rounded" src="../img/about1.jpg" alt="">
-                        <p>
+                        <!-- <img class="img-fluid rounded" src="../img/about1.jpg" alt=""> -->
+                        <img class="first" src="../img/about1.jpg" width="450px" alt=""> 
+                        <!-- <p>
                             Professionals who are new to your industry and want to interact with business partners and investigate potential vendors. If you're a B2B site, you need to cater to these new users.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-3">
-                        <img class="img-fluid rounded" src="../img/about2.jpg" alt="">
-                        <p>
+                        </p> -->
+                   <!--  </div>
+                </div> -->
+                <!-- <div class="col-md-4">
+                    <div class="p-3"> -->
+                        <img src="../img/about2.jpg" width="450px" alt=""> 
+                        <!-- <p>
 			   Professionals who are new to your industry and want to interact with business partners and investigate potential vendors. If you're a B2B site, you need to cater to these new users.                            
-                        </p>
-                    </div>
+                        </p> -->
+                    <!-- </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="p-3">
-                        <img class="img-fluid rounded" src="../img/about3.jpg" alt="">
-                        <p>
+                    <div class="p-3"> -->
+                        <img src="../img/about3.jpg" width="450px" alt="">
+                        <img src="../img/about3.jpg" width="450px" alt="">
+                        <img src="../img/about3.jpg" width="450px" alt="">
+                        <img src="../img/about3.jpg" width="450px" alt=""> 
+                        <!-- <p>
                             Professionals who are new to your industry and want to interact with business partners and investigate potential vendors. If you're a B2B site, you need to cater to these new users.
-                        </p>
-                    </div>
-                </div>
+                        </p> -->
+                   <!-- </div> -->
+                <!-- </div> --> 
             </div>
-        </div>
+        </div> 
     </section>
     <hr/>
     <section>

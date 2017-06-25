@@ -1,14 +1,18 @@
-import { Category } from './category'
+import { Component, OnInit } from '@angular/core';
+import { Category } from './category';
 import { AppService } from './app.service';
 
 import * as global from './shared/global';
+
+declare var $:any;
+
 @Component({
   selector: 'my-app',
-  templateUrl:'./app/app.component.html',
-  providers: [AppService]
-})
+  templateUrl:'./app/app.component.html'
+  })
 export class AppComponent implements OnInit {
-	 categoryItems:CategoryData[] = [];
+	 private hideElement: boolean = true;
+	 categoryItems:Category[] = [];
 	 home : string;
 	 contact : string;
 	 about : string;
@@ -47,10 +51,30 @@ export class AppComponent implements OnInit {
 	
 	ngOnInit(): void {
         this.getCategoryItems();
+        
    }
 	getCategoryItems():void{
 		
 		this.categoryItems = this.appService.getCategory();
+		console.log(this.categoryItems);
 	}
+	
+   
+   toggleElement(){
+   	
+        if(this.hideElement){
+            this.hideElement = false;
+        }else{
+            this.hideElement = true;
+        }     
+    }
+	showList(){
+		console.log("called");
+	}
+	getUser(){
+			
+		console.log(this.appService.getUser());
+	}
+	
 	
 }

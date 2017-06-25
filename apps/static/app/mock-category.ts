@@ -1,6 +1,6 @@
 import { Category } from './category';
 
-export const CATEGORYDATA: categorydata[] = [
+export const CATEGORYDATA: Category[] = [
   {"name": "Home Services", "data": ["Pest Control","Electrician","Plumbers","Carpenters","Pest Control"]},
   {"name": "Electronics", "data": ["Mobile","Television","Washing Machine","Air Condition","Laptop"]},
   {"name": "Travel", "data": ["Flights","Taxi Booking","Bus Tickets","Train Tickets","Hotel"]},
