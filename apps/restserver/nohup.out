@@ -2214,3 +2214,24 @@ test
  * Debugger PIN: 135-965-059
 106.51.242.87 - - [24/Jun/2017 06:21:00] "GET / HTTP/1.1" 404 -
 106.51.242.87 - - [24/Jun/2017 06:21:00] "GET /favicon.ico HTTP/1.1" 404 -
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+45.33.12.203 - - [25/Jun/2017 10:52:38] "GET / HTTP/1.0" 404 -
+5.188.11.103 - - [25/Jun/2017 20:55:52] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+5.188.11.103 - - [25/Jun/2017 20:55:52] "  ,'à     Cookie: mstshash=eltons" HTTPStatus.BAD_REQUEST -
+106.51.235.58 - - [26/Jun/2017 07:01:25] "GET /user/list HTTP/1.1" 200 -
+106.51.235.58 - - [26/Jun/2017 07:01:26] "GET /favicon.ico HTTP/1.1" 404 -
+106.51.235.58 - - [26/Jun/2017 08:52:57] "GET /user/list HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/user/controllers.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/kallme/apps/restserver/app/__init__.py", line 4, in <module>
+    from app.user.controllers import user
+  File "/var/www/kallme/apps/restserver/app/user/controllers.py", line 34
+    return jsonify(listuser())
+         ^
+SyntaxError: invalid syntax

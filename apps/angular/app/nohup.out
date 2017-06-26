@@ -1,0 +1,133 @@
+
+> apps@1.0.0 start /var/www/kallme/apps/static
+> concurrently "npm run watch" "npm run serve"
+
+[0] 
+[0] > apps@1.0.0 watch /var/www/kallme/apps/static
+[0] > tsc -w
+[0] 
+[1] 
+[1] > apps@1.0.0 serve /var/www/kallme/apps/static
+[1] > lite-server
+[1] 
+[1] Did not detect a `bs-config.json` or `bs-config.js` override file. Using lite-server defaults...
+[1] ** browser-sync config **
+[1] { injectChanges: false,
+[1]   files: [ './**/*.{html,htm,css,js}' ],
+[1]   watchOptions: { ignored: 'node_modules' },
+[1]   server: { baseDir: './', middleware: [ [Function], [Function] ] } }
+[1] [BS] Access URLs:
+[1]  -------------------------------------
+[1]        Local: http://localhost:3000
+[1]     External: http://50.62.56.105:3000
+[1]  -------------------------------------
+[1]           UI: http://localhost:3001
+[1]  UI External: http://50.62.56.105:3001
+[1]  -------------------------------------
+[1] [BS] Serving files from: ./
+[1] [BS] Watching files...
+[1] [90m17.06.26 07:06:23[0m [32m200[0m [35mGET[0m [90m/[0m
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[0] node_modules/@angular/common/src/directives/ng_class.d.ts(48,34): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/aot/compiler.d.ts(44,32): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/compiler/src/aot/static_reflector.d.ts(8,49): error TS2422: A class may only implement another class or interface.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(342,20): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(344,28): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(346,15): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(348,23): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(350,17): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(352,25): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/output/output_ast.d.ts(433,63): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/core/src/change_detection/differs/default_keyvalue_differ.d.ts(24,15): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/change_detection/differs/default_keyvalue_differ.d.ts(28,16): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/di/reflective_provider.d.ts(87,123): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/di/reflective_provider.d.ts(87,165): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/facade/lang.d.ts(12,17): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/facade/lang.d.ts(13,17): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/core/src/util/decorators.d.ts(11,5): error TS2411: Property 'extends' of type 'Type<any> | undefined' is not assignable to string index type 'Function | any[] | Type<any>'.
+[0] node_modules/@angular/http/src/headers.d.ts(52,71): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/http/src/url_search_params.d.ts(46,16): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/platform-browser/src/browser/browser_adapter.d.ts(79,33): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/platform-browser/src/dom/dom_adapter.d.ts(97,42): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/platform-browser/src/dom/dom_renderer.d.ts(22,37): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/platform-browser/src/dom/dom_renderer.d.ts(30,22): error TS2420: Class 'DomRenderer' incorrectly implements interface 'Renderer'.
+[0]   Types of property 'animate' are incompatible.
+[0]     Type '(element: any, startingStyles: AnimationStyles | undefined, keyframes: (AnimationKeyframe | undef...' is not assignable to type '(element: any, startingStyles: AnimationStyles, keyframes: AnimationKeyframe[], duration: number,...'.
+[0]       Type 'AnimationPlayer | undefined' is not assignable to type 'AnimationPlayer'.
+[0]         Type 'undefined' is not assignable to type 'AnimationPlayer'.
+[0] node_modules/@angular/platform-browser/src/dom/shared_styles_host.d.ts(11,30): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/platform-browser/src/dom/shared_styles_host.d.ts(22,30): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/platform-browser/src/dom/web_animations_driver.d.ts(12,22): error TS2420: Class 'WebAnimationsDriver' incorrectly implements interface 'AnimationDriver'.
+[0]   Types of property 'animate' are incompatible.
+[0]     Type '(element: any, startingStyles: AnimationStyles | undefined, keyframes: (AnimationKeyframe | undef...' is not assignable to type '(element: any, startingStyles: AnimationStyles | undefined, keyframes: (AnimationKeyframe | undef...'. Two different types with this name exist, but they are unrelated.
+[0]       Type 'WebAnimationsPlayer' is not assignable to type 'AnimationPlayer'.
+[0]         Types of property 'parentPlayer' are incompatible.
+[0]           Type 'AnimationPlayer | undefined' is not assignable to type 'AnimationPlayer'.
+[0]             Type 'undefined' is not assignable to type 'AnimationPlayer'.
+[0] node_modules/@angular/platform-browser/src/dom/web_animations_player.d.ts(3,53): error TS2422: A class may only implement another class or interface.
+[0] node_modules/rxjs/Observable.d.ts(58,60): error TS2693: 'Promise' only refers to a type, but is being used as a value here.
+[0] 7:06:25 AM - Compilation complete. Watching for file changes.
+[0] 
+[0] 
+[0] 7:07:05 AM - File change detected. Starting incremental compilation...
+[0] 
+[0] 
+[1] [BS] Reloading Browsers...
+[0] node_modules/@angular/common/src/directives/ng_class.d.ts(48,34): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/aot/compiler.d.ts(44,32): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/compiler/src/aot/static_reflector.d.ts(8,49): error TS2422: A class may only implement another class or interface.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(342,20): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(344,28): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(346,15): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(348,23): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(350,17): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/compile_metadata.d.ts(352,25): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/compiler/src/output/output_ast.d.ts(433,63): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/core/src/change_detection/differs/default_keyvalue_differ.d.ts(24,15): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/change_detection/differs/default_keyvalue_differ.d.ts(28,16): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/di/reflective_provider.d.ts(87,123): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/di/reflective_provider.d.ts(87,165): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/facade/lang.d.ts(12,17): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/core/src/facade/lang.d.ts(13,17): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/core/src/util/decorators.d.ts(11,5): error TS2411: Property 'extends' of type 'Type<any> | undefined' is not assignable to string index type 'Function | any[] | Type<any>'.
+[0] node_modules/@angular/http/src/headers.d.ts(52,71): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/http/src/url_search_params.d.ts(46,16): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/platform-browser/src/browser/browser_adapter.d.ts(79,33): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/platform-browser/src/dom/dom_adapter.d.ts(97,42): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/platform-browser/src/dom/dom_renderer.d.ts(22,37): error TS2304: Cannot find name 'Map'.
+[0] node_modules/@angular/platform-browser/src/dom/dom_renderer.d.ts(30,22): error TS2420: Class 'DomRenderer' incorrectly implements interface 'Renderer'.
+[0]   Types of property 'animate' are incompatible.
+[0]     Type '(element: any, startingStyles: AnimationStyles | undefined, keyframes: (AnimationKeyframe | undef...' is not assignable to type '(element: any, startingStyles: AnimationStyles, keyframes: AnimationKeyframe[], duration: number,...'.
+[0]       Type 'AnimationPlayer | undefined' is not assignable to type 'AnimationPlayer'.
+[0]         Type 'undefined' is not assignable to type 'AnimationPlayer'.
+[0] node_modules/@angular/platform-browser/src/dom/shared_styles_host.d.ts(11,30): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/platform-browser/src/dom/shared_styles_host.d.ts(22,30): error TS2304: Cannot find name 'Set'.
+[0] node_modules/@angular/platform-browser/src/dom/web_animations_driver.d.ts(12,22): error TS2420: Class 'WebAnimationsDriver' incorrectly implements interface 'AnimationDriver'.
+[0]   Types of property 'animate' are incompatible.
+[0]     Type '(element: any, startingStyles: AnimationStyles | undefined, keyframes: (AnimationKeyframe | undef...' is not assignable to type '(element: any, startingStyles: AnimationStyles | undefined, keyframes: (AnimationKeyframe | undef...'. Two different types with this name exist, but they are unrelated.
+[0]       Type 'WebAnimationsPlayer' is not assignable to type 'AnimationPlayer'.
+[0]         Types of property 'parentPlayer' are incompatible.
+[0]           Type 'AnimationPlayer | undefined' is not assignable to type 'AnimationPlayer'.
+[0]             Type 'undefined' is not assignable to type 'AnimationPlayer'.
+[0] node_modules/@angular/platform-browser/src/dom/web_animations_player.d.ts(3,53): error TS2422: A class may only implement another class or interface.
+[0] node_modules/rxjs/Observable.d.ts(58,60): error TS2693: 'Promise' only refers to a type, but is being used as a value here.
+[0] 7:07:07 AM - Compilation complete. Watching for file changes.
+[0] 
+[0] 
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
+[1] [BS] Reloading Browsers...
