@@ -2235,3 +2235,69 @@ Traceback (most recent call last):
     return jsonify(listuser())
          ^
 SyntaxError: invalid syntax
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.129.1 - - [02/Jul/2017 10:14:58] "GET /user/list HTTP/1.1" 200 -
+106.51.243.10 - - [02/Jul/2017 11:29:04] "GET /user/list HTTP/1.1" 200 -
+106.51.128.67 - - [03/Jul/2017 09:28:20] "GET /user/list HTTP/1.1" 200 -
+5.188.11.103 - - [03/Jul/2017 19:03:04] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+5.188.11.103 - - [03/Jul/2017 19:03:04] "  ,'à     Cookie: mstshash=eltons" HTTPStatus.BAD_REQUEST -
+106.205.89.220 - - [03/Jul/2017 23:46:31] "GET /user/list HTTP/1.1" 200 -
+64.233.173.15 - - [04/Jul/2017 02:36:22] "GET /user/list HTTP/1.1" 200 -
+168.1.128.37 - - [04/Jul/2017 16:06:08] "GET / HTTP/1.1" 404 -
+158.85.81.126 - - [04/Jul/2017 21:38:56] "GET / HTTP/1.1" 404 -
+46.17.47.89 - - [04/Jul/2017 22:00:32] "GET / HTTP/1.1" 404 -
+169.54.244.84 - - [05/Jul/2017 01:32:48] "GET / HTTP/1.1" 404 -
+169.54.244.84 - - [05/Jul/2017 01:32:51] "GET / HTTP/1.1" 404 -
+169.54.244.84 - - [05/Jul/2017 01:32:52] "GET / HTTP/1.1" 404 -
+169.54.244.84 - - [05/Jul/2017 01:32:58] "GET / HTTP/1.1" 404 -
+5.188.11.103 - - [06/Jul/2017 00:57:59] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+5.188.11.103 - - [06/Jul/2017 00:57:59] "  ,'à     Cookie: mstshash=eltons" HTTPStatus.BAD_REQUEST -
+64.233.173.16 - - [06/Jul/2017 08:25:46] "GET /user/list HTTP/1.1" 200 -
+64.233.173.17 - - [06/Jul/2017 18:59:40] "GET /user/list HTTP/1.1" 200 -
+54.179.173.195 - - [06/Jul/2017 19:45:19] "GET / HTTP/1.1" 404 -
+106.51.37.161 - - [06/Jul/2017 21:24:50] "GET /user/list HTTP/1.1" 200 -
+169.54.244.78 - - [07/Jul/2017 08:52:00] "GET / HTTP/1.1" 404 -
+169.54.244.78 - - [07/Jul/2017 08:52:02] "GET / HTTP/1.1" 404 -
+169.54.244.78 - - [07/Jul/2017 08:52:05] "GET / HTTP/1.1" 404 -
+169.54.244.78 - - [07/Jul/2017 08:52:10] "GET / HTTP/1.1" 404 -
+91.197.232.10 - - [07/Jul/2017 17:02:06] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+91.197.232.10 - - [07/Jul/2017 17:02:06] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+212.92.123.35 - - [08/Jul/2017 00:18:49] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+212.92.123.35 - - [08/Jul/2017 00:18:49] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+ * Detected change in '/var/www/kallme/apps/restserver/app/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/db.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/models.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/kallme/apps/restserver/app/__init__.py", line 6, in <module>
+    from app.category.controllers import category
+  File "/var/www/kallme/apps/restserver/app/category/controllers.py", line 8, in <module>
+    from . models import *
+  File "/var/www/kallme/apps/restserver/app/category/models.py", line 13
+    conn.close()
+       ^
+SyntaxError: invalid syntax
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.136.197 - - [09/Jul/2017 06:55:29] "GET /user/list HTTP/1.1" 200 -

@@ -25,6 +25,7 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       'ng2-file-upload':           'npm:ng2-file-upload',
+      'ng2-bootstrap':		   'npm:ng2-bootstrap',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
@@ -39,7 +40,12 @@
       'ng2-file-upload': { 
         main: 'ng2-file-upload.js', 
         defaultExtension: 'js' 
+      },
+      'ng2-bootstrap': {
+        main: 'ng2-bootstrap.js',
+        defaultExtension: 'js'
       }
+	
       
     }
   });

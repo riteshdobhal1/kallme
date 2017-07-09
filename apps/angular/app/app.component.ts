@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from './category';
 import { AppService } from './app.service';
-
 import * as globalval from './shared/global';
 
 declare var $:any;
