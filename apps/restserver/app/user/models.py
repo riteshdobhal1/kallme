@@ -1,7 +1,7 @@
 import sys
 sys.path.append('/var/www/apps/restserver')
 from db import *
-
+import pymysql
 
 def adduser(data):
 	username = data.get('username')
@@ -20,7 +20,7 @@ def adduser(data):
 	
 def listuser():
 	conn = mysql.connect()
-	cursor =conn.cursor()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
 	cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name'))
 	results = cursor.fetchall()
 	conn.close()
