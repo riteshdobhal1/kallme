@@ -18,6 +18,8 @@ def search():
 	else:
 		params = request.args
 
+	return jsonify(searchcategory(params))
+
 @category.route('/list', methods=['GET'])
 def list():
 	return jsonify(listcategory())
