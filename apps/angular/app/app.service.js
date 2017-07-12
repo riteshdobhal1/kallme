@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const http_1 = require("@angular/http");
-const mock_category_1 = require("./mock-category");
 require("rxjs/add/operator/map");
 let AppService = class AppService {
     constructor(http) {
@@ -22,7 +21,10 @@ let AppService = class AppService {
             .map((res) => res.json());
     }
     getCategory() {
-        return mock_category_1.CATEGORYDATA;
+        return this.http.get(`http://kallme.in:5000/category/list`)
+            .map((res) => res.json());
+    }
+    getCategoryList() {
     }
 };
 AppService = __decorate([

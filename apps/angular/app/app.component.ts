@@ -12,11 +12,11 @@ declare var $:any;
   })
 export class AppComponent implements OnInit {
 	 private hideElement: boolean = true;
-	 categoryItems:Category[] = [];
+	 categoryItems:Array<Object> ; 
 	 home : string;
 	 contact : string;
 	 about : string;
-     services: string;
+     	 services: string;
 	 login_signup: string;
 	 search: string;
 	 home_img_title1 : string;
@@ -56,10 +56,15 @@ export class AppComponent implements OnInit {
         this.getCategoryItems();
             
    }
-	getCategoryItems():void{
+	getCategoryItems(){
 		
-		this.categoryItems = this.appService.getCategory();
-		console.log(this.categoryItems);
+		this.appService.getCategory().subscribe(categoryItems => {
+			this.categoryItems = categoryItems;
+		},
+		err => {
+      			console.log(err);
+      			return false;
+    		});
 	}
 	
    
