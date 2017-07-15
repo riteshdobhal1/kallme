@@ -12,16 +12,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
+const globalval = require("./shared/global");
 let AppService = class AppService {
     constructor(http) {
         this.http = http;
     }
     getUser() {
-        return this.http.get(`http://kallme.in:5000/user/list`)
+        return this.http.get(`${globalval.rest_api_domain}/user/list`)
             .map((res) => res.json());
     }
     getCategory() {
-        return this.http.get(`http://kallme.in:5000/category/list`)
+        return this.http.get(`${globalval.rest_api_domain}/category/list`)
+            .map((res) => res.json());
+    }
+    getSearchResults(searchString) {
+        return this.http.get(`${globalval.rest_api_domain}/category/search`, {
+            search: {
+                search: searchString
+            }
+        })
             .map((res) => res.json());
     }
     getCategoryList() {
