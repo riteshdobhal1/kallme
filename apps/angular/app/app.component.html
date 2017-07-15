@@ -7,7 +7,7 @@
         <div class="container">
             <a class="navbar-brand" ><img src="../img/KallMeLogo-alt.png" alt="KALL ME"/></a>
 	    <a href="tel:+911234567890" id="phoneNumber"><i class="material-icons hidden-md-down">call</i> +91-1234567890</a>
-	     <div class="container" ><input class="form-control" style="width:125%" type="text" placeholder="Search"></div>
+	     <div class="container" ><input class="form-control" style="width:125%" type="text" placeholder="Search" [value]="search" (input)="search = $event.target.value" (keyup.enter)="searchCategories()"></div>
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
 		            <li class="nav-item active">

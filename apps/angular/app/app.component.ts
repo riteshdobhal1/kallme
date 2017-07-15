@@ -51,6 +51,10 @@ export class AppComponent implements OnInit {
 		console.log(user);
 	});
 	};
+
+	searchCategories(): void {
+		debugger;
+	}
 	
 	ngOnInit(): void {
         this.getCategoryItems();
