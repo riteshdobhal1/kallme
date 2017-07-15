@@ -26,7 +26,8 @@
       'rxjs':                      'npm:rxjs',
       'ng2-file-upload':           'npm:ng2-file-upload',
       'ng2-bootstrap':		   'npm:ng2-bootstrap',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'jquery': 'npm:jquery'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -43,6 +44,10 @@
       },
       'ng2-bootstrap': {
         main: 'ng2-bootstrap.js',
+        defaultExtension: 'js'
+      },
+      'jquery': {
+        main: 'dist/jquery.min.js',
         defaultExtension: 'js'
       }
 	

@@ -2406,3 +2406,140 @@ IndentationError: unindent does not match any outer indentation level
 106.51.137.181 - - [12/Jul/2017 10:54:16] "GET /category/list HTTP/1.1" 200 -
 106.51.137.181 - - [12/Jul/2017 10:54:44] "GET /user/list HTTP/1.1" 200 -
 106.51.137.181 - - [12/Jul/2017 10:54:44] "GET /category/list HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+64.233.173.16 - - [12/Jul/2017 18:25:21] "GET /user/list HTTP/1.1" 200 -
+64.233.173.15 - - [12/Jul/2017 18:25:21] "GET /category/list HTTP/1.1" 200 -
+106.51.140.44 - - [12/Jul/2017 23:58:26] "GET /user/list HTTP/1.1" 200 -
+106.51.140.44 - - [12/Jul/2017 23:58:26] "GET /category/list HTTP/1.1" 200 -
+5.188.11.103 - - [13/Jul/2017 04:41:19] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+5.188.11.103 - - [13/Jul/2017 04:41:19] "  ,'à     Cookie: mstshash=eltons" HTTPStatus.BAD_REQUEST -
+106.51.135.186 - - [13/Jul/2017 07:57:59] "GET /user/list HTTP/1.1" 200 -
+106.51.135.186 - - [13/Jul/2017 07:57:59] "GET /category/list HTTP/1.1" 200 -
+169.54.92.142 - - [13/Jul/2017 08:11:35] "GET / HTTP/1.1" 404 -
+106.51.135.186 - - [13/Jul/2017 09:32:58] "GET /user/list HTTP/1.1" 200 -
+106.51.135.186 - - [13/Jul/2017 09:32:58] "GET /category/list HTTP/1.1" 200 -
+103.227.97.50 - - [13/Jul/2017 20:43:17] "GET /user/list HTTP/1.1" 200 -
+103.227.97.50 - - [13/Jul/2017 20:43:17] "GET /category/list HTTP/1.1" 200 -
+103.227.97.50 - - [13/Jul/2017 20:43:20] "GET /user/list HTTP/1.1" 200 -
+103.227.97.50 - - [13/Jul/2017 20:43:20] "GET /category/list HTTP/1.1" 200 -
+103.227.97.50 - - [13/Jul/2017 20:43:22] "GET /category/list HTTP/1.1" 200 -
+103.227.97.50 - - [13/Jul/2017 20:43:42] "GET /favicon.ico HTTP/1.1" 404 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/models.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/kallme/apps/restserver/app/__init__.py", line 6, in <module>
+    from app.category.controllers import category
+  File "/var/www/kallme/apps/restserver/app/category/controllers.py", line 8, in <module>
+    from . models import *
+  File "/var/www/kallme/apps/restserver/app/category/models.py", line 30
+    cursor =conn.cursor(pymysql.cursors.DictCursor)
+                                                  ^
+TabError: inconsistent use of tabs and spaces in indentation
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.139.215 - - [13/Jul/2017 23:44:41] "GET /user/list HTTP/1.1" 200 -
+106.51.139.215 - - [13/Jul/2017 23:44:41] "GET /category/list HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/models.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/kallme/apps/restserver/app/__init__.py", line 6, in <module>
+    from app.category.controllers import category
+  File "/var/www/kallme/apps/restserver/app/category/controllers.py", line 8, in <module>
+    from . models import *
+  File "/var/www/kallme/apps/restserver/app/category/models.py", line 32
+    qry = "SELECT " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[1] + " FROM " + tbl_category_dtls.get('name') + " WHERE " tbl_category_dtls.get('columns')[2]+ "=1"
+                                                                                                                                                                       ^
+SyntaxError: invalid syntax
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.139.215 - - [13/Jul/2017 23:51:24] "GET /user/list HTTP/1.1" 200 -
+106.51.139.215 - - [13/Jul/2017 23:51:24] "GET /category/list HTTP/1.1" 200 -
+106.51.139.215 - - [13/Jul/2017 23:52:06] "GET /user/list HTTP/1.1" 200 -
+106.51.139.215 - - [13/Jul/2017 23:52:06] "GET /category/list HTTP/1.1" 200 -
+106.51.139.215 - - [13/Jul/2017 23:52:38] "GET /user/list HTTP/1.1" 200 -
+106.51.139.215 - - [13/Jul/2017 23:52:38] "GET /category/list HTTP/1.1" 200 -
+196.52.43.60 - - [14/Jul/2017 00:39:07] "GET / HTTP/1.1" 404 -
+106.51.233.189 - - [14/Jul/2017 01:00:33] "GET /user/list HTTP/1.1" 200 -
+106.51.233.189 - - [14/Jul/2017 01:00:33] "GET /category/list HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.243.243 - - [14/Jul/2017 02:42:22] "GET /user/list HTTP/1.1" 200 -
+106.51.243.243 - - [14/Jul/2017 02:42:22] "GET /category/list HTTP/1.1" 200 -
+106.51.242.168 - - [14/Jul/2017 07:22:02] "GET /user/list HTTP/1.1" 200 -
+106.51.242.168 - - [14/Jul/2017 07:22:02] "GET /category/list HTTP/1.1" 200 -
+106.51.242.168 - - [14/Jul/2017 07:44:55] "GET /user/list HTTP/1.1" 200 -
+106.51.242.168 - - [14/Jul/2017 07:44:55] "GET /category/list HTTP/1.1" 200 -
+106.51.242.168 - - [14/Jul/2017 07:46:42] "GET /user/list HTTP/1.1" 200 -
+106.51.242.168 - - [14/Jul/2017 07:46:42] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:02:17] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:02:17] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:02:46] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:02:47] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:10:49] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:10:50] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:21:24] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:21:24] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:22:14] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:22:14] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:26:38] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:26:38] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:28:01] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 08:28:01] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 09:13:22] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 09:13:22] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 09:14:56] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 09:14:56] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 09:16:06] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 09:16:06] "GET /category/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 09:20:20] "GET /user/list HTTP/1.1" 200 -
+106.51.135.248 - - [14/Jul/2017 09:20:21] "GET /category/list HTTP/1.1" 200 -
+106.51.137.168 - - [14/Jul/2017 09:29:19] "GET /user/list HTTP/1.1" 200 -
+106.51.137.168 - - [14/Jul/2017 09:29:19] "GET /category/list HTTP/1.1" 200 -
+106.51.137.168 - - [14/Jul/2017 09:32:00] "GET /user/list HTTP/1.1" 200 -
+106.51.137.168 - - [14/Jul/2017 09:32:00] "GET /category/list HTTP/1.1" 200 -
+169.54.233.116 - - [14/Jul/2017 09:44:12] "GET / HTTP/1.1" 404 -
+169.54.233.116 - - [14/Jul/2017 09:44:14] "GET / HTTP/1.1" 404 -
+169.54.233.116 - - [14/Jul/2017 09:44:16] "GET / HTTP/1.1" 404 -
+169.54.233.116 - - [14/Jul/2017 09:44:22] "GET / HTTP/1.1" 404 -
+106.51.128.247 - - [14/Jul/2017 10:19:57] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 10:19:57] "GET /category/list HTTP/1.1" 200 -
+164.52.0.133 - - [14/Jul/2017 10:41:57] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x01"\x01\x00\x01')
+164.52.0.133 - - [14/Jul/2017 10:41:57] "" ùÿ$rJ/È0{ KÑ^òÞä¨"Cß  À0À,À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+164.52.0.133 - - [14/Jul/2017 10:42:00] "GET / HTTP/1.1" 404 -
+106.51.128.247 - - [14/Jul/2017 10:52:31] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 10:52:31] "GET /category/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 10:54:34] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 10:54:34] "GET /category/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 10:57:37] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 10:57:37] "GET /category/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:00:27] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:00:27] "GET /category/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:08:31] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:08:32] "GET /category/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:09:28] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:09:28] "GET /category/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:10:13] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:10:13] "GET /category/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:14:45] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [14/Jul/2017 11:14:45] "GET /category/list HTTP/1.1" 200 -

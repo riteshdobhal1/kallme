@@ -12,6 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const app_service_1 = require("./app.service");
 const globalval = require("./shared/global");
+require("../lib/bootstrap/js/myScript.js");
+const $ = require("jquery");
+///declare var $:any;
 let AppComponent = class AppComponent {
     constructor(appService) {
         this.appService = appService;
@@ -39,6 +42,17 @@ let AppComponent = class AppComponent {
     ;
     ngOnInit() {
         this.getCategoryItems();
+        $('#myTab a').click(function (e) {
+            var contentId = "link_" + $(this).attr('id');
+            if (contentId == "link_login") {
+                $("#link_login").show();
+                $("#link_signup").hide();
+            }
+            else {
+                $("#link_login").hide();
+                $("#link_signup").show();
+            }
+        });
     }
     getCategoryItems() {
         this.appService.getCategory().subscribe(categoryItems => {
