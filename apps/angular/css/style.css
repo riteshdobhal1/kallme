@@ -458,4 +458,33 @@ span:nth-last-child(3) {
 	box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
 }
 
+.item-contents {
+	display: inline-block;
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid #bbb;
+}
+
+.margin-top-46 {
+	margin-top: 46px;
+}
+
+.item-img {
+	max-width: 200px;
+}
+
+.item-city {
+	font-size: 11px;
+}
+
+.item-category {
+	font-size: 10px;
+}
+
+.no-results {
+	text-align: center;
+	color: red;
+	font-size: 18px;
+}
+
 
