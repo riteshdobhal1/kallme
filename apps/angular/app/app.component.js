@@ -16,7 +16,6 @@ let AppComponent = class AppComponent {
     constructor(appService) {
         this.appService = appService;
         this.hideElement = true;
-        this.categoryItems = [];
         this.home = globalval.home;
         this.contact = globalval.contact;
         this.about = globalval.about;
@@ -42,8 +41,12 @@ let AppComponent = class AppComponent {
         this.getCategoryItems();
     }
     getCategoryItems() {
-        this.categoryItems = this.appService.getCategory();
-        console.log(this.categoryItems);
+        this.appService.getCategory().subscribe(categoryItems => {
+            this.categoryItems = categoryItems;
+        }, err => {
+            console.log(err);
+            return false;
+        });
     }
     toggleElement() {
         if (this.hideElement) {

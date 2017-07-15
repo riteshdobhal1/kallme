@@ -22,4 +22,15 @@ def search():
 
 @category.route('/list', methods=['GET'])
 def list():
-	return jsonify(listcategory())
+	category=['Home Services','Electronics','Travel','Personal Care','Automobiles','Real Estate']
+	categorySet=[]
+	mylist = listcategory()
+	for cat in category:
+		catData = []
+		for catrow in mylist:
+			category = catrow["categoryname"]
+			if cat ==  category:
+				catData.append(catrow["subcategoryname"])
+		categorySet.append({"data":catData,"name":cat})
+	return jsonify(categorySet)    
+	

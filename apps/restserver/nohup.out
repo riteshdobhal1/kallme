@@ -2301,3 +2301,108 @@ SyntaxError: invalid syntax
  * Debugger is active!
  * Debugger PIN: 135-965-059
 106.51.136.197 - - [09/Jul/2017 06:55:29] "GET /user/list HTTP/1.1" 200 -
+64.233.173.17 - - [09/Jul/2017 20:08:09] "GET /user/list HTTP/1.1" 200 -
+106.51.37.161 - - [09/Jul/2017 21:19:49] "GET /user/list HTTP/1.1" 200 -
+64.233.173.17 - - [10/Jul/2017 05:14:02] "GET / HTTP/1.1" 404 -
+64.233.173.17 - - [10/Jul/2017 05:14:03] "GET /favicon.ico HTTP/1.1" 404 -
+64.233.173.17 - - [10/Jul/2017 05:14:15] "GET /user/list HTTP/1.1" 200 -
+106.201.120.102 - - [10/Jul/2017 05:20:19] "GET /user/list HTTP/1.1" 200 -
+106.201.120.125 - - [10/Jul/2017 05:20:20] "GET /favicon.ico HTTP/1.1" 404 -
+14.141.179.130 - - [10/Jul/2017 05:20:53] "GET /category/list HTTP/1.1" 200 -
+106.216.180.235 - - [10/Jul/2017 05:57:47] "GET /user/list HTTP/1.1" 200 -
+106.216.180.235 - - [10/Jul/2017 06:08:11] "GET /user/list HTTP/1.1" 200 -
+106.216.180.235 - - [10/Jul/2017 06:10:59] "GET /user/list HTTP/1.1" 200 -
+103.210.133.248 - - [10/Jul/2017 06:35:11] "GET /user/list HTTP/1.1" 200 -
+103.210.133.248 - - [10/Jul/2017 06:37:28] "GET /user/list HTTP/1.1" 200 -
+103.210.133.248 - - [10/Jul/2017 06:38:02] "GET /user/list HTTP/1.1" 200 -
+103.210.133.248 - - [10/Jul/2017 06:41:26] "GET /user/list HTTP/1.1" 200 -
+103.210.133.248 - - [10/Jul/2017 06:50:06] "GET /user/list HTTP/1.1" 200 -
+103.210.133.248 - - [10/Jul/2017 06:50:18] "GET /user/list HTTP/1.1" 200 -
+103.210.133.248 - - [10/Jul/2017 06:58:26] "GET /user/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 08:53:59] "GET /user/list HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+66.102.6.24 - - [10/Jul/2017 09:14:51] "GET /category/list HTTP/1.1" 200 -
+66.102.6.20 - - [10/Jul/2017 09:14:52] "GET /favicon.ico HTTP/1.1" 404 -
+103.227.97.189 - - [10/Jul/2017 09:14:53] "GET /category/list HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/models.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/controllers.py', reloading
+ * Restarting with stat
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/kallme/apps/restserver/app/__init__.py", line 6, in <module>
+    from app.category.controllers import category
+  File "/var/www/kallme/apps/restserver/app/category/controllers.py", line 26
+    print obj["categoryname"]
+            ^
+SyntaxError: Missing parentheses in call to 'print'
+Traceback (most recent call last):
+  File "run.py", line 1, in <module>
+    from app import app
+  File "/var/www/kallme/apps/restserver/app/__init__.py", line 6, in <module>
+    from app.category.controllers import category
+  File "/var/www/kallme/apps/restserver/app/category/controllers.py", line 28
+    category["data"] = obj["subcategoryname"]
+                                            ^
+IndentationError: unindent does not match any outer indentation level
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.97.189 - - [10/Jul/2017 11:52:06] "GET /user/list HTTP/1.1" 200 -
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+103.227.97.189 - - [10/Jul/2017 11:56:16] "GET /category/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 11:56:23] "GET /category/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 11:56:33] "GET /category/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 11:56:37] "GET /category/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 11:56:40] "GET /category/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 11:56:42] "GET /category/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 11:56:43] "GET /category/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 11:57:05] "GET /category/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 11:57:05] "GET /category/list HTTP/1.1" 200 -
+103.227.97.189 - - [10/Jul/2017 11:57:06] "GET /category/list HTTP/1.1" 200 -
+5.188.11.103 - - [10/Jul/2017 12:41:52] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+5.188.11.103 - - [10/Jul/2017 12:41:52] "  ,'à     Cookie: mstshash=eltons" HTTPStatus.BAD_REQUEST -
+66.102.6.20 - - [10/Jul/2017 21:32:12] "GET /category/list HTTP/1.1" 200 -
+66.102.6.22 - - [10/Jul/2017 21:32:12] "GET /favicon.ico HTTP/1.1" 404 -
+66.102.6.24 - - [10/Jul/2017 22:01:19] "GET /category/list HTTP/1.1" 200 -
+64.233.173.15 - - [10/Jul/2017 22:40:02] "GET /user/list HTTP/1.1" 200 -
+5.153.234.67 - - [10/Jul/2017 23:51:57] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+5.153.234.67 - - [10/Jul/2017 23:51:57] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+5.153.234.67 - - [11/Jul/2017 00:10:43] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
+5.153.234.67 - - [11/Jul/2017 00:10:43] "  +&à     Cookie: mstshash=hello" HTTPStatus.BAD_REQUEST -
+158.85.81.122 - - [11/Jul/2017 02:05:05] "GET / HTTP/1.1" 404 -
+106.51.134.97 - - [11/Jul/2017 09:58:24] "GET /user/list HTTP/1.1" 200 -
+196.52.43.55 - - [11/Jul/2017 12:18:23] "GET / HTTP/1.1" 404 -
+158.85.81.120 - - [11/Jul/2017 14:36:50] "GET / HTTP/1.1" 404 -
+5.39.216.150 - - [12/Jul/2017 04:46:53] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+5.39.216.150 - - [12/Jul/2017 04:46:53] "  *%à     Cookie: mstshash=Test" HTTPStatus.BAD_REQUEST -
+5.39.216.150 - - [12/Jul/2017 04:46:56] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00*%à\x00\x00\x00\x00\x00Cookie:')
+5.39.216.150 - - [12/Jul/2017 04:46:56] "  *%à     Cookie: mstshash=Test" HTTPStatus.BAD_REQUEST -
+ * Detected change in '/var/www/kallme/apps/restserver/app/category/controllers.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.137.66 - - [12/Jul/2017 09:31:14] "GET /user/list HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.137.66 - - [12/Jul/2017 09:50:55] "GET /user/list HTTP/1.1" 200 -
+106.51.137.66 - - [12/Jul/2017 09:53:26] "GET /category/list HTTP/1.1" 200 -
+106.51.137.66 - - [12/Jul/2017 09:53:26] "GET /favicon.ico HTTP/1.1" 404 -
+106.51.137.181 - - [12/Jul/2017 10:52:46] "GET /user/list HTTP/1.1" 200 -
+106.51.137.181 - - [12/Jul/2017 10:52:46] "GET /category/list HTTP/1.1" 200 -
+106.51.137.181 - - [12/Jul/2017 10:54:16] "GET /user/list HTTP/1.1" 200 -
+106.51.137.181 - - [12/Jul/2017 10:54:16] "GET /category/list HTTP/1.1" 200 -
+106.51.137.181 - - [12/Jul/2017 10:54:44] "GET /user/list HTTP/1.1" 200 -
+106.51.137.181 - - [12/Jul/2017 10:54:44] "GET /category/list HTTP/1.1" 200 -
