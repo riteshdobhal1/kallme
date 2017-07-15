@@ -16,6 +16,7 @@ let AppComponent = class AppComponent {
     constructor(appService) {
         this.appService = appService;
         this.hideElement = true;
+        this.showHome = true;
         this.home = globalval.home;
         this.contact = globalval.contact;
         this.about = globalval.about;
@@ -37,6 +38,21 @@ let AppComponent = class AppComponent {
         });
     }
     ;
+    searchCategories() {
+        if (!!this.search.length) {
+            this.appService.getSearchResults(this.search).subscribe(contentList => {
+                this.contentList = contentList;
+                this.showHome = false;
+            }, err => {
+                console.log(err);
+                return false;
+            });
+        }
+        else {
+            this.showHome = true;
+            this.contentList = [];
+        }
+    }
     ngOnInit() {
         this.getCategoryItems();
     }
