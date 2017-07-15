@@ -70,6 +70,11 @@ export class AppComponent implements OnInit {
         }
     }
 
+    goToHome(): void {
+        this.search = '';
+        this.showHome = true;
+    }
+
     ngOnInit(): void {
         this.getCategoryItems();
 

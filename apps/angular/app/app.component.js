@@ -53,6 +53,10 @@ let AppComponent = class AppComponent {
             this.contentList = [];
         }
     }
+    goToHome() {
+        this.search = '';
+        this.showHome = true;
+    }
     ngOnInit() {
         this.getCategoryItems();
     }
