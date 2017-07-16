@@ -2543,3 +2543,23 @@ SyntaxError: invalid syntax
 106.51.128.247 - - [14/Jul/2017 11:10:13] "GET /category/list HTTP/1.1" 200 -
 106.51.128.247 - - [14/Jul/2017 11:14:45] "GET /user/list HTTP/1.1" 200 -
 106.51.128.247 - - [14/Jul/2017 11:14:45] "GET /category/list HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 135-965-059
+106.51.128.247 - - [15/Jul/2017 08:23:27] "GET /user/list HTTP/1.1" 200 -
+106.51.128.247 - - [15/Jul/2017 08:23:27] "GET /category/list HTTP/1.1" 200 -
+106.51.128.247 - - [15/Jul/2017 08:24:15] "GET /category/search?search=lg HTTP/1.1" 200 -
+106.51.128.247 - - [15/Jul/2017 08:25:06] "GET /category/search?search=new HTTP/1.1" 200 -
+106.51.128.247 - - [15/Jul/2017 08:28:47] "GET /category/search?search=ne HTTP/1.1" 200 -
+106.51.128.247 - - [15/Jul/2017 08:28:48] "GET /category/search?search=ne HTTP/1.1" 200 -
+66.249.82.192 - - [15/Jul/2017 09:39:16] "GET /user/list HTTP/1.1" 200 -
+66.249.82.223 - - [15/Jul/2017 09:39:16] "GET /category/list HTTP/1.1" 200 -
+66.249.82.223 - - [15/Jul/2017 09:39:24] "GET /category/search?search=Lg HTTP/1.1" 200 -
+5.188.11.103 - - [15/Jul/2017 20:40:50] code 400, message Bad HTTP/0.9 request type ("\x03\x00\x00,'à\x00\x00\x00\x00\x00Cookie:")
+5.188.11.103 - - [15/Jul/2017 20:40:50] "  ,'à     Cookie: mstshash=eltons" HTTPStatus.BAD_REQUEST -
+103.227.97.36 - - [16/Jul/2017 08:51:00] "GET /user/list HTTP/1.1" 200 -
+103.227.97.36 - - [16/Jul/2017 08:51:00] "GET /category/list HTTP/1.1" 200 -
+103.227.97.36 - - [16/Jul/2017 08:51:30] "GET /category/search?search=lg HTTP/1.1" 200 -
+47.31.2.12 - - [16/Jul/2017 09:20:41] "GET /user/list HTTP/1.1" 200 -
+47.31.2.12 - - [16/Jul/2017 09:20:41] "GET /category/list HTTP/1.1" 200 -

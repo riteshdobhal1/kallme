@@ -12,9 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const app_service_1 = require("./app.service");
 const globalval = require("./shared/global");
-require("../lib/bootstrap/js/myScript.js");
 const $ = require("jquery");
-///declare var $:any;
 let AppComponent = class AppComponent {
     constructor(appService) {
         this.appService = appService;
