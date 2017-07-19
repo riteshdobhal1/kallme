@@ -33,16 +33,41 @@ let AppComponent = class AppComponent {
         this.email = globalval.email;
         this.copyright = globalval.copyright;
         this.address_description = globalval.address_description;
+        this.categoryObj = {};
+        this.subCategoryObj = {};
+        this.categoryFilter = {};
+        this.subCategoryFilter = {};
         this.appService.getUser().subscribe(user => {
             console.log(user);
         });
     }
     ;
     searchCategories() {
+        this.categoryObj = {};
+        this.subCategoryObj = {};
+        this.categoryFilter = {};
+        this.subCategoryFilter = {};
         if (!!this.search.length) {
             this.appService.getSearchResults(this.search).subscribe(contentList => {
                 this.contentList = contentList;
+                this.filteredContent = contentList;
                 this.showHome = false;
+                this.contentList.forEach(content => {
+                    if (this.categoryObj.hasOwnProperty(content["category"])) {
+                        this.categoryObj[content["category"]] = this.categoryObj[content["category"]] + 1;
+                    }
+                    else {
+                        this.categoryObj[content["category"]] = 1;
+                    }
+                    if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
+                        this.subCategoryObj[content["sub_category"]] = this.subCategoryObj[content["sub_category"]] + 1;
+                    }
+                    else {
+                        this.subCategoryObj[content["sub_category"]] = 1;
+                    }
+                });
+                this.categoryList = Object.keys(this.categoryObj);
+                this.subCategoryList = Object.keys(this.subCategoryObj);
             }, err => {
                 console.log(err);
                 return false;
@@ -51,6 +76,36 @@ let AppComponent = class AppComponent {
         else {
             this.showHome = true;
             this.contentList = [];
+        }
+    }
+    filterCategory(target, key) {
+        if (target.checked == true) {
+            this.categoryFilter[key] = true;
+        }
+        else {
+            delete this.categoryFilter[key];
+        }
+        this.filterResults();
+    }
+    filterSubCategory(target, key) {
+        if (target.checked == true) {
+            this.subCategoryFilter[key] = true;
+        }
+        else {
+            delete this.subCategoryFilter[key];
+        }
+        this.filterResults();
+    }
+    filterResults() {
+        if (Object.keys(this.categoryFilter).length === 0 && Object.keys(this.subCategoryFilter).length === 0) {
+            this.filteredContent = this.contentList;
+        }
+        else {
+            this.filteredContent = this.contentList.filter(content => {
+                if (this.categoryFilter.hasOwnProperty(content["category"]) || this.subCategoryFilter.hasOwnProperty(content["sub_category"])) {
+                    return content;
+                }
+            });
         }
     }
     goToHome() {
