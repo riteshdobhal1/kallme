@@ -24,4 +24,20 @@ def listcategory():
 	cursor.execute("SELECT " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[1] + " as categoryname," + tbl_sub_category_dtls.get('name')+"." +tbl_sub_category_dtls.get('columns')[2] + " as subcategoryname FROM " + tbl_category_dtls.get('name') + "," + tbl_sub_category_dtls.get('name') + " WHERE " + tbl_category_dtls.get('name')+ "." +tbl_category_dtls.get('columns')[0] + "=" +  tbl_sub_category_dtls.get('name')+ "." + tbl_sub_category_dtls.get('columns')[1] + " AND " + tbl_category_dtls.get('name')+ "." + tbl_category_dtls.get('columns')[2]+ "=1 AND " + tbl_sub_category_dtls.get('name')+ "." +tbl_sub_category_dtls.get('columns')[3]+"=1")
 	results = cursor.fetchall()
 	conn.close()
-	return results	
+	return results
+
+def getcategory():
+	conn = mysql.connect()
+	cursor =conn.cursor(pymysql.cursors.DictCursor)
+	qry = "SELECT " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[1] + " FROM " + tbl_category_dtls.get('name') + " WHERE " + tbl_category_dtls.get('columns')[2] + "=1"
+	
+	cursor.execute(qry)
+	results = cursor.fetchall()
+	return results
+
+
+
+
+
+
+	

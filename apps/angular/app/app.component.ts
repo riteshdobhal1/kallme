@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Category} from './category';
 import {AppService} from './app.service';
 import * as globalval from './shared/global';
-
-declare var $: any;
+import * as $ from 'jquery';
 
 @Component({
     selector: 'my-app',
@@ -138,6 +137,22 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
         this.getCategoryItems();
+	 $('#myTab a').click(function (e) {
+
+                var contentId = "link_" + $(this).attr('id');
+                if(contentId == "link_login"){
+
+                        $("#link_login").show();
+                        $("#link_signup").hide();
+                }else{
+
+                        $("#link_login").hide();
+                        $("#link_signup").show();
+                }
+
+
+
+                })
 
     }
 
