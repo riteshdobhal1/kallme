@@ -1,7 +1,11 @@
-apps/angular/node_modules/
+# Ignore all node modules
+apps/angular/node_modules
 
+# Ignore all js files created from ts files
 apps/angular/app/*.js
 
+# Ignore all js.map files created from ts files
 apps/angular/app/*.js.map
 
+# Ignore all python compiler files
 *.pyc
