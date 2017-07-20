@@ -3,3 +3,16 @@ apps/angular/node_modules
 
 # Ignore all python compiler files
 *.pyc
+
+# Ignore all .sw files created by unix
+*.swl
+*.swm
+*.swn
+*.swo
+*.swp
+
+# Ignore all nohup.out files
+nohup.out
+
+# Ignore all log files
+*.log
