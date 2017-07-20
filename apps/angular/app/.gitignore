@@ -1,4 +1,14 @@
+# Ignore all created js files from ts files
 *.js
+
+# Ignore all created js.map files from ts files
 *.js.map
+
+# Ignore all ts.swo files
 *.ts.swo
+
+# Ignore all ts.swp files
 *.ts.swp
+
+# Ignore nohup.out file
+nohup.out
