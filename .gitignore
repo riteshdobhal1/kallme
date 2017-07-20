@@ -1,1 +1,7 @@
 apps/angular/node_modules/
+
+apps/angular/app/*.js
+
+apps/angular/app/*.js.map
+
+*.pyc
