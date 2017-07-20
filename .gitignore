@@ -1,5 +1,5 @@
 # Ignore all node modules
-apps/angular/node_modules
+node_modules/
 
 # Ignore all python compiler files
 *.pyc
@@ -16,3 +16,9 @@ nohup.out
 
 # Ignore all log files
 *.log
+
+# Ignore .idea directory created by unix
+.idea/
+
+# Ignore package-locak.json created by unix
+package-lock.json
