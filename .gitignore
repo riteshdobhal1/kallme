@@ -22,3 +22,6 @@ nohup.out
 
 # Ignore package-locak.json created by unix
 package-lock.json
+
+# Ignore all .DS_Store files created by unix
+.DS_Store
