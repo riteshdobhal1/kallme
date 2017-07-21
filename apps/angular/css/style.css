@@ -463,14 +463,31 @@ span:nth-last-child(3) {
 	padding: 10px;
 	margin: 5px;
 	border: 1px solid #bbb;
+	width: 250px;
+	height: 250px;
+}
+
+.item-contents label {
+	text-overflow: ellipsis;
+	display: inline-block;
+	overflow: hidden;
+	width: 230px;
+	white-space: nowrap;
+	vertical-align: middle;
 }
 
 .margin-top-46 {
-	margin-top: 46px;
+	margin-top: 46px !important;
+}
+
+.height-30 {
+	height: 30px !important;
 }
 
 .item-img {
-	max-width: 200px;
+	width: 200px;
+	height: 150px;
+
 }
 
 .item-city {
@@ -485,6 +502,17 @@ span:nth-last-child(3) {
 	text-align: center;
 	color: red;
 	font-size: 18px;
+}
+
+.search-button {
+	cursor: pointer;
+}
+
+.left-filter-list {
+	list-style-type: none;
+	padding-left: 1em;
+	font-size: 12px;
+	opacity: 0.7;
 }
 
 
