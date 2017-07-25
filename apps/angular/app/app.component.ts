@@ -3,6 +3,7 @@ import {Category} from './category';
 import {AppService} from './app.service';
 import * as globalval from './shared/global';
 import * as $ from 'jquery';
+import {CompleterService, CompleterData} from 'ng2-completer';
 
 @Component({
     selector: 'my-app',
@@ -37,8 +38,10 @@ export class AppComponent implements OnInit {
     email: string;
     copyright: string;
     address_description;
+    suggestionsData: Array<Object>;
+    suggestions: CompleterData;
 
-    constructor(private appService: AppService) {
+    constructor(private appService: AppService, private completerService: CompleterService) {
         this.home = globalval.home;
         this.contact = globalval.contact;
         this.about = globalval.about;
@@ -69,19 +72,19 @@ export class AppComponent implements OnInit {
         this.subCategoryObj = {};
         this.categoryFilter = {};
         this.subCategoryFilter = {};
-        if(!!this.search.length) {
+        if (!!this.search.length) {
             this.appService.getSearchResults(this.search).subscribe(contentList => {
                     this.contentList = contentList;
                     this.filteredContent = contentList;
                     this.showHome = false;
                     this.contentList.forEach(content => {
-                        if(this.categoryObj.hasOwnProperty(content["category"])) {
+                        if (this.categoryObj.hasOwnProperty(content["category"])) {
                             this.categoryObj[content["category"]] = this.categoryObj[content["category"]] + 1;
                         } else {
                             this.categoryObj[content["category"]] = 1;
                         }
 
-                        if(this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
+                        if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
                             this.subCategoryObj[content["sub_category"]] = this.subCategoryObj[content["sub_category"]] + 1;
                         } else {
                             this.subCategoryObj[content["sub_category"]] = 1;
@@ -101,7 +104,7 @@ export class AppComponent implements OnInit {
     }
 
     filterCategory(target, key): void {
-        if(target.checked == true) {
+        if (target.checked == true) {
             this.categoryFilter[key] = true;
         } else {
             delete this.categoryFilter[key];
@@ -110,7 +113,7 @@ export class AppComponent implements OnInit {
     }
 
     filterSubCategory(target, key): void {
-        if(target.checked == true) {
+        if (target.checked == true) {
             this.subCategoryFilter[key] = true;
         } else {
             delete this.subCategoryFilter[key];
@@ -119,11 +122,11 @@ export class AppComponent implements OnInit {
     }
 
     filterResults(): void {
-        if(Object.keys(this.categoryFilter).length === 0 && Object.keys(this.subCategoryFilter).length === 0) {
+        if (Object.keys(this.categoryFilter).length === 0 && Object.keys(this.subCategoryFilter).length === 0) {
             this.filteredContent = this.contentList;
         } else {
             this.filteredContent = this.contentList.filter(content => {
-                if(this.categoryFilter.hasOwnProperty(content["category"]) || this.subCategoryFilter.hasOwnProperty(content["sub_category"])) {
+                if (this.categoryFilter.hasOwnProperty(content["category"]) || this.subCategoryFilter.hasOwnProperty(content["sub_category"])) {
                     return content;
                 }
             });
@@ -137,23 +140,35 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
         this.getCategoryItems();
-	 $('#myTab a').click(function (e) {
+        this.getSuggestionItems();
+        $('#myTab a').click(function (e) {
 
-                var contentId = "link_" + $(this).attr('id');
-                if(contentId == "link_login"){
+            var contentId = "link_" + $(this).attr('id');
+            if (contentId == "link_login") {
 
-                        $("#link_login").show();
-                        $("#link_signup").hide();
-                }else{
+                $("#link_login").show();
+                $("#link_signup").hide();
+            } else {
 
-                        $("#link_login").hide();
-                        $("#link_signup").show();
-                }
+                $("#link_login").hide();
+                $("#link_signup").show();
+            }
 
 
+        })
 
-                })
+    }
 
+    getSuggestionItems() {
+        this.appService.getSuggestionsList().subscribe(response => {
+                this.suggestionsData = response;
+                this.suggestions = this.completerService.local(this.suggestionsData, 'keywords', 'title').descriptionField('description');
+
+            },
+            err => {
+                console.log(err);
+                return false;
+            });
     }
 
     getCategoryItems() {
