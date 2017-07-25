@@ -42,5 +42,11 @@ tbl_customer_data_dtls = {
   'columns': ['id', 'city_id', 'category_id', 'subcategory_id', 'content', 'img']
 }
 
+# Description of suggestions table
+tbl_suggestion_dtls = {
+    'name': 'suggestions',
+    'columns': ['id', 'value', 'category_id', 'subcategory_id', 'keywords']
+}
+
 tbl_agent = "agent"
 tbl_vendor = "vendor"
