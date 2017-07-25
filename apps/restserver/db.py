@@ -45,7 +45,7 @@ tbl_customer_data_dtls = {
 # Description of suggestions table
 tbl_suggestion_dtls = {
     'name': 'suggestions',
-    'columns': ['id', 'value', 'category_id', 'subcategory_id', 'keywords']
+    'columns': ['id', 'title', 'category_id', 'subcategory_id', 'keywords']
 }
 
 tbl_agent = "agent"
