@@ -12,9 +12,7 @@
             +91-1234567890</a>
         <div class="container">
             <div class="input-group">
-                <input class="form-control" style="width:125%" type="text" placeholder="Search"
-                       [value]="search" (input)="search = $event.target.value"
-                       (keyup.enter)="searchCategories()">
+                <ng2-completer inputClass="form-control width-100-per" placeholder="Search" class="width-125-per" [(ngModel)]="search" [datasource]="suggestions" [minSearchLength]="1" (keyup.enter)="searchCategories()" (selected)="searchCategories()"></ng2-completer>
                 <div class="input-group-btn">
                     <button class="btn btn-default search-button" type="button" (click)="searchCategories()">
                         <i class="fa fa-search" aria-hidden="true"></i>

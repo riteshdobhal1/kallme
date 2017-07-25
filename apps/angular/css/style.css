@@ -515,4 +515,20 @@ span:nth-last-child(3) {
 	opacity: 0.7;
 }
 
+.width-100-per {
+	width: 100% !important;
+}
+
+.width-125-per {
+	width: 125% !important;
+}
+
+.completer-dropdown {
+	width: 100% !important;
+}
+
+.completer-description {
+	opacity: 0.6;
+}
+
 
