@@ -52,24 +52,12 @@
         <div class="container-fluid margin-top-46" id="contents">
             <div class="row">
                 <div class="col-sm-12 col-md-3 col-lg-2">
-                    Categories:
-                    <ul class="left-filter-list">
-                        <li *ngFor="let key of categoryList">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" (change)="filterCategory($event.target, key)"> {{key}}
-                                    ({{categoryObj[key]}})
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-
-                    Sub Categories:
+                    Filters:
                     <ul class="left-filter-list">
                         <li *ngFor="let key of subCategoryList">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" (change)="filterSubCategory($event.target, key)"> {{key}} ({{subCategoryObj[key]}})
+                                    <input type="checkbox" (change)="filterSubCategory($event.target, key)"> {{key}} <span class="filter-desc">{{subCategoryObj[key]["category"]}}</span> ({{subCategoryObj[key]["count"]}})
                                 </label>
                             </div>
                         </li>
@@ -238,14 +226,14 @@
             <div class="modal-content">
                 <ul class="nav nav-tabs nav-fill" id="myTab">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" id="login">Login</a>
+                        <a class="nav-link" [ngClass]="{'active': loginActive}" href="#" id="login" (click)="loginActive = true;">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="signup">Signup</a>
+                        <a class="nav-link" [ngClass]="{'active': !loginActive}" href="#" id="signup" (click)="loginActive = false;">Signup</a>
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane active" id="link_login" role="tabpanel">
+                    <div class="tab-pane" [ngClass]="{'active': loginActive}" id="link_login" role="tabpanel" *ngIf="loginActive">
                         <form class="row form-group">
                             <div class="col-md-12">
                                 <label for="username" hidden="true">Username</label>
@@ -267,7 +255,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="tab-pane" id="link_signup" role="tabpanel" style="display: none">
+                    <div class="tab-pane" [ngClass]="{'active': !loginActive}" id="link_signup" role="tabpanel" *ngIf="!loginActive">
                         <form class="row form-group">
                             <div class="col-md-12">
                                 <label for="username" hidden="true">Username</label>
