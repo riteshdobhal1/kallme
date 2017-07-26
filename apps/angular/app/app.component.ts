@@ -1,27 +1,25 @@
 import {Component, OnInit} from '@angular/core';
+import {NgClass} from '@angular/common';
 import {Category} from './category';
 import {AppService} from './app.service';
 import * as globalval from './shared/global';
-import * as $ from 'jquery';
 import {CompleterService, CompleterData} from 'ng2-completer';
 
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.component.html',
-    providers: [AppService]
+    providers: [AppService, NgClass]
 })
 export class AppComponent implements OnInit {
     private hideElement: boolean = true;
     private showHome: boolean = true;
+    private loginActive: boolean = true;
     categoryItems: Array<Object>;
     contentList: Array<Object>;
     filteredContent: Array<Object>;
-    categoryObj: Object;
     subCategoryObj: Object;
-    categoryFilter: Object;
     subCategoryFilter: Object;
-    categoryList: Array<string>;
-    subCategoryList: Array<string>;
+    subCategoryList: Array<Object>;
     home: string;
     contact: string;
     about: string;
@@ -58,9 +56,7 @@ export class AppComponent implements OnInit {
         this.email = globalval.email;
         this.copyright = globalval.copyright;
         this.address_description = globalval.address_description;
-        this.categoryObj = {};
         this.subCategoryObj = {};
-        this.categoryFilter = {};
         this.subCategoryFilter = {};
         this.appService.getUser().subscribe(user => {
             console.log(user);
@@ -68,9 +64,7 @@ export class AppComponent implements OnInit {
     };
 
     searchCategories(): void {
-        this.categoryObj = {};
         this.subCategoryObj = {};
-        this.categoryFilter = {};
         this.subCategoryFilter = {};
         if (!!this.search.length) {
             this.appService.getSearchResults(this.search).subscribe(contentList => {
@@ -78,19 +72,18 @@ export class AppComponent implements OnInit {
                     this.filteredContent = contentList;
                     this.showHome = false;
                     this.contentList.forEach(content => {
-                        if (this.categoryObj.hasOwnProperty(content["category"])) {
-                            this.categoryObj[content["category"]] = this.categoryObj[content["category"]] + 1;
-                        } else {
-                            this.categoryObj[content["category"]] = 1;
-                        }
-
                         if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
-                            this.subCategoryObj[content["sub_category"]] = this.subCategoryObj[content["sub_category"]] + 1;
+                            this.subCategoryObj[content["sub_category"]] = {
+                                count: this.subCategoryObj[content["sub_category"]]["count"] + 1,
+                                category: content["category"]
+                            };
                         } else {
-                            this.subCategoryObj[content["sub_category"]] = 1;
+                            this.subCategoryObj[content["sub_category"]] = {
+                                count: 1,
+                                category: content["category"]
+                            };
                         }
                     });
-                    this.categoryList = Object.keys(this.categoryObj);
                     this.subCategoryList = Object.keys(this.subCategoryObj);
                 },
                 err => {
@@ -103,15 +96,6 @@ export class AppComponent implements OnInit {
         }
     }
 
-    filterCategory(target, key): void {
-        if (target.checked == true) {
-            this.categoryFilter[key] = true;
-        } else {
-            delete this.categoryFilter[key];
-        }
-        this.filterResults();
-    }
-
     filterSubCategory(target, key): void {
         if (target.checked == true) {
             this.subCategoryFilter[key] = true;
@@ -122,11 +106,11 @@ export class AppComponent implements OnInit {
     }
 
     filterResults(): void {
-        if (Object.keys(this.categoryFilter).length === 0 && Object.keys(this.subCategoryFilter).length === 0) {
+        if (Object.keys(this.subCategoryFilter).length === 0) {
             this.filteredContent = this.contentList;
         } else {
             this.filteredContent = this.contentList.filter(content => {
-                if (this.categoryFilter.hasOwnProperty(content["category"]) || this.subCategoryFilter.hasOwnProperty(content["sub_category"])) {
+                if (this.subCategoryFilter.hasOwnProperty(content["sub_category"])) {
                     return content;
                 }
             });
@@ -141,25 +125,9 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.getCategoryItems();
         this.getSuggestionItems();
-        $('#myTab a').click(function (e) {
-
-            var contentId = "link_" + $(this).attr('id');
-            if (contentId == "link_login") {
-
-                $("#link_login").show();
-                $("#link_signup").hide();
-            } else {
-
-                $("#link_login").hide();
-                $("#link_signup").show();
-            }
-
-
-        })
-
     }
 
-    getSuggestionItems() {
+    getSuggestionItems(): void {
         this.appService.getSuggestionsList().subscribe(response => {
                 this.suggestionsData = response;
                 this.suggestions = this.completerService.local(this.suggestionsData, 'keywords', 'title').descriptionField('description');
@@ -171,7 +139,7 @@ export class AppComponent implements OnInit {
             });
     }
 
-    getCategoryItems() {
+    getCategoryItems(): void {
         this.appService.getCategory().subscribe(categoryItems => {
                 this.categoryItems = categoryItems;
             },
@@ -182,7 +150,7 @@ export class AppComponent implements OnInit {
     }
 
 
-    toggleElement() {
+    toggleElement(): void {
         if (this.hideElement) {
             this.hideElement = false;
         } else {
@@ -190,11 +158,11 @@ export class AppComponent implements OnInit {
         }
     }
 
-    showList() {
+    showList(): void {
         console.log("called");
     }
 
-    getUser() {
+    getUser(): void {
         console.log(this.appService.getUser());
     }
 

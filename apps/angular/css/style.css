@@ -4,26 +4,26 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-one-page-wonder/blob/master/LICENSE)
  */
 @font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url(2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -42,7 +42,7 @@ header.masthead {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    
+
 }
 
 header.masthead > .overlay {
@@ -57,478 +57,494 @@ header.masthead > .overlay {
     border-color: #d35400;
     width: 100%;
 }
+
 .btn-login:hover {
     color: #fff;
     background-color: #d35400;
 }
+
 .row-space {
     margin-top: 1em;
 }
+
 a {
     color: #e67e22;
 }
+
 a:hover {
     color: #d35400;
 }
+
 .tab-content {
     padding: 1em;
 }
+
 .nav-pills .nav-link.active, .btn-login-sec {
     color: #fff;
     background-color: #34495e;
     border-color: #2c3e50;
     width: 100%;
 }
+
 .btn-login-sec:hover {
-    background-color: #2c3e50;   
+    background-color: #2c3e50;
 }
+
 #phoneNumber {
-    width:40%;
-    margin-top:18px;
+    width: 40%;
+    margin-top: 18px;
     background: #2c3e50;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
 }
+
 #phoneNumber i {
-  vertical-align: middle;
-  margin-top: -4px;
+    vertical-align: middle;
+    margin-top: -4px;
 }
+
 #phoneNumber:hover {
-  text-decoration: none;
-  background: #34495e;
+    text-decoration: none;
+    background: #34495e;
 }
-#categories{
-  padding: 5px 0; 
+
+#categories {
+    padding: 5px 0;
 }
+
 #categories h6 {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
+
 #categories ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; 
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
+
 #categories ul li a {
 
 }
+
 #categories ul li a:hover {
-  text-decoration: none;
-  color: #2c3e50;
+    text-decoration: none;
+    color: #2c3e50;
 }
+
 #categorySection {
-  background: #ffffff;
-  margin-left: 30px;
+    background: #ffffff;
+    margin-left: 30px;
 }
 
 .cssload-preloader {
-	font-family: Arial, Tahoma;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	z-index: 10;
-	display: box;
-		display: -o-box;
-		display: -ms-box;
-		display: -webkit-box;
-		display: -moz-box;
-	display: flex;
-		display: -o-flex;
-		display: -ms-flex;
-		display: -webkit-flex;
-		display: -moz-flex;
-	box-pack: center;
-		-o-box-pack: center;
-		-ms-box-pack: center;
-		-webkit-box-pack: center;
-		-moz-box-pack: center;
-	justify-content: center;
-		-o-justify-content: center;
-		-ms-justify-content: center;
-		-webkit-justify-content: center;
-		-moz-justify-content: center;
-	box-align: center;
-		-o-box-align: center;
-		-ms-box-align: center;
-		-webkit-box-align: center;
-		-moz-box-align: center;
-	align-items: center;
-		-o-align-items: center;
-		-ms-align-items: center;
-		-webkit-align-items: center;
-		-moz-align-items: center;
-	transform-style: preserve-3d;
-		-o-transform-style: preserve-3d;
-		-ms-transform-style: preserve-3d;
-		-webkit-transform-style: preserve-3d;
-		-moz-transform-style: preserve-3d;
-	perspective: 487px;
-		-o-perspective: 487px;
-		-ms-perspective: 487px;
-		-webkit-perspective: 487px;
-		-moz-perspective: 487px;
-	overflow: hidden;
-	animation: wobble 5.75s ease-in-out infinite;
-		-o-animation: wobble 5.75s ease-in-out infinite;
-		-ms-animation: wobble 5.75s ease-in-out infinite;
-		-webkit-animation: wobble 5.75s ease-in-out infinite;
-		-moz-animation: wobble 5.75s ease-in-out infinite;
-	padding-bottom: 2em;
+    font-family: Arial, Tahoma;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 10;
+    display: box;
+    display: -o-box;
+    display: -ms-box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    box-pack: center;
+    -o-box-pack: center;
+    -ms-box-pack: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    box-align: center;
+    -o-box-align: center;
+    -ms-box-align: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    align-items: center;
+    -o-align-items: center;
+    -ms-align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    perspective: 487px;
+    -o-perspective: 487px;
+    -ms-perspective: 487px;
+    -webkit-perspective: 487px;
+    -moz-perspective: 487px;
+    overflow: hidden;
+    animation: wobble 5.75s ease-in-out infinite;
+    -o-animation: wobble 5.75s ease-in-out infinite;
+    -ms-animation: wobble 5.75s ease-in-out infinite;
+    -webkit-animation: wobble 5.75s ease-in-out infinite;
+    -moz-animation: wobble 5.75s ease-in-out infinite;
+    padding-bottom: 2em;
 }
-
 
 .cssload-preloader > span {
-	font-size: 49px;
-	animation: 5.75s ease-in-out infinite;
-		-o-animation: 5.75s ease-in-out infinite;
-		-ms-animation: 5.75s ease-in-out infinite;
-		-webkit-animation: 5.75s ease-in-out infinite;
-		-moz-animation: 5.75s ease-in-out infinite;
-	color: transparent;
-	text-shadow: 0 0 0px rgb(0,0,0);
+    font-size: 49px;
+    animation: 5.75s ease-in-out infinite;
+    -o-animation: 5.75s ease-in-out infinite;
+    -ms-animation: 5.75s ease-in-out infinite;
+    -webkit-animation: 5.75s ease-in-out infinite;
+    -moz-animation: 5.75s ease-in-out infinite;
+    color: transparent;
+    text-shadow: 0 0 0px rgb(0, 0, 0);
 }
+
 span:nth-child(-n+3) {
-	animation-delay: -2.88s;
-		-o-animation-delay: -2.88s;
-		-ms-animation-delay: -2.88s;
-		-webkit-animation-delay: -2.88s;
-		-moz-animation-delay: -2.88s;
+    animation-delay: -2.88s;
+    -o-animation-delay: -2.88s;
+    -ms-animation-delay: -2.88s;
+    -webkit-animation-delay: -2.88s;
+    -moz-animation-delay: -2.88s;
 }
 
 span:nth-child(1),
 span:nth-last-child(1) {
-	animation-name: blur-1;
-		-o-animation-name: blur-1;
-		-ms-animation-name: blur-1;
-		-webkit-animation-name: blur-1;
-		-moz-animation-name: blur-1;
+    animation-name: blur-1;
+    -o-animation-name: blur-1;
+    -ms-animation-name: blur-1;
+    -webkit-animation-name: blur-1;
+    -moz-animation-name: blur-1;
 }
-
-
 
 span:nth-child(2),
 span:nth-last-child(2) {
-	animation-name: blur-2;
-		-o-animation-name: blur-2;
-		-ms-animation-name: blur-2;
-		-webkit-animation-name: blur-2;
-		-moz-animation-name: blur-2;
+    animation-name: blur-2;
+    -o-animation-name: blur-2;
+    -ms-animation-name: blur-2;
+    -webkit-animation-name: blur-2;
+    -moz-animation-name: blur-2;
 }
-
-
 
 span:nth-child(3),
 span:nth-last-child(3) {
-	animation-name: blur-3;
-		-o-animation-name: blur-3;
-		-ms-animation-name: blur-3;
-		-webkit-animation-name: blur-3;
-		-moz-animation-name: blur-3;
+    animation-name: blur-3;
+    -o-animation-name: blur-3;
+    -ms-animation-name: blur-3;
+    -webkit-animation-name: blur-3;
+    -moz-animation-name: blur-3;
 }
 
-
 @keyframes blur-1 {
-	50% {
-		text-shadow: 0 0 0.15em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.15em rgb(0, 0, 0);
+    }
 }
 
 @-o-keyframes blur-1 {
-	50% {
-		text-shadow: 0 0 0.15em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.15em rgb(0, 0, 0);
+    }
 }
 
 @-ms-keyframes blur-1 {
-	50% {
-		text-shadow: 0 0 0.15em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.15em rgb(0, 0, 0);
+    }
 }
 
 @-webkit-keyframes blur-1 {
-	50% {
-		text-shadow: 0 0 0.15em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.15em rgb(0, 0, 0);
+    }
 }
 
 @-moz-keyframes blur-1 {
-	50% {
-		text-shadow: 0 0 0.15em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.15em rgb(0, 0, 0);
+    }
 }
 
 @keyframes blur-2 {
-	50% {
-		text-shadow: 0 0 0.075em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.075em rgb(0, 0, 0);
+    }
 }
 
 @-o-keyframes blur-2 {
-	50% {
-		text-shadow: 0 0 0.075em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.075em rgb(0, 0, 0);
+    }
 }
 
 @-ms-keyframes blur-2 {
-	50% {
-		text-shadow: 0 0 0.075em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.075em rgb(0, 0, 0);
+    }
 }
 
 @-webkit-keyframes blur-2 {
-	50% {
-		text-shadow: 0 0 0.075em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.075em rgb(0, 0, 0);
+    }
 }
 
 @-moz-keyframes blur-2 {
-	50% {
-		text-shadow: 0 0 0.075em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.075em rgb(0, 0, 0);
+    }
 }
 
 @keyframes blur-3 {
-	50% {
-		text-shadow: 0 0 0.05em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.05em rgb(0, 0, 0);
+    }
 }
 
 @-o-keyframes blur-3 {
-	50% {
-		text-shadow: 0 0 0.05em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.05em rgb(0, 0, 0);
+    }
 }
 
 @-ms-keyframes blur-3 {
-	50% {
-		text-shadow: 0 0 0.05em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.05em rgb(0, 0, 0);
+    }
 }
 
 @-webkit-keyframes blur-3 {
-	50% {
-		text-shadow: 0 0 0.05em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.05em rgb(0, 0, 0);
+    }
 }
 
 @-moz-keyframes blur-3 {
-	50% {
-		text-shadow: 0 0 0.05em rgb(0,0,0);
-	}
+    50% {
+        text-shadow: 0 0 0.05em rgb(0, 0, 0);
+    }
 }
 
 @keyframes wobble {
-	from, to {
-		transform: rotateY(-45deg);
-	}
-	50% {
-		transform: rotateY(45deg);
-	}
+    from, to {
+        transform: rotateY(-45deg);
+    }
+    50% {
+        transform: rotateY(45deg);
+    }
 }
 
 @-o-keyframes wobble {
-	from, to {
-		-o-transform: rotateY(-45deg);
-	}
-	50% {
-		-o-transform: rotateY(45deg);
-	}
+    from, to {
+        -o-transform: rotateY(-45deg);
+    }
+    50% {
+        -o-transform: rotateY(45deg);
+    }
 }
 
 @-ms-keyframes wobble {
-	from, to {
-		-ms-transform: rotateY(-45deg);
-	}
-	50% {
-		-ms-transform: rotateY(45deg);
-	}
+    from, to {
+        -ms-transform: rotateY(-45deg);
+    }
+    50% {
+        -ms-transform: rotateY(45deg);
+    }
 }
 
 @-webkit-keyframes wobble {
-	from, to {
-		-webkit-transform: rotateY(-45deg);
-	}
-	50% {
-		-webkit-transform: rotateY(45deg);
-	}
+    from, to {
+        -webkit-transform: rotateY(-45deg);
+    }
+    50% {
+        -webkit-transform: rotateY(45deg);
+    }
 }
 
 @-moz-keyframes wobble {
-	from, to {
-		-moz-transform: rotateY(-45deg);
-	}
-	50% {
-		-moz-transform: rotateY(45deg);
-	}
+    from, to {
+        -moz-transform: rotateY(-45deg);
+    }
+    50% {
+        -moz-transform: rotateY(45deg);
+    }
 }
-
-
-
-
 
 .first {
-	-webkit-animation: bannermove 30s linear infinite;
-	   -moz-animation: bannermove 30s linear infinite;
-	    -ms-animation: bannermove 30s linear infinite;
-	     -o-animation: bannermove 30s linear infinite;
-	        animation: bannermove 30s linear infinite;
+    -webkit-animation: bannermove 30s linear infinite;
+    -moz-animation: bannermove 30s linear infinite;
+    -ms-animation: bannermove 30s linear infinite;
+    -o-animation: bannermove 30s linear infinite;
+    animation: bannermove 30s linear infinite;
 }
- 
+
 @keyframes "bannermove" {
- 0% {
-    margin-left: 0px;
- }
- 100% {
-    margin-left: -2125px;
- }
- 
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
 }
- 
+
 @-moz-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
- 
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
 }
- 
+
 @-webkit-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
- 
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
 }
- 
+
 @-ms-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
- 
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
 }
- 
+
 @-o-keyframes "bannermove" {
- 0% {
-   margin-left: 0px;
- }
- 100% {
-   margin-left: -2125px;
- }
- 
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
 }
-.rollover{
-	
-	z-index: -1;
+
+.rollover {
+
+    z-index: -1;
 }
 
 .photobanner {
-	height: 200px;
-	width: 3300px;
-	margin-bottom: 80px;
+    height: 200px;
+    width: 3300px;
+    margin-bottom: 80px;
 }
- 
+
 .photobanner img {
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	-ms-transition: all 0.5s ease;
-	transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
- 
+
 .photobanner img:hover {
-	-webkit-transform: scale(1.1);
-	-moz-transform: scale(1.1);
-	-o-transform: scale(1.1);
-	-ms-transform: scale(1.1);
-	transform: scale(1.1);
-	cursor: pointer;
- 
-	-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-	box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+
+    -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .item-contents {
-	display: inline-block;
-	padding: 10px;
-	margin: 5px;
-	border: 1px solid #bbb;
-	width: 250px;
-	height: 250px;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #bbb;
+    width: 250px;
+    height: 250px;
 }
 
 .item-contents label {
-	text-overflow: ellipsis;
-	display: inline-block;
-	overflow: hidden;
-	width: 230px;
-	white-space: nowrap;
-	vertical-align: middle;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+    width: 230px;
+    white-space: nowrap;
+    vertical-align: middle;
 }
 
 .margin-top-46 {
-	margin-top: 46px !important;
+    margin-top: 46px !important;
 }
 
 .height-30 {
-	height: 30px !important;
+    height: 30px !important;
 }
 
 .item-img {
-	width: 200px;
-	height: 150px;
+    width: 200px;
+    height: 150px;
 
 }
 
 .item-city {
-	font-size: 11px;
+    font-size: 11px;
 }
 
 .item-category {
-	font-size: 10px;
+    font-size: 10px;
 }
 
 .no-results {
-	text-align: center;
-	color: red;
-	font-size: 18px;
+    text-align: center;
+    color: red;
+    font-size: 18px;
 }
 
 .search-button {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .left-filter-list {
-	list-style-type: none;
-	padding-left: 1em;
-	font-size: 12px;
-	opacity: 0.7;
+    list-style-type: none;
+    padding-left: 1em;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.filter-desc {
+    background-color: #444;
+    color: white;
+    border-radius: 4px;
+    font-size: 9px;
+    padding: 3px;
 }
 
 .width-100-per {
-	width: 100% !important;
+    width: 100% !important;
 }
 
 .width-125-per {
-	width: 125% !important;
+    width: 125% !important;
 }
 
 .completer-dropdown {
-	width: 100% !important;
+    width: 100% !important;
 }
 
 .completer-description {
-	opacity: 0.6;
+    opacity: 0.6;
 }
 
 
