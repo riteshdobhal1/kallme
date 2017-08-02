@@ -69,8 +69,12 @@
                     </div>
                     <div *ngIf="filteredContent.length > 0">
                         <span class="item-contents" *ngFor="let content of filteredContent">
-                            <img class="item-img" [src]="content.image_url"><br>
-                            <label title={{content.content}}>{{content.content}}</label><br>
+                            <!-- <img class="item-img" [src]="content.image_url"><br> -->
+                            <label class="title-main" style="width:210px" title={{content.content}}>{{content.content}}</label><br>
+                           <label><a href="tel:+911234567890" id="phoneNumber"><i class="material-icons hidden-md-down">call</i>
+            {{content.phone}}</a></label><br>
+                            <!-- <span class="item-city">{{content.phone}}</span><br> -->
+                            <span class="item-city">{{content.address}}</span><br>
                             <span class="item-category">{{content.category}}/{{content.sub_category}}</span><br>
                             <span class="item-city">{{content.city}}</span>
                         </span>

@@ -19,6 +19,7 @@
     "@types/node": "^8.0.3",
     "concurrently": "^3.5.0",
     "lite-server": "^2.3.0",
+    "ng2-completer": "^1.6.0",
     "typescript": "^2.3.4"
   },
   "dependencies": {

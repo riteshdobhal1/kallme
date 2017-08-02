@@ -58,6 +58,14 @@ header.masthead > .overlay {
     width: 100%;
 }
 
+.title-main {
+	background-color: #33A2FF;
+	border-radius: 5px;
+	color:#ffffff;
+	font-weight:bold;
+	text-align:center
+}
+
 .btn-login:hover {
     color: #fff;
     background-color: #d35400;
@@ -93,7 +101,7 @@ a:hover {
 #phoneNumber {
     width: 40%;
     margin-top: 18px;
-    background: #2c3e50;
+    /* background: #2c3e50; */
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
@@ -106,7 +114,7 @@ a:hover {
 
 #phoneNumber:hover {
     text-decoration: none;
-    background: #34495e;
+    background: #D3D3D3;
 }
 
 #categories {
@@ -471,8 +479,9 @@ span:nth-last-child(3) {
     padding: 10px;
     margin: 5px;
     border: 1px solid #bbb;
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 150px;
+    border-radius:5px
 }
 
 .item-contents label {
