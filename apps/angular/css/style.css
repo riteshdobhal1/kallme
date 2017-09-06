@@ -56,6 +56,7 @@ header.masthead > .overlay {
     background-color: #e67e22;
     border-color: #d35400;
     width: 100%;
+    cursor:pointer
 }
 
 .title-main {
@@ -96,6 +97,8 @@ a:hover {
 
 .btn-login-sec:hover {
     background-color: #2c3e50;
+    cursor: pointer;
+    
 }
 
 #phoneNumber {
@@ -555,5 +558,10 @@ span:nth-last-child(3) {
 .completer-description {
     opacity: 0.6;
 }
-
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
 
