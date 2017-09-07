@@ -3,6 +3,7 @@ export var services: string = 'Services';
 export var about: string = 'About';
 export var contact: string = 'Contact';
 export var login_signup: string = 'Login/Signup';
+export var post_free_add: string = 'Post your Business';
 export var search: string = '';
 export var home_img_title1: string = 'Kall Me !';
 export var home_img_title2: string = 'For anything and everything';

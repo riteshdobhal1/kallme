@@ -6,10 +6,13 @@ from datetime import timedelta
 from flask import make_response, request, current_app
 from functools import update_wrapper
 from flask import jsonify
+import json
 from . models import *
+
 user = Blueprint('user', __name__)
 
 CORS(user)
+
 
 @user.route('/add', methods=['GET','POST'])
 def add():
@@ -36,3 +39,25 @@ def update():
 def list():
 	return jsonify(listuser())
         #return "User list"
+
+@user.route('/postfree', methods=['POST'])
+def postfree():
+	json = request.json
+	addpostfree(json)
+	return "added"
+
+@user.route('/signup', methods=['POST'])
+def signup():
+	json = request.json
+	signupuser(json)
+	return "signup user"
+
+@user.route('/login', methods=['POST'])
+def login():
+	json = request.json
+	loginuser(json)
+	return "login user"
+
+
+
+

@@ -9,7 +9,7 @@ mysql.init_app(app)
 # Description of user table
 tbl_user_dtls = {
   'name': 'user',
-  'columns': ['firstname', 'lastname', 'username', 'password', 'email', 'phone', 'type']
+  'columns': ['username', 'password', 'email','firstname','lastname','phone', 'type']
 }
 
 # Description of contactus table
@@ -46,6 +46,11 @@ tbl_customer_data_dtls = {
 tbl_suggestion_dtls = {
     'name': 'suggestions',
     'columns': ['id', 'title', 'category_id', 'subcategory_id', 'keywords']
+}
+
+tbl_postfreeuser_info_dtls = {
+    'name': 'postfreeuser_info',
+    'columns': ['company', 'name', 'email', 'mobile','phone','city','id']
 }
 
 tbl_agent = "agent"

@@ -29,12 +29,20 @@
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#services">{{services}}</a>
                 </li> -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#about">{{about}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">{{contact}}</a>
-                </li>
+                </li> -->
+                
+                <li class="nav-item">
+                        <span class="navbar-btn">
+                            <button type="button" class="btn btn-login" data-toggle="modal" (click)="postFreeMsg = false;post_free_data={};" data-target="#postFreeModal">
+                                {{post_free_add}}
+                            </button>
+                        </span>
+                </li>&nbsp;&nbsp;                                
                 <li class="nav-item">
                         <span class="navbar-btn">
                             <button type="button" class="btn btn-login" data-toggle="modal" data-target="#exampleModal">
@@ -238,14 +246,14 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane" [ngClass]="{'active': loginActive}" id="link_login" role="tabpanel" *ngIf="loginActive">
-                        <form class="row form-group">
+                        <form class="row form-group" (ngSubmit)="loginUser()" #login="ngForm">
                             <div class="col-md-12">
                                 <label for="username" hidden="true">Username</label>
-                                <input class="form-control" type="text" placeholder="Username" required="true" />
+                                <input class="form-control" type="text" placeholder="Username" required="true" id="username" name="username" [(ngModel)]="login.username" />
                             </div>
                             <div class="col-md-12 row-space">
                                 <label for="password" hidden="true">Password</label>
-                                <input class="form-control" type="password" placeholder="Password" required="true" />
+                                <input class="form-control" type="password" placeholder="Password" required="true" id="password" name="password" [(ngModel)]="login.password" />
                             </div>
                             <div class="col-md-12 row-space">
                                 <div class="form-check">
@@ -255,33 +263,87 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-login-sec">Login</button>
+                                <button type="submit" [disabled]="!login.form.valid" class="btn btn-login-sec">Login</button>
                             </div>
                         </form>
-                    </div>
+                    </div> 
                     <div class="tab-pane" [ngClass]="{'active': !loginActive}" id="link_signup" role="tabpanel" *ngIf="!loginActive">
-                        <form class="row form-group">
+                        <form class="row form-group" (ngSubmit)="signUpUser()" #signUp="ngForm">
                             <div class="col-md-12">
                                 <label for="username" hidden="true">Username</label>
-                                <input class="form-control" type="text" placeholder="Username" required="true" />
+                                <input class="form-control" type="text" id="username" name="username" [(ngModel)]="signup.username" placeholder="Username" required="true" />
                             </div>
                             <div class="col-md-12 row-space">
                                 <label for="password" hidden="true">Password</label>
-                                <input class="form-control" type="password" placeholder="Password" required="true" />
+                                <input class="form-control" type="password" id="password" name="password" [(ngModel)]="signup.password" placeholder="Password" required="true" />
                             </div>
                             <div class="col-md-12 row-space">
                                 <label for="password" hidden="true">Repeat Password</label>
-                                <input class="form-control" type="password" placeholder="Repeat Password" required="true" />
+                                <input class="form-control" type="password" id="retypepassword" name="retypepassword" [(ngModel)]="signup.retypepassword" placeholder="Repeat Password" required="true" />
                             </div>
                             <div class="col-md-12 row-space">
                             	<label for="password" hidden="true">Email</label>
-                            	<input class="form-control" type="email" placeholder="Email" required="true"/>
+                            	<input class="form-control" type="email" placeholder="Email" id="email" name="email" [(ngModel)]="signup.email" required="true"/>
                             </div>
                             <div class="col-md-12 row-space">
-                            	<button type="submit" class="btn btn-login-sec">Signup</button>
+                            	<button type="submit" [disabled]="!signUp.form.valid" class="btn btn-login-sec">Signup</button>
                             </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="postFreeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <ul class="nav nav-tabs nav-fill" id="myTab">
+                    <li class="nav-item">
+                        <b>Post Your business for Free</b>
+                    </li>
+                <!--    <li class="nav-item">
+                        <a class="nav-link" [ngClass]="{'active': !loginActive}" href="#" id="signup" (click)="loginActive = false;">Signup</a>
+                </li> -->
+                </ul> 
+                <div align="center" class="alert alert-success" *ngIf="postFreeMsg">
+                      Your request has been sent successfully.<br><strong>Our support team will contact you soon.</strong>
+                </div>
+                <div class="tab-content" >
+                    <!-- <div class="tab-pane" [ngClass]="{'active': loginActive}" role="tabpanel"> -->
+                        <form (ngSubmit)="addPostFree()" class="row form-group" #postFree="ngForm">
+                            <div class="col-md-12">
+                                <label for="company" hidden="true">Company</label>
+                                <input class="form-control" type="text" id="company" [(ngModel)]="post_free_data.company" name="company" placeholder="Company" required="true"/>
+                            </div>
+                                        
+                            <div class="col-md-12 row-space">
+                                <label for="name" hidden="true">Name</label>
+                                <input class="form-control" type="text" id="name" [(ngModel)]="post_free_data.name" name="name" placeholder="Name" required="true" />
+                            </div>
+                            <div class="col-md-12 row-space">
+                                <label for="city" hidden="true">City</label>
+                                <input class="form-control" type="text" id="city" [(ngModel)]="post_free_data.city" name="city" placeholder="City" required="true" />
+                            </div>
+                            <div class="col-md-12 row-space">
+                                <label for="email" hidden="true">Email</label>
+                                <input class="form-control" type="text" id="email" [(ngModel)]="post_free_data.email" name="email" placeholder="Email" required="true" />
+                            </div>
+                            <div class="col-md-12 row-space">
+                                <label for="mobile" hidden="true">Mobile</label>
+                                <input class="form-control" type="text" id="mobile" [(ngModel)]="post_free_data.mobile" name="mobile" placeholder="Mobile" required="true" />
+                            </div>
+                            <div class="col-md-12 row-space">
+                                <label for="phone" hidden="true">Landline</label>
+                                <input class="form-control" type="text" id="phone" [(ngModel)]="post_free_data.phone" name="phone" placeholder="Landline" required="true" />
+                            </div>
+                            
+                                          
+                            <div class="col-md-12 row-space">
+                                <button type="submit" [disabled]="!postFree.form.valid" class="btn btn-login-sec">Submit</button>
+                            </div>
+                        </form>
+                    <!-- </div> -->
+                    
             </div>
         </div>
     </div>

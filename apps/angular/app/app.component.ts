@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {NgClass} from '@angular/common';
 import {Category} from './category';
+import {PostFree} from './postfree';
+import {Login} from './login';
+import {SignUp} from './signup';
 import {AppService} from './app.service';
 import * as globalval from './shared/global';
 import {CompleterService, CompleterData} from 'ng2-completer';
@@ -14,6 +17,7 @@ export class AppComponent implements OnInit {
     private hideElement: boolean = true;
     private showHome: boolean = true;
     private loginActive: boolean = true;
+    private postFreeMsg: boolean = false;
     categoryItems: Array<Object>;
     contentList: Array<Object>;
     filteredContent: Array<Object>;
@@ -36,9 +40,14 @@ export class AppComponent implements OnInit {
     email: string;
     copyright: string;
     address_description;
+    post_free_add: string;
     suggestionsData: Array<Object>;
     suggestions: CompleterData;
-
+    
+    post_free_data = new PostFree();
+    login = new Login();
+    signup = new SignUp();
+      
     constructor(private appService: AppService, private completerService: CompleterService) {
         this.home = globalval.home;
         this.contact = globalval.contact;
@@ -56,6 +65,7 @@ export class AppComponent implements OnInit {
         this.email = globalval.email;
         this.copyright = globalval.copyright;
         this.address_description = globalval.address_description;
+        this.post_free_add = globalval.post_free_add;
         this.subCategoryObj = {};
         this.subCategoryFilter = {};
         this.appService.getUser().subscribe(user => {
@@ -148,6 +158,36 @@ export class AppComponent implements OnInit {
                 return false;
             });
     }
+    addPostFree(): void {
+        this.appService.addPostFreeData(this.post_free_data).subscribe(response => {
+                            this.postFreeMsg = true;
+                            },
+                err => {
+                    this.postFreeMsg = true;
+        	    console.log(err);            
+                    return false;
+                });
+     }
+   signUpUser(): void {
+    
+        this.appService.signUpUser(this.signup).subscribe(response => {
+            
+                            },
+                err => {
+                    
+                    return false;
+                }); 
+     }  
+   loginUser(): void {
+    
+        this.appService.loginUser(this.login).subscribe(response => {
+            
+                            },
+                err => {
+                    
+                    return false;
+                });
+     }  
 
 
     toggleElement(): void {
