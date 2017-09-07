@@ -37,6 +37,14 @@ export class AppService {
             .map((res: Response) => res.json());
     }
 
+    getCategoryFilter(subCategories) {
+        return this.http.post(`${globalval.rest_api_domain}/category/filter`, {
+            category_id: [],
+            subcategory_id: subCategories
+        })
+            .map((res: Response) => res.json());
+    }
+
     getSuggestionsList() {
         return this.http.get(`${globalval.rest_api_domain}/suggestions/list`)
             .map((res: Response) => res.json());

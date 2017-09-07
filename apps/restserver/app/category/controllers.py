@@ -22,21 +22,16 @@ def search():
 
 @category.route('/filter', methods=['POST'])
 def filter():
+    print request.data
     params = request.data
-    #return filtercategory(params)
     return jsonify(filtercategory(params))
 
 @category.route('/list', methods=['GET'])
 def list():
 
-	#category = []
 	categorySet = []
 	category = getcategory()
-	#for catname in categoryName:
-	#	category.append({"name": catname["name"], ""})
-	#print str(categoryName)
 	sub_category = getsubcategory()
-	#print str(mylist)
 	for cat in category:
 		catData = []
 		for sub_cat in sub_category:
