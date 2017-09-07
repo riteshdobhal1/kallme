@@ -29,19 +29,20 @@ def filter():
 @category.route('/list', methods=['GET'])
 def list():
 
-	category = []
+	#category = []
 	categorySet = []
-	categoryName = getcategory()
-	for catname in categoryName:
-		category.append(catname["name"])
-
-	mylist = listcategory()
+	category = getcategory()
+	#for catname in categoryName:
+	#	category.append({"name": catname["name"], ""})
+	#print str(categoryName)
+	sub_category = getsubcategory()
+	#print str(mylist)
 	for cat in category:
 		catData = []
-		for catrow in mylist:
-			category = catrow["categoryname"]
-			if cat ==  category:
-				catData.append(catrow["subcategoryname"])
-		categorySet.append({"data":catData,"name":cat})
+		for sub_cat in sub_category:
+			#category = sub_cat["categoryname"]
+			if cat["id"] == sub_cat["cat_id"]:
+				catData.append({"name": sub_cat["name"], "id": sub_cat["id"]})
+		categorySet.append({"sub_categories": catData, "name": cat["name"], "id": cat["id"]})
 	return jsonify(categorySet)   
 

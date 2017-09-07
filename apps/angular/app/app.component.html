@@ -129,11 +129,11 @@
     <section id="categorySection">
         <div class="container" id="categories">
             <div class="row">
-                <div class="col-md-2" *ngFor="let item of categoryItems">
-                    <div><h6>{{item.name}}</h6></div>
+                <div class="col-md-2" *ngFor="let category of categoryItems">
+                    <div><h6>{{category.name}}</h6></div>
                     <div>
-                        <ul *ngFor="let itemData of item.data">
-                            <li><a href="#">{{itemData}}</a></li>
+                        <ul *ngFor="let sub_category of category.sub_categories">
+                            <li><a href="#">{{sub_category.name}}</a></li>
                         </ul>
                     </div>
                 </div>
