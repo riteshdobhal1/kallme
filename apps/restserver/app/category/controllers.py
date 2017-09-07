@@ -20,6 +20,12 @@ def search():
 
 	return jsonify(searchcategory(params))
 
+@category.route('/filter', methods=['POST'])
+def filter():
+    params = request.data
+    #return filtercategory(params)
+    return jsonify(filtercategory(params))
+
 @category.route('/list', methods=['GET'])
 def list():
 
