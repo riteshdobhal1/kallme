@@ -73,36 +73,71 @@ export class AppComponent implements OnInit {
         });
     };
 
-    searchCategories(): void {
+    loadContents(contentList): void {
+        this.contentList = contentList;
+        this.filteredContent = contentList;
+        this.showHome = false;
+        this.contentList.forEach(content => {
+            if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
+                this.subCategoryObj[content["sub_category"]] = {
+                    count: this.subCategoryObj[content["sub_category"]]["count"] + 1,
+                    category: content["category"]
+                };
+            } else {
+                this.subCategoryObj[content["sub_category"]] = {
+                    count: 1,
+                    category: content["category"]
+                };
+            }
+        });
+        this.subCategoryList = Object.keys(this.subCategoryObj);
+    }
+
+    resetFilters(): void {
         this.subCategoryObj = {};
         this.subCategoryFilter = {};
+    }
+
+    searchCategories(): void {
+        this.resetFilters();
         if (!!this.search.length) {
             this.appService.getSearchResults(this.search).subscribe(contentList => {
-                    this.contentList = contentList;
-                    this.filteredContent = contentList;
-                    this.showHome = false;
-                    this.contentList.forEach(content => {
-                        if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
-                            this.subCategoryObj[content["sub_category"]] = {
-                                count: this.subCategoryObj[content["sub_category"]]["count"] + 1,
-                                category: content["category"]
-                            };
-                        } else {
-                            this.subCategoryObj[content["sub_category"]] = {
-                                count: 1,
-                                category: content["category"]
-                            };
-                        }
-                    });
-                    this.subCategoryList = Object.keys(this.subCategoryObj);
+                    this.loadContents(contentList);
                 },
                 err => {
                     console.log(err);
                     return false;
                 });
         } else {
-            this.showHome = true;
-            this.contentList = [];
+            this.goToHome();
+        }
+    }
+
+    getSubCategories(): Array<number> {
+        var subCategories = [];
+        this.categoryItems.forEach(category => {
+            category["sub_categories"].forEach(subCategory => {
+                if(subCategory.selected === true) {
+                    subCategories.push(subCategory.id);
+                }
+            });
+        });
+        return subCategories;
+    }
+
+    searchSubCategories(): void {
+        this.resetFilters();
+        var subCategories = this.getSubCategories();
+        if (!!subCategories.length) {
+            this.appService.getCategoryFilter(subCategories).subscribe(contentList => {
+                    this.loadContents(contentList);
+                },
+                err => {
+                    console.log(err);
+                    return false;
+                });
+        } else {
+            this.goToHome();
         }
     }
 
@@ -130,6 +165,15 @@ export class AppComponent implements OnInit {
     goToHome(): void {
         this.search = '';
         this.showHome = true;
+        this.contentList = [];
+        this.categoryItems.forEach(category => {
+            if(category.hasOwnProperty("selected"))
+                delete category["selected"];
+            category["sub_categories"].forEach(subCategory => {
+                if(subCategory.hasOwnProperty("selected"))
+                    delete subCategory["selected"];
+            });
+        });
     }
 
     ngOnInit(): void {
@@ -206,5 +250,7 @@ export class AppComponent implements OnInit {
         console.log(this.appService.getUser());
     }
 
-
+    subCategoryClicked(sub_category): void {
+        sub_category.selected = !sub_category.selected;
+    }
 }

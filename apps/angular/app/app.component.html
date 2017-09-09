@@ -129,16 +129,17 @@
     <section id="categorySection">
         <div class="container" id="categories">
             <div class="row">
-                <div class="col-md-2" *ngFor="let item of categoryItems">
-                    <div><h6>{{item.name}}</h6></div>
+                <div class="col-md-2" *ngFor="let category of categoryItems">
+                    <div><h6>{{category.name}}</h6></div>
                     <div>
-                        <ul *ngFor="let itemData of item.data">
-                            <li><a href="#">{{itemData}}</a></li>
+                        <ul *ngFor="let sub_category of category.sub_categories">
+                            <li><span class="sub-category" [ngClass]="{'selected-filter': sub_category.hasOwnProperty('selected') && !!sub_category.selected}" (click)="subCategoryClicked(sub_category)">{{sub_category.name}}</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <button *ngIf="!!categoryItems.length" type="button" class="btn pull-right" (click)="searchSubCategories()">Search categories</button>
     </section>
 
     <hr/>

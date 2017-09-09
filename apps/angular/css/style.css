@@ -84,6 +84,14 @@ a:hover {
     color: #d35400;
 }
 
+.sub-category {
+    color: #e67e22;
+    cursor: pointer;
+}
+.sub-category.selected-filter {
+    color: green;
+}
+
 .tab-content {
     padding: 1em;
 }
