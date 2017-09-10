@@ -72,10 +72,10 @@
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-9 col-lg-10">
-                    <div class="height-30" *ngIf="filteredContent.length > 0">
+                    <div class="height-30" *ngIf="!!filteredContent && filteredContent.length > 0">
                         <span class="pull-right">Showing {{filteredContent.length}} result(s)</span>
                     </div>
-                    <div *ngIf="filteredContent.length > 0">
+                    <div *ngIf="!!filteredContent && filteredContent.length > 0">
                         <span class="item-contents" *ngFor="let content of filteredContent">
                             <!-- <img class="item-img" [src]="content.image_url"><br> -->
                             <label class="title-main" style="width:210px" title={{content.content}}>{{content.content}}</label><br>
@@ -139,7 +139,7 @@
                 </div>
             </div>
         </div>
-        <button *ngIf="!!categoryItems.length" type="button" class="btn pull-right" (click)="searchSubCategories()">Search categories</button>
+        <button *ngIf="!!categoryItems && !!categoryItems.length" type="button" class="btn pull-right" (click)="searchSubCategories()">Search categories</button>
     </section>
 
     <hr/>
