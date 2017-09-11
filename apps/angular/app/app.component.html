@@ -127,19 +127,21 @@
 
     </section>
     <section id="categorySection">
-        <div class="container" id="categories">
+        <div class="container-fluid" id="categories">
             <div class="row">
                 <div class="col-md-2" *ngFor="let category of categoryItems">
-                    <div><h6>{{category.name}}</h6></div>
+                    <div><h6><i class="category-icon fa" [ngClass]="[!category.faClass ? 'fa-question' : category.faClass]" aria-hidden="true"></i>{{category.name}}</h6></div>
                     <div>
                         <ul *ngFor="let sub_category of category.sub_categories">
-                            <li><span class="sub-category" [ngClass]="{'selected-filter': sub_category.hasOwnProperty('selected') && !!sub_category.selected}" (click)="subCategoryClicked(sub_category)">{{sub_category.name}}</span></li>
+                            <li><i class="category-icon fa" [ngClass]="[!sub_category.faClass ? 'fa-question' : sub_category.faClass]" aria-hidden="true"></i><span class="sub-category" [ngClass]="{'selected-filter': sub_category.hasOwnProperty('selected') && !!sub_category.selected}" (click)="subCategoryClicked(sub_category)">{{sub_category.name}}</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <button *ngIf="!!categoryItems && !!categoryItems.length" type="button" class="btn pull-right" (click)="searchSubCategories()">Search categories</button>
+        <div class="text-center">
+            <button [disabled]="!getSubCategories().length" *ngIf="!!categoryItems && !!categoryItems.length" type="button" class="btn btn-primary search-cat-button" (click)="searchSubCategories()">Search categories</button>
+        </div>
     </section>
 
     <hr/>
