@@ -21,13 +21,13 @@ tbl_contactus_dtls = {
 # Description of category table
 tbl_category_dtls = {
   'name': 'category',
-  'columns': ['id', 'name', 'active']
+  'columns': ['id', 'name', 'active', 'icon_fa_class']
 }
 
 # Description of sub_category table
 tbl_sub_category_dtls = {
   'name': 'sub_category',
-  'columns': ['id', 'cat_id', 'name', 'active']
+  'columns': ['id', 'cat_id', 'name', 'active', 'icon_fa_class']
 }
 
 # Description of city table
