@@ -58,7 +58,7 @@ def filtercategory(data):
 def getsubcategory():
 	conn = mysql.connect()
 	cursor =conn.cursor(pymysql.cursors.DictCursor)
-	cursor.execute("SELECT " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[0] + " as cat_id, " + tbl_sub_category_dtls.get('name')+"." +tbl_sub_category_dtls.get('columns')[2] + " as name, " + tbl_sub_category_dtls.get('name')+"." +tbl_sub_category_dtls.get('columns')[0] + " as id FROM " + tbl_category_dtls.get('name') + "," + tbl_sub_category_dtls.get('name') + " WHERE " + tbl_category_dtls.get('name')+ "." +tbl_category_dtls.get('columns')[0] + "=" +  tbl_sub_category_dtls.get('name')+ "." + tbl_sub_category_dtls.get('columns')[1] + " AND " + tbl_category_dtls.get('name')+ "." + tbl_category_dtls.get('columns')[2]+ "=1 AND " + tbl_sub_category_dtls.get('name')+ "." +tbl_sub_category_dtls.get('columns')[3]+"=1")
+	cursor.execute("SELECT " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[0] + " as cat_id, " + tbl_sub_category_dtls.get('name')+"." +tbl_sub_category_dtls.get('columns')[2] + " as name, " + tbl_sub_category_dtls.get('name')+"." +tbl_sub_category_dtls.get('columns')[0] + " as id, " + tbl_sub_category_dtls.get('name')+"." +tbl_sub_category_dtls.get('columns')[4] + " as faClass FROM " + tbl_category_dtls.get('name') + "," + tbl_sub_category_dtls.get('name') + " WHERE " + tbl_category_dtls.get('name')+ "." +tbl_category_dtls.get('columns')[0] + "=" +  tbl_sub_category_dtls.get('name')+ "." + tbl_sub_category_dtls.get('columns')[1] + " AND " + tbl_category_dtls.get('name')+ "." + tbl_category_dtls.get('columns')[2]+ "=1 AND " + tbl_sub_category_dtls.get('name')+ "." +tbl_sub_category_dtls.get('columns')[3]+"=1")
 	results = cursor.fetchall()
 	conn.close()
 	return results
@@ -66,7 +66,7 @@ def getsubcategory():
 def getcategory():
 	conn = mysql.connect()
 	cursor =conn.cursor(pymysql.cursors.DictCursor)
-	qry = "SELECT " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[1] + ", " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[0] + " FROM " + tbl_category_dtls.get('name') + " WHERE " + tbl_category_dtls.get('columns')[2] + "=1"
+	qry = "SELECT " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[1] + ", " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[3] + ", " + tbl_category_dtls.get('name') + "." + tbl_category_dtls.get('columns')[0] + " FROM " + tbl_category_dtls.get('name') + " WHERE " + tbl_category_dtls.get('columns')[2] + "=1"
 	
 	cursor.execute(qry)
 	results = cursor.fetchall()

@@ -35,9 +35,8 @@ def list():
 	for cat in category:
 		catData = []
 		for sub_cat in sub_category:
-			#category = sub_cat["categoryname"]
 			if cat["id"] == sub_cat["cat_id"]:
-				catData.append({"name": sub_cat["name"], "id": sub_cat["id"]})
-		categorySet.append({"sub_categories": catData, "name": cat["name"], "id": cat["id"]})
+				catData.append({"name": sub_cat["name"], "id": sub_cat["id"], "faClass": sub_cat["faClass"]})
+		categorySet.append({"sub_categories": catData, "name": cat["name"], "id": cat["id"], "faClass": cat["icon_fa_class"]})
 	return jsonify(categorySet)   
 
