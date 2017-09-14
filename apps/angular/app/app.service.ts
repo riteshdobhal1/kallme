@@ -51,7 +51,7 @@ export class AppService {
     }
     
     addPostFreeData(postFree):Observable<Response> {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let headers = new Headers({ 'Content-Type': undefined });
         let options = new RequestOptions({ headers: headers });
         
         return this.http.post(`${globalval.rest_api_domain}/user/postfree`, postFree,headers)
@@ -64,7 +64,8 @@ export class AppService {
         let options = new RequestOptions({ headers: headers });
         
         return this.http.post(`${globalval.rest_api_domain}/user/signup`, signUp,headers)
-                .map((res: Response) => res.json());
+                .map((res: Response) => res.json())
+                .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
                    
     }
       

@@ -3,7 +3,8 @@ sys.path.append('/var/www/apps/restserver')
 from db import *
 import pymysql
 from flask import abort
-import ast
+import ast, json
+from ast import literal_eval
 
 def searchcategory(data):
     searchdata = data.get('search').lower()
@@ -21,7 +22,8 @@ def searchcategory(data):
     return results
 
 def filtercategory(data):
-    data = ast.literal_eval(data)
+    #data = ast.literal_eval(data)
+    data = json.loads(data.decode())
     if(tbl_customer_data_dtls.get('columns')[2] in data and tbl_customer_data_dtls.get('columns')[3] in data):
         category_statement = ""
         for index, id in enumerate(data.get(tbl_customer_data_dtls.get('columns')[2])):

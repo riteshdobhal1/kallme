@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
     private showHome: boolean = true;
     private loginActive: boolean = true;
     private postFreeMsg: boolean = false;
+    private signupUserMsg: boolean = false;
     categoryItems: Array<Object>;
     contentList: Array<Object>;
     filteredContent: Array<Object>;
@@ -208,17 +209,20 @@ export class AppComponent implements OnInit {
                             },
                 err => {
                     this.postFreeMsg = true;
-        	    console.log(err);            
+        	        console.log(err);            
                     return false;
                 });
      }
    signUpUser(): void {
     
         this.appService.signUpUser(this.signup).subscribe(response => {
-            
+                            this.signupUserMsg = true;
+                            console.log(response);            
                             },
                 err => {
                     
+                    this.signupUserMsg = true;
+                    console.log(err);                    
                     return false;
                 }); 
      }  

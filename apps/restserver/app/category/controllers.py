@@ -22,7 +22,7 @@ def search():
 
 @category.route('/filter', methods=['POST'])
 def filter():
-    print request.data
+    #print request.data
     params = request.data
     return jsonify(filtercategory(params))
 

@@ -44,11 +44,29 @@ def signupuser(data):
 	email = data.get('email')
 	conn = mysql.connect()
 	cursor = conn.cursor()
-	cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[1] + "," + tbl_user_dtls.get('columns')[2] +") VALUES (%s,%s,%s)",(username,password,email))
-	conn.commit()
-	conn.close()		
 	
+	qry = "SELECT " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[0] + " , " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[1] + ", " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[2] + " FROM " + tbl_user_dtls.get('name') + " WHERE " +  tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[0] + "='" + username + "' AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[1] + "='" + password + "'" 
+	cursor.execute(qry)
+	count = cursor.rowcount
 	
+	if count > 1:
+		results = cursor.fetchone()
+		conn.commit() 
+		conn.close()
+		user = results[0]
+		passwd = results[1]
+		emailId = results[2]
+		if email == emailId:
+			return "Email already exist"
+		else:
+			return "Username already exist, please try another"
+      	 
+	else:
+		cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[1] + "," + tbl_user_dtls.get('columns')[2] +") VALUES (%s,%s,%s)",(username,password,email))
+		conn.commit() 
+		conn.close()
+		return "user added"
+
 def listuser():
 	conn = mysql.connect()
 	cursor = conn.cursor(pymysql.cursors.DictCursor)

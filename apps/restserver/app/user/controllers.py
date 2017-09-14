@@ -49,8 +49,8 @@ def postfree():
 @user.route('/signup', methods=['POST'])
 def signup():
 	json = request.json
-	signupuser(json)
-	return "signup user"
+	response  = signupuser(json)
+	return jsonify(response)
 
 @user.route('/login', methods=['POST'])
 def login():

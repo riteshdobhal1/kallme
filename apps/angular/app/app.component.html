@@ -45,7 +45,7 @@
                 </li>&nbsp;&nbsp;                                
                 <li class="nav-item">
                         <span class="navbar-btn">
-                            <button type="button" class="btn btn-login" data-toggle="modal" data-target="#exampleModal">
+                            <button type="button" class="btn btn-login" data-toggle="modal" (click)="signupUserMsg = false;signup={};" data-target="#exampleModal">
                                 {{login_signup}}
                             </button>
                         </span>
@@ -269,7 +269,11 @@
                         </form>
                     </div> 
                     <div class="tab-pane" [ngClass]="{'active': !loginActive}" id="link_signup" role="tabpanel" *ngIf="!loginActive">
-                        <form class="row form-group" (ngSubmit)="signUpUser()" #signUp="ngForm">
+                    	<div align="center" class="alert alert-success" *ngIf="signupUserMsg" >
+                      		Your will soon receive an email after verification to Login as Agent
+                		</div>
+                		
+                    	<form class="row form-group" (ngSubmit)="signUpUser()" #signUp="ngForm">
                             <div class="col-md-12">
                                 <label for="username" hidden="true">Username</label>
                                 <input class="form-control" type="text" id="username" name="username" [(ngModel)]="signup.username" placeholder="Username" required="true" />
