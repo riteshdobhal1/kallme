@@ -43,11 +43,12 @@ export class AppComponent implements OnInit {
     post_free_add: string;
     suggestionsData: Array<Object>;
     suggestions: CompleterData;
-    
+    location: Object;
+
     post_free_data = new PostFree();
     login = new Login();
     signup = new SignUp();
-      
+
     constructor(private appService: AppService, private completerService: CompleterService) {
         this.home = globalval.home;
         this.contact = globalval.contact;
@@ -68,10 +69,32 @@ export class AppComponent implements OnInit {
         this.post_free_add = globalval.post_free_add;
         this.subCategoryObj = {};
         this.subCategoryFilter = {};
+        this.location = {};
         this.appService.getUser().subscribe(user => {
             console.log(user);
         });
     };
+
+    // filterOnLocation(contentList): Promise<Array> {
+    //     return new Promise((resolve, reject) => {
+    //         let result = [], count = 0;
+    //         const total = contentList.length;
+    //         contentList.forEach(content => {
+    //             this.appService.getDistance(this.location, content).subscribe(res => {
+    //                 console.log(res);
+    //                 if(res.rows[0].elements[0].distance.value < 20000) {
+    //                     result.push(content);
+    //                 }
+    //                 count++;
+    //                 if (count === total) {
+    //                     resolve(result);
+    //                 }
+    //             }, err => {
+    //                 console.log(err);
+    //             });
+    //         });
+    //     });
+    // }
 
     loadContents(contentList): void {
         this.contentList = contentList;
@@ -101,7 +124,7 @@ export class AppComponent implements OnInit {
     searchCategories(): void {
         this.resetFilters();
         if (!!this.search.length) {
-            this.appService.getSearchResults(this.search).subscribe(contentList => {
+            this.appService.getSearchResults(this.search, this.location.latitude, this.location.longitude).subscribe(contentList => {
                     this.loadContents(contentList);
                 },
                 err => {
@@ -117,7 +140,7 @@ export class AppComponent implements OnInit {
         var subCategories = [];
         this.categoryItems.forEach(category => {
             category["sub_categories"].forEach(subCategory => {
-                if(subCategory.selected === true) {
+                if (subCategory.selected === true) {
                     subCategories.push(subCategory.id);
                 }
             });
@@ -167,10 +190,10 @@ export class AppComponent implements OnInit {
         this.showHome = true;
         this.contentList = [];
         this.categoryItems.forEach(category => {
-            if(category.hasOwnProperty("selected"))
+            if (category.hasOwnProperty("selected"))
                 delete category["selected"];
             category["sub_categories"].forEach(subCategory => {
-                if(subCategory.hasOwnProperty("selected"))
+                if (subCategory.hasOwnProperty("selected"))
                     delete subCategory["selected"];
             });
         });
@@ -179,6 +202,46 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.getCategoryItems();
         this.getSuggestionItems();
+        this.getCurrentLatLong();
+    }
+
+    getCurrentLatLong(): void {
+        let locationLoaded = false;
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(position => {
+                    this.location.latitude = position.coords.latitude;
+                    this.location.longitude = position.coords.longitude;
+                    locationLoaded = true;
+                    console.log(this.location);
+                },
+                error => {
+                    if (error.code == error.PERMISSION_DENIED) {
+                        geoip2.insights(position => {
+                            this.location.latitude = position.location.latitude;
+                            this.location.longitude = position.location.longitude;
+                            locationLoaded = true;
+                            console.log(this.location);
+                        });
+                    }
+                });
+        } else {
+            geoip2.insights(position => {
+                this.location.latitude = position.location.latitude;
+                this.location.longitude = position.location.longitude;
+                locationLoaded = true;
+                console.log(this.location);
+            });
+        }
+        setTimeout(() => {
+            if (!locationLoaded) {
+                geoip2.insights(position => {
+                    this.location.latitude = position.location.latitude;
+                    this.location.longitude = position.location.longitude;
+                    locationLoaded = true;
+                    console.log(this.location);
+                });
+            }
+        }, 6000);
     }
 
     getSuggestionItems(): void {
@@ -202,36 +265,39 @@ export class AppComponent implements OnInit {
                 return false;
             });
     }
+
     addPostFree(): void {
         this.appService.addPostFreeData(this.post_free_data).subscribe(response => {
-                            this.postFreeMsg = true;
-                            },
-                err => {
-                    this.postFreeMsg = true;
-        	    console.log(err);            
-                    return false;
-                });
-     }
-   signUpUser(): void {
-    
+                this.postFreeMsg = true;
+            },
+            err => {
+                this.postFreeMsg = true;
+                console.log(err);
+                return false;
+            });
+    }
+
+    signUpUser(): void {
+
         this.appService.signUpUser(this.signup).subscribe(response => {
-            
-                            },
-                err => {
-                    
-                    return false;
-                }); 
-     }  
-   loginUser(): void {
-    
+
+            },
+            err => {
+
+                return false;
+            });
+    }
+
+    loginUser(): void {
+
         this.appService.loginUser(this.login).subscribe(response => {
-            
-                            },
-                err => {
-                    
-                    return false;
-                });
-     }  
+
+            },
+            err => {
+
+                return false;
+            });
+    }
 
 
     toggleElement(): void {

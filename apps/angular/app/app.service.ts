@@ -28,10 +28,12 @@ export class AppService {
             .map((res: Response) => res.json());
     }
 
-    getSearchResults(searchString) {
+    getSearchResults(searchString, latitude, longitude) {
         return this.http.get(`${globalval.rest_api_domain}/category/search`, {
             search: {
-                search: searchString
+                search: searchString,
+                latitude: latitude,
+                longitude: longitude
             }
         })
             .map((res: Response) => res.json());
@@ -78,6 +80,11 @@ export class AppService {
                 .map((res: Response) => res.json());
                    
     }
+
+    // getDistance(source: Object, dest: Object) {
+    //     return this.http.get(`http://maps.googleapis.com/maps/api/distancematrix/json?origins=${source.latitude},${source.longitude}&destinations=${dest.latitude},${dest.longitude}`)
+    //         .map((res: Response) => res.json());
+    // }
     
     getCategoryList() {
 
