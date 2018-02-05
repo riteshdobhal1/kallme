@@ -5,13 +5,14 @@ import {PostFree} from './postfree';
 import {Login} from './login';
 import {SignUp} from './signup';
 import {AppService} from './app.service';
+import {JsonpService} from './jsonp.service';
 import * as globalval from './shared/global';
 import {CompleterService, CompleterData} from 'ng2-completer';
 
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.component.html',
-    providers: [AppService, NgClass]
+    providers: [AppService, JsonpService, NgClass]
 })
 export class AppComponent implements OnInit {
     private hideElement: boolean = true;
@@ -43,12 +44,13 @@ export class AppComponent implements OnInit {
     post_free_add: string;
     suggestionsData: Array<Object>;
     suggestions: CompleterData;
-    
+    location: Object;
+
     post_free_data = new PostFree();
     login = new Login();
     signup = new SignUp();
-      
-    constructor(private appService: AppService, private completerService: CompleterService) {
+
+    constructor(private appService: AppService, private completerService: CompleterService, private jsonpService: JsonpService) {
         this.home = globalval.home;
         this.contact = globalval.contact;
         this.about = globalval.about;
@@ -68,29 +70,87 @@ export class AppComponent implements OnInit {
         this.post_free_add = globalval.post_free_add;
         this.subCategoryObj = {};
         this.subCategoryFilter = {};
+        this.location = {};
         this.appService.getUser().subscribe(user => {
             console.log(user);
         });
     };
 
+    filterOnLocation(contentList): Promise<Array<object>> {
+        return new Promise((resolve, reject) => {
+            let result = [], count = 0;
+            const total = contentList.length;
+            contentList.forEach(content => {
+                let service = new google.maps.DistanceMatrixService;
+                const origin = [{
+                    lat: this.location["latitude"],
+                    lng: this.location["longitude"]
+                }], destination = [{
+                    lat: content["latitude"],
+                    lng: content["longitude"]
+                }];
+                return service.getDistanceMatrix({
+                    origins: origin,
+                    destinations: destination
+                }, (res, status) => {
+                    if (status !== 'OK') {
+                        console.error(status);
+                    } else {
+                        console.log(res);
+                        if(res.rows[0].elements[0].distance.value < 20000) {
+                            result.push(content);
+                        }
+                        count++;
+                        if (count === total) {
+                            resolve(result);
+                        }
+                    }
+                });
+                // this.jsonpService.getDistance(this.location, content).subscribe(res => {
+                //
+                // }, err => {
+                //     console.log(err);
+                // });
+            });
+        });
+    }
+
     loadContents(contentList): void {
         this.contentList = contentList;
-        this.filteredContent = contentList;
-        this.showHome = false;
-        this.contentList.forEach(content => {
-            if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
-                this.subCategoryObj[content["sub_category"]] = {
-                    count: this.subCategoryObj[content["sub_category"]]["count"] + 1,
-                    category: content["category"]
-                };
-            } else {
-                this.subCategoryObj[content["sub_category"]] = {
-                    count: 1,
-                    category: content["category"]
-                };
-            }
+        this.filterOnLocation(contentList).then(content => {
+            this.filteredContent = content;
+            this.showHome = false;
+            this.filteredContent.forEach(content => {
+                if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
+                    this.subCategoryObj[content["sub_category"]] = {
+                        count: this.subCategoryObj[content["sub_category"]]["count"] + 1,
+                        category: content["category"]
+                    };
+                } else {
+                    this.subCategoryObj[content["sub_category"]] = {
+                        count: 1,
+                        category: content["category"]
+                    };
+                }
+            });
+            this.subCategoryList = Object.keys(this.subCategoryObj);
         });
-        this.subCategoryList = Object.keys(this.subCategoryObj);
+        // this.filteredContent = contentList;
+        // this.showHome = false;
+        // this.contentList.forEach(content => {
+        //     if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
+        //         this.subCategoryObj[content["sub_category"]] = {
+        //             count: this.subCategoryObj[content["sub_category"]]["count"] + 1,
+        //             category: content["category"]
+        //         };
+        //     } else {
+        //         this.subCategoryObj[content["sub_category"]] = {
+        //             count: 1,
+        //             category: content["category"]
+        //         };
+        //     }
+        // });
+        // this.subCategoryList = Object.keys(this.subCategoryObj);
     }
 
     resetFilters(): void {
@@ -117,7 +177,7 @@ export class AppComponent implements OnInit {
         var subCategories = [];
         this.categoryItems.forEach(category => {
             category["sub_categories"].forEach(subCategory => {
-                if(subCategory.selected === true) {
+                if (subCategory.selected === true) {
                     subCategories.push(subCategory.id);
                 }
             });
@@ -167,10 +227,10 @@ export class AppComponent implements OnInit {
         this.showHome = true;
         this.contentList = [];
         this.categoryItems.forEach(category => {
-            if(category.hasOwnProperty("selected"))
+            if (category.hasOwnProperty("selected"))
                 delete category["selected"];
             category["sub_categories"].forEach(subCategory => {
-                if(subCategory.hasOwnProperty("selected"))
+                if (subCategory.hasOwnProperty("selected"))
                     delete subCategory["selected"];
             });
         });
@@ -179,6 +239,46 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.getCategoryItems();
         this.getSuggestionItems();
+        this.getCurrentLatLong();
+    }
+
+    getCurrentLatLong(): void {
+        let locationLoaded = false;
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(position => {
+                    this.location["latitude"] = position.coords.latitude;
+                    this.location["longitude"] = position.coords.longitude;
+                    locationLoaded = true;
+                    console.log(this.location);
+                },
+                error => {
+                    if (error.code == error.PERMISSION_DENIED) {
+                        geoip2.insights(position => {
+                            this.location["latitude"] = position.location.latitude;
+                            this.location["longitude"] = position.location.longitude;
+                            locationLoaded = true;
+                            console.log(this.location);
+                        });
+                    }
+                });
+        } else {
+            geoip2.insights(position => {
+                this.location["latitude"] = position.location.latitude;
+                this.location["longitude"] = position.location.longitude;
+                locationLoaded = true;
+                console.log(this.location);
+            });
+        }
+        setTimeout(() => {
+            if (!locationLoaded) {
+                geoip2.insights(position => {
+                    this.location["latitude"] = position.location.latitude;
+                    this.location["longitude"] = position.location.longitude;
+                    locationLoaded = true;
+                    console.log(this.location);
+                });
+            }
+        }, 6000);
     }
 
     getSuggestionItems(): void {
@@ -202,36 +302,39 @@ export class AppComponent implements OnInit {
                 return false;
             });
     }
+
     addPostFree(): void {
         this.appService.addPostFreeData(this.post_free_data).subscribe(response => {
-                            this.postFreeMsg = true;
-                            },
-                err => {
-                    this.postFreeMsg = true;
-        	    console.log(err);            
-                    return false;
-                });
-     }
-   signUpUser(): void {
-    
+                this.postFreeMsg = true;
+            },
+            err => {
+                this.postFreeMsg = true;
+                console.log(err);
+                return false;
+            });
+    }
+
+    signUpUser(): void {
+
         this.appService.signUpUser(this.signup).subscribe(response => {
-            
-                            },
-                err => {
-                    
-                    return false;
-                }); 
-     }  
-   loginUser(): void {
-    
+
+            },
+            err => {
+
+                return false;
+            });
+    }
+
+    loginUser(): void {
+
         this.appService.loginUser(this.login).subscribe(response => {
-            
-                            },
-                err => {
-                    
-                    return false;
-                });
-     }  
+
+            },
+            err => {
+
+                return false;
+            });
+    }
 
 
     toggleElement(): void {

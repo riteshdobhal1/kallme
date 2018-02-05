@@ -6,6 +6,9 @@ from datetime import timedelta
 from flask import make_response, request, current_app
 from flask import jsonify
 from . models import *
+import requests
+import json
+import time
 category = Blueprint('category', __name__)
 
 CORS(category)
@@ -18,17 +21,16 @@ def search():
 	else:
 		params = request.args
 
-	return jsonify(searchcategory(params))
+	data = searchcategory(params)
+	return jsonify(data)
 
 @category.route('/filter', methods=['POST'])
 def filter():
-    print request.data
     params = request.data
     return jsonify(filtercategory(params))
 
 @category.route('/list', methods=['GET'])
 def list():
-
 	categorySet = []
 	category = getcategory()
 	sub_category = getsubcategory()

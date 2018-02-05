@@ -39,7 +39,7 @@ tbl_city_dtls = {
 # Description of customer_data table
 tbl_customer_data_dtls = {
   'name': 'customer_data',
-  'columns': ['id', 'city_id', 'category_id', 'subcategory_id', 'content', 'img','address','phone']
+  'columns': ['id', 'city_id', 'category_id', 'subcategory_id', 'company', 'img', 'address', 'phone', 'latitude', 'longitude']
 }
 
 # Description of suggestions table

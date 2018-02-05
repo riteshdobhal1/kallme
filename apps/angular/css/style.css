@@ -56,15 +56,15 @@ header.masthead > .overlay {
     background-color: #e67e22;
     border-color: #d35400;
     width: 100%;
-    cursor:pointer
+    cursor: pointer
 }
 
 .title-main {
-	background-color: #33A2FF;
-	border-radius: 5px;
-	color:#ffffff;
-	font-weight:bold;
-	text-align:center
+    background-color: #33A2FF;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center
 }
 
 .btn-login:hover {
@@ -88,6 +88,7 @@ a:hover {
     color: #e67e22;
     cursor: pointer;
 }
+
 .sub-category.selected-filter {
     color: green;
 }
@@ -106,7 +107,7 @@ a:hover {
 .btn-login-sec:hover {
     background-color: #2c3e50;
     cursor: pointer;
-    
+
 }
 
 #phoneNumber {
@@ -492,7 +493,7 @@ span:nth-last-child(3) {
     border: 1px solid #bbb;
     width: 230px;
     height: 150px;
-    border-radius:5px
+    border-radius: 5px
 }
 
 .item-contents label {
@@ -571,12 +572,15 @@ span:nth-last-child(3) {
 .completer-description {
     opacity: 0.6;
 }
-.ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42A948; /* green */
+
+.ng-valid[required], .ng-valid.required {
+    border-left: 5px solid #42A948; /* green */
 }
-.ng-invalid:not(form)  {
-  border-left: 5px solid #a94442; /* red */
+
+.ng-invalid:not(form) {
+    border-left: 5px solid #a94442; /* red */
 }
+
 .category-icon {
     margin-right: 10px;
     color: cadetblue;
