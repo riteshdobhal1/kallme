@@ -5,13 +5,14 @@ import {PostFree} from './postfree';
 import {Login} from './login';
 import {SignUp} from './signup';
 import {AppService} from './app.service';
+import {JsonpService} from './jsonp.service';
 import * as globalval from './shared/global';
 import {CompleterService, CompleterData} from 'ng2-completer';
 
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.component.html',
-    providers: [AppService, NgClass]
+    providers: [AppService, JsonpService, NgClass]
 })
 export class AppComponent implements OnInit {
     private hideElement: boolean = true;
@@ -49,7 +50,7 @@ export class AppComponent implements OnInit {
     login = new Login();
     signup = new SignUp();
 
-    constructor(private appService: AppService, private completerService: CompleterService) {
+    constructor(private appService: AppService, private completerService: CompleterService, private jsonpService: JsonpService) {
         this.home = globalval.home;
         this.contact = globalval.contact;
         this.about = globalval.about;
@@ -75,45 +76,81 @@ export class AppComponent implements OnInit {
         });
     };
 
-    // filterOnLocation(contentList): Promise<Array> {
-    //     return new Promise((resolve, reject) => {
-    //         let result = [], count = 0;
-    //         const total = contentList.length;
-    //         contentList.forEach(content => {
-    //             this.appService.getDistance(this.location, content).subscribe(res => {
-    //                 console.log(res);
-    //                 if(res.rows[0].elements[0].distance.value < 20000) {
-    //                     result.push(content);
-    //                 }
-    //                 count++;
-    //                 if (count === total) {
-    //                     resolve(result);
-    //                 }
-    //             }, err => {
-    //                 console.log(err);
-    //             });
-    //         });
-    //     });
-    // }
+    filterOnLocation(contentList): Promise<Array<object>> {
+        return new Promise((resolve, reject) => {
+            let result = [], count = 0;
+            const total = contentList.length;
+            contentList.forEach(content => {
+                let service = new google.maps.DistanceMatrixService;
+                const origin = [{
+                    lat: this.location["latitude"],
+                    lng: this.location["longitude"]
+                }], destination = [{
+                    lat: content["latitude"],
+                    lng: content["longitude"]
+                }];
+                return service.getDistanceMatrix({
+                    origins: origin,
+                    destinations: destination
+                }, (res, status) => {
+                    if (status !== 'OK') {
+                        console.error(status);
+                    } else {
+                        console.log(res);
+                        if(res.rows[0].elements[0].distance.value < 20000) {
+                            result.push(content);
+                        }
+                        count++;
+                        if (count === total) {
+                            resolve(result);
+                        }
+                    }
+                });
+                // this.jsonpService.getDistance(this.location, content).subscribe(res => {
+                //
+                // }, err => {
+                //     console.log(err);
+                // });
+            });
+        });
+    }
 
     loadContents(contentList): void {
         this.contentList = contentList;
-        this.filteredContent = contentList;
-        this.showHome = false;
-        this.contentList.forEach(content => {
-            if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
-                this.subCategoryObj[content["sub_category"]] = {
-                    count: this.subCategoryObj[content["sub_category"]]["count"] + 1,
-                    category: content["category"]
-                };
-            } else {
-                this.subCategoryObj[content["sub_category"]] = {
-                    count: 1,
-                    category: content["category"]
-                };
-            }
+        this.filterOnLocation(contentList).then(content => {
+            this.filteredContent = content;
+            this.showHome = false;
+            this.filteredContent.forEach(content => {
+                if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
+                    this.subCategoryObj[content["sub_category"]] = {
+                        count: this.subCategoryObj[content["sub_category"]]["count"] + 1,
+                        category: content["category"]
+                    };
+                } else {
+                    this.subCategoryObj[content["sub_category"]] = {
+                        count: 1,
+                        category: content["category"]
+                    };
+                }
+            });
+            this.subCategoryList = Object.keys(this.subCategoryObj);
         });
-        this.subCategoryList = Object.keys(this.subCategoryObj);
+        // this.filteredContent = contentList;
+        // this.showHome = false;
+        // this.contentList.forEach(content => {
+        //     if (this.subCategoryObj.hasOwnProperty(content["sub_category"])) {
+        //         this.subCategoryObj[content["sub_category"]] = {
+        //             count: this.subCategoryObj[content["sub_category"]]["count"] + 1,
+        //             category: content["category"]
+        //         };
+        //     } else {
+        //         this.subCategoryObj[content["sub_category"]] = {
+        //             count: 1,
+        //             category: content["category"]
+        //         };
+        //     }
+        // });
+        // this.subCategoryList = Object.keys(this.subCategoryObj);
     }
 
     resetFilters(): void {
@@ -124,7 +161,7 @@ export class AppComponent implements OnInit {
     searchCategories(): void {
         this.resetFilters();
         if (!!this.search.length) {
-            this.appService.getSearchResults(this.search, this.location.latitude, this.location.longitude).subscribe(contentList => {
+            this.appService.getSearchResults(this.search).subscribe(contentList => {
                     this.loadContents(contentList);
                 },
                 err => {
@@ -209,16 +246,16 @@ export class AppComponent implements OnInit {
         let locationLoaded = false;
         if (navigator.geolocation) {
             navigator.geolocation.watchPosition(position => {
-                    this.location.latitude = position.coords.latitude;
-                    this.location.longitude = position.coords.longitude;
+                    this.location["latitude"] = position.coords.latitude;
+                    this.location["longitude"] = position.coords.longitude;
                     locationLoaded = true;
                     console.log(this.location);
                 },
                 error => {
                     if (error.code == error.PERMISSION_DENIED) {
                         geoip2.insights(position => {
-                            this.location.latitude = position.location.latitude;
-                            this.location.longitude = position.location.longitude;
+                            this.location["latitude"] = position.location.latitude;
+                            this.location["longitude"] = position.location.longitude;
                             locationLoaded = true;
                             console.log(this.location);
                         });
@@ -226,8 +263,8 @@ export class AppComponent implements OnInit {
                 });
         } else {
             geoip2.insights(position => {
-                this.location.latitude = position.location.latitude;
-                this.location.longitude = position.location.longitude;
+                this.location["latitude"] = position.location.latitude;
+                this.location["longitude"] = position.location.longitude;
                 locationLoaded = true;
                 console.log(this.location);
             });
@@ -235,8 +272,8 @@ export class AppComponent implements OnInit {
         setTimeout(() => {
             if (!locationLoaded) {
                 geoip2.insights(position => {
-                    this.location.latitude = position.location.latitude;
-                    this.location.longitude = position.location.longitude;
+                    this.location["latitude"] = position.location.latitude;
+                    this.location["longitude"] = position.location.longitude;
                     locationLoaded = true;
                     console.log(this.location);
                 });

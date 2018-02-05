@@ -11,4 +11,3 @@ MAIL_SENDER = "akjain@kallme.in"
 MAIL_RECIPIENTS = "akjain@kallme.in"
 MAIL_BODY1 = "Dear Kallme Team, \r\n"
 MAIL_BODY2 = "This is system generated email, please donot reply."
-DISTANCE_TO_SEARCH_IN_METERS = 80000

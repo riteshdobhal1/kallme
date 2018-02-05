@@ -9,7 +9,6 @@ from . models import *
 import requests
 import json
 import time
-from config import DISTANCE_TO_SEARCH_IN_METERS
 category = Blueprint('category', __name__)
 
 CORS(category)
@@ -23,15 +22,7 @@ def search():
 		params = request.args
 
 	data = searchcategory(params)
-	returnData = []
-	print str(len(data))
-	for d in data:
-		r = requests.get('http://maps.googleapis.com/maps/api/distancematrix/json?origins=' + params.get('latitude') + ',' + params.get('longitude') + '&destinations=' + str(d["latitude"]) + ',' + str(d["longitude"]))
-		obj = json.loads(r.text)
-        if(obj["rows"][0]["elements"][0]["distance"]["value"] < 80000):
-            print str(DISTANCE_TO_SEARCH_IN_METERS)
-            returnData.append(d)
-	return jsonify(returnData)
+	return jsonify(data)
 
 @category.route('/filter', methods=['POST'])
 def filter():

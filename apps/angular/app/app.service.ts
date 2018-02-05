@@ -10,7 +10,6 @@ import {PostFree} from './postfree';
 import {SignUp} from './signup';
 import {Login} from './login';
 
-
 @Injectable()
 
 export class AppService {
@@ -28,12 +27,10 @@ export class AppService {
             .map((res: Response) => res.json());
     }
 
-    getSearchResults(searchString, latitude, longitude) {
+    getSearchResults(searchString) {
         return this.http.get(`${globalval.rest_api_domain}/category/search`, {
             search: {
-                search: searchString,
-                latitude: latitude,
-                longitude: longitude
+                search: searchString
             }
         })
             .map((res: Response) => res.json());
@@ -80,11 +77,6 @@ export class AppService {
                 .map((res: Response) => res.json());
                    
     }
-
-    // getDistance(source: Object, dest: Object) {
-    //     return this.http.get(`http://maps.googleapis.com/maps/api/distancematrix/json?origins=${source.latitude},${source.longitude}&destinations=${dest.latitude},${dest.longitude}`)
-    //         .map((res: Response) => res.json());
-    // }
     
     getCategoryList() {
 
