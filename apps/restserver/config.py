@@ -8,6 +8,6 @@ MAIL_SERVER = "smtp@gmail.com"
 MAIL_PORT = 465
 MAIL_USE_SSL = True
 MAIL_SENDER = "akjain@kallme.in"
-MAIL_RECIPIENTS = "akjain@kallme.in"
+MAIL_RECIPIENTS = "loveedoval@gmail.com"
 MAIL_BODY1 = "Dear Kallme Team, \r\n"
 MAIL_BODY2 = "This is system generated email, please donot reply."

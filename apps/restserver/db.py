@@ -9,7 +9,7 @@ mysql.init_app(app)
 # Description of user table
 tbl_user_dtls = {
   'name': 'user',
-  'columns': ['username', 'password', 'email','firstname','lastname','phone', 'type']
+  'columns': ['username', 'password', 'email', 'type', 'user_admin','user_id','active','firstname','lastname','mobile']
 }
 
 # Description of contactus table
@@ -39,7 +39,7 @@ tbl_city_dtls = {
 # Description of customer_data table
 tbl_customer_data_dtls = {
   'name': 'customer_data',
-  'columns': ['id', 'city_id', 'category_id', 'subcategory_id', 'content', 'img','address','phone']
+  'columns': ['id', 'city_id', 'category_id', 'subcategory_id', 'company', 'img','address','mobile','phone','active']
 }
 
 # Description of suggestions table
@@ -50,8 +50,13 @@ tbl_suggestion_dtls = {
 
 tbl_postfreeuser_info_dtls = {
     'name': 'postfreeuser_info',
-    'columns': ['company', 'name', 'email', 'mobile','phone','city','id']
+    'columns': ['company', 'name', 'email', 'mobile','phone','city_id','address','category_id','subcategory_id','id']
 }
 
+# Description of pack table
+tbl_pack_dtls = {
+  'name' : 'pack',                
+  'columns': ['pack_id', 'name','monthly_price','quartely_price','discounted_quartely_price','halfyearly_price','discounted_halfyearly_price','yearly_price','discounted_yearly_price']
+}
 tbl_agent = "agent"
 tbl_vendor = "vendor"

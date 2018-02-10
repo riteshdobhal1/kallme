@@ -18,10 +18,36 @@ export class AppService {
     }
 
     getUser() {
-        return this.http.get(`${globalval.rest_api_domain}/user/list`)
+        let headers = new Headers({ 'Content-Type': undefined });
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        
+        return this.http.get(`${globalval.rest_api_domain}/user/list`,options)
             .map((res: Response) => res.json());
 
     }
+    
+    logout() {
+        let headers = new Headers({ 'Content-Type': undefined });
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        return this.http.get(`${globalval.rest_api_domain}/user/logout`,options)
+            .map((res: Response) => res.json());
+
+    }
+
+
+    getVendor(vendorAdmin):Observable<Response> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        
+        return this.http.post(`${globalval.rest_api_domain}/user/listvendor`,vendorAdmin,options)
+            .map((res: Response) => res.json());
+
+    }
+
+    
 
     getCategory() {
         return this.http.get(`${globalval.rest_api_domain}/category/list`)
@@ -49,7 +75,14 @@ export class AppService {
         return this.http.get(`${globalval.rest_api_domain}/suggestions/list`)
             .map((res: Response) => res.json());
     }
-    
+    getCitiesList() {
+        return this.http.get(`${globalval.rest_api_domain}/user/getcitylist`)
+            .map((res: Response) => res.json());
+    }
+    getPackList() {
+        return this.http.get(`${globalval.rest_api_domain}/user/getpacklist`)
+            .map((res: Response) => res.json());
+    }
     addPostFreeData(postFree):Observable<Response> {
         let headers = new Headers({ 'Content-Type': undefined });
         let options = new RequestOptions({ headers: headers });
@@ -68,20 +101,63 @@ export class AppService {
                 .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
                    
     }
+    addUserData(addUser):Observable<Response> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        return this.http.post(`${globalval.rest_api_domain}/user/adduser`, addUser,options)
+                .map((res: Response) => res.json())
+                .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+                   
+    }
       
 
     loginUser(login):Observable<Response> {
         
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
+        let headers = new Headers({ 'Content-Type': 'application/json'});
         
-        return this.http.post(`${globalval.rest_api_domain}/user/login`, login,headers)
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        return this.http.post(`${globalval.rest_api_domain}/user/login`, login,options)
                 .map((res: Response) => res.json());
                    
     }
-    
+    changeUserState(userStatus):Observable<Response> {
+        
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        return this.http.post(`${globalval.rest_api_domain}/user/changeuserstate`, userStatus,options)
+                .map((res: Response) => res.json());
+                   
+    }
+    deleteSelectedUser(deleteStatus):Observable<Response> {
+        
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        return this.http.post(`${globalval.rest_api_domain}/user/deleteuser`, deleteStatus,options)
+                .map((res: Response) => res.json());
+                  
+    }
+    getUserDetails(userinfo){
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        return this.http.post(`${globalval.rest_api_domain}/user/getuserdetails`, userinfo,options)
+           .map((res: Response) => res.json());
+                   
+    }
+    updateUserDetails(user_info){
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        return this.http.post(`${globalval.rest_api_domain}/user/updateuserdetails`, user_info,options)
+           .map((res: Response) => res.json());
+                   
+    }
     getCategoryList() {
 
-    }
+    } 
 
 }

@@ -1,10 +1,12 @@
 export class PostFree {
    company: string;
-   name: string;
-   city: string;
+   city_id: string;
    email: string;
    mobile: string;
    phone: string;
+   address: string;
+   category_id: string;
+   subcategory_id: string;
    constructor() { 
    }
 } 

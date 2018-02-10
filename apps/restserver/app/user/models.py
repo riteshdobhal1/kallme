@@ -7,41 +7,75 @@ from config import *
 import pymysql
 
 app = Flask(__name__)
-
+	
 mail=Mail(app)
 
-def adduser(data):
-	username = data.get('username')
-	password = data.get('password')
-	firstname = data.get('firstname')
-	lastname = data.get('lastname')
-	email = data.get('email')
-	usertype = 'guest'
-	phone =  data.get('phone')
-	conn = mysql.connect()
-	cursor =conn.cursor()
-	cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[1] + "," + tbl_user_dtls.get('columns')[2]+ "," + tbl_user_dtls.get('columns')[3] + "," + tbl_user_dtls.get('columns')[4] + "," + tbl_user_dtls.get('columns')[5] + "," + tbl_user_dtls.get('columns')[6]+") VALUES (%s,%s,%s,%s,%s,%s,%s)",(firstname,lastname,username,password,email,phone,usertype))
-	conn.commit()
-	conn.close()
+def adduserdata(data):
 	
-def addpostfree(data):
 	company = data.get('company')
-	name = data.get('name')
-	city = data.get('city')
+	city = data.get('city_id')
 	mobile = data.get('mobile')
 	email = data.get('email')
 	phone = data.get('phone')
+	address = data.get('address')
+	category = data.get('category_id')
+	subcategory = data.get('subcategory_id')
+	user_admin = data.get('admin_id')
+	type = data.get('type')
 	conn = mysql.connect()
 	cursor = conn.cursor()
-	cursor.execute("INSERT INTO " +  tbl_postfreeuser_info_dtls.get('name') +" (" + tbl_postfreeuser_info_dtls.get('columns')[0] + "," + tbl_postfreeuser_info_dtls.get('columns')[1] + "," + tbl_postfreeuser_info_dtls.get('columns')[2]+ "," + tbl_postfreeuser_info_dtls.get('columns')[3] + "," + tbl_postfreeuser_info_dtls.get('columns')[4] + "," + tbl_postfreeuser_info_dtls.get('columns')[5] +") VALUES (%s,%s,%s,%s,%s,%s)",(company,name,email,mobile,phone,city))
+	
+	qry = "SELECT * FROM " + tbl_user_dtls.get('name') + " WHERE " +  tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[9] + "='" + str(mobile) + "'" 
+	cursor.execute(qry)
+	count = cursor.rowcount
+	
+	if count == 1:
+		return "msg_5"
+	else:
+		if type == "vendor":
+			cursor.execute("INSERT INTO " +  tbl_postfreeuser_info_dtls.get('name') +" (" + tbl_postfreeuser_info_dtls.get('columns')[0] + "," + tbl_postfreeuser_info_dtls.get('columns')[2]+ "," + tbl_postfreeuser_info_dtls.get('columns')[3] + "," + tbl_postfreeuser_info_dtls.get('columns')[4] + "," + tbl_postfreeuser_info_dtls.get('columns')[5] + "," + tbl_postfreeuser_info_dtls.get('columns')[6] + "," + tbl_postfreeuser_info_dtls.get('columns')[7] + "," + tbl_postfreeuser_info_dtls.get('columns')[8] +") VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",(company,email,mobile,phone,city,address,category,subcategory))
+		
+		cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[2] + "," + tbl_user_dtls.get('columns')[3]+ "," + tbl_user_dtls.get('columns')[4] + "," + tbl_user_dtls.get('columns')[9] + ") VALUES (%s,%s,%s,%s,%s)",(company,email,type,user_admin,mobile))
+	
 	conn.commit()
 	conn.close()
-	sendmail(email,mobile)	
+	
+	return "msg_6"
+	
+def addpostfree(data):
+	company = data.get('company')
+	city = data.get('city_id')
+	mobile = data.get('mobile')
+	email = data.get('email')
+	phone = data.get('phone')
+	address = data.get('address')
+	category = data.get('category_id')
+	subcategory = data.get('subcategory_id')
+	type = "vendor"
+	conn = mysql.connect()
+	cursor = conn.cursor()
+	
+	qry = "SELECT * FROM " + tbl_user_dtls.get('name') + " WHERE " +  tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[9] + "='" + str(mobile) + "'" 
+	cursor.execute(qry)
+	count = cursor.rowcount
+	
+	if count == 1:
+		return "msg_5"
+	else:
+		cursor.execute("INSERT INTO " +  tbl_postfreeuser_info_dtls.get('name') +" (" + tbl_postfreeuser_info_dtls.get('columns')[0] + "," + tbl_postfreeuser_info_dtls.get('columns')[2]+ "," + tbl_postfreeuser_info_dtls.get('columns')[3] + "," + tbl_postfreeuser_info_dtls.get('columns')[4] + "," + tbl_postfreeuser_info_dtls.get('columns')[5] + "," + tbl_postfreeuser_info_dtls.get('columns')[6] + "," + tbl_postfreeuser_info_dtls.get('columns')[7] + "," + tbl_postfreeuser_info_dtls.get('columns')[8] +") VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",(company,email,mobile,phone,city,address,category,subcategory))
+		cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[2] + "," + tbl_user_dtls.get('columns')[3] + "," + tbl_user_dtls.get('columns')[9] +") VALUES (%s,%s,%s,%s)",(company,email,type,mobile))
+	
+	conn.commit()
+	conn.close()
+	sendmail(email,mobile)
+	return "msg_7"	
 	
 def signupuser(data):
 	username = data.get('username')
 	password = data.get('password')
 	email = data.get('email')
+	type = data.get('type')
+	mobile = data.get('mobile')
 	conn = mysql.connect()
 	cursor = conn.cursor()
 	
@@ -49,7 +83,7 @@ def signupuser(data):
 	cursor.execute(qry)
 	count = cursor.rowcount
 	
-	if count > 1:
+	if count == 1:
 		results = cursor.fetchone()
 		conn.commit() 
 		conn.close()
@@ -57,20 +91,52 @@ def signupuser(data):
 		passwd = results[1]
 		emailId = results[2]
 		if email == emailId:
-			return "Email already exist"
+			return "msg_2"
 		else:
-			return "Username already exist, please try another"
-      	 
+			return "msg_3"      	 
 	else:
-		cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[1] + "," + tbl_user_dtls.get('columns')[2] +") VALUES (%s,%s,%s)",(username,password,email))
+		cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[1] + "," + tbl_user_dtls.get('columns')[2] + "," + tbl_user_dtls.get('columns')[3] + "," + tbl_user_dtls.get('columns')[9] +") VALUES (%s,%s,%s,%s,%s)",(username,password,email,type,mobile))
 		conn.commit() 
 		conn.close()
-		return "user added"
+		return "msg_1"
+	
+def	loginuser(data):
+	username = data.get('username')
+	password = data.get('password')
+	
+	conn = mysql.connect()
+	cursor = conn.cursor()
+	
+	
+		
+	qry = "SELECT " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[0] + " , " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[1] + ", " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[2] + "," + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[3] + "," + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[5] + " FROM " + tbl_user_dtls.get('name') + " WHERE " +  tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[0] + "='" + username + "' AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[1] + "='" + password + "'" 
+	cursor.execute(qry)
+	count = cursor.rowcount
+	
+	if count ==  1:
+		results = cursor.fetchone()
+		conn.commit() 
+		conn.close()
+		##type = results[3]
+		return results
+			
+	else:
+		return "msg_6"
+	
 
 def listuser():
 	conn = mysql.connect()
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
-	cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name'))
+	cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + " WHERE type!='admin'")
+	results = cursor.fetchall()
+	conn.close()
+	return results
+
+def listuservendor(data):
+	admin_id = data.get("admin_id")
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + " WHERE " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[3] + "='vendor' AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[4] + "='" + str(admin_id) + "'")
 	results = cursor.fetchall()
 	conn.close()
 	return results
@@ -79,3 +145,97 @@ def sendmail(email,mobile):
 	msg = Message("New Post free Add Request!!",sender=MAIL_SENDER,recipients=[MAIL_RECIPIENTS])
 	msg.body = MAIL_BODY1 + "Please contact customer at " + email + " or call at " + mobile + "\r\n\r\n" + MAIL_BODY2
 	mail.send(msg)
+
+def changestate(data):
+	user_id = data.get('user_id')
+	status = data.get('status')
+	type = data.get('type')
+	mobile = data.get('mobile')
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	
+	if type == "vendor":
+		cursor.execute("SELECT * FROM " + tbl_customer_data_dtls.get('name') + " WHERE " + tbl_customer_data_dtls.get('columns')[7] + "='" + str(mobile) + "'")
+		count = cursor.rowcount
+		if count == 1:
+			cursor.execute("UPDATE " +  tbl_customer_data_dtls.get('name') +" SET " + tbl_customer_data_dtls.get('columns')[9] + "='" + str(status) + "' WHERE " + tbl_customer_data_dtls.get('columns')[7] + "='" + str(mobile) +"'")
+		else:	
+			cursor.execute("INSERT INTO " + tbl_customer_data_dtls.get('name') + " (" + tbl_customer_data_dtls.get('columns')[1] + "," + tbl_customer_data_dtls.get('columns')[2] + "," + tbl_customer_data_dtls.get('columns')[3] + "," + tbl_customer_data_dtls.get('columns')[4] + "," + tbl_customer_data_dtls.get('columns')[6] + "," + tbl_customer_data_dtls.get('columns')[7] + ") SELECT " + tbl_postfreeuser_info_dtls.get('columns')[5] + "," + tbl_postfreeuser_info_dtls.get('columns')[7] + "," + tbl_postfreeuser_info_dtls.get('columns')[8] + "," + tbl_postfreeuser_info_dtls.get('columns')[0] + "," + tbl_postfreeuser_info_dtls.get('columns')[6] + "," + tbl_postfreeuser_info_dtls.get('columns')[3] + " FROM " + tbl_postfreeuser_info_dtls.get('name') + " WHERE " + tbl_postfreeuser_info_dtls.get('columns')[3] + "='" + str(mobile) + "'")      
+			cursor.execute("UPDATE " + tbl_customer_data_dtls.get('name') +" SET " + tbl_customer_data_dtls.get('columns')[9] + "='" + str(status) + "' WHERE " + tbl_customer_data_dtls.get('columns')[7] + "='" + str(mobile) +"'")
+	
+	cursor.execute("UPDATE " +  tbl_user_dtls.get('name') +" SET " + tbl_user_dtls.get('columns')[6] + "='" + str(status) + "' WHERE " + tbl_user_dtls.get('columns')[9] + "='" + str(mobile) +"'")
+	conn.commit() 
+	conn.close()
+	return "msg_7"
+
+def deleteselecteduser(data):
+	user_id = data.get('user_id')
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	
+	cursor.execute("DELETE FROM " +  tbl_user_dtls.get('name') +" WHERE " + tbl_user_dtls.get('columns')[5] + "='" + str(user_id) +"'")
+	conn.commit()
+	conn.close()
+	return "msg_8"
+
+def getuser(data):
+	uid = data.get('user_id')
+	type = data.get('type')
+	mode = data.get('mode')
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	print(type)
+	if(type == "agent" or type == "admin"):
+		cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + " WHERE " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[5] + " = " + str(uid) + " AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[3] + " = '" + str(type) +"'")
+	else:
+		if mode == "active":
+			cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + "," + tbl_customer_data_dtls.get('name') + " WHERE " + tbl_user_dtls.get('columns')[5] + " = " + str(uid) + " AND " + tbl_user_dtls.get('columns')[3] + " = '" + str(type) +"' AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[9] + "=" + tbl_customer_data_dtls.get('name') + "." + tbl_customer_data_dtls.get('columns')[7])
+		else:
+			cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + "," + tbl_postfreeuser_info_dtls.get('name') + " WHERE " + tbl_user_dtls.get('columns')[5] + " = " + str(uid) + " AND " + tbl_user_dtls.get('columns')[3] + " = '" + str(type) +"' AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[9] + "=" + tbl_postfreeuser_info_dtls.get('name') + "." + tbl_postfreeuser_info_dtls.get('columns')[3])
+
+	results = cursor.fetchone()
+	conn.close()
+	return results
+
+def updateuser(data):
+	company = data.get('company')
+	username = data.get('username')
+	city = data.get('city_id')
+	mobile = data.get('mobile')
+	email = data.get('email')
+	phone = data.get('phone')
+	address = data.get('address')
+	category = data.get('category_id')
+	subcategory = data.get('subcategory_id')
+	id = data.get('id')
+	user_id = data.get('user_id')
+	type = data.get('type')
+	conn = mysql.connect()
+	
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	if type == "vendor":
+		cursor.execute("UPDATE " +  tbl_customer_data_dtls.get('name') + " SET " + tbl_customer_data_dtls.get('columns')[1] + "='" + str(city) + "', " + tbl_customer_data_dtls.get('columns')[2] + "='" + str(category) + "', " + tbl_customer_data_dtls.get('columns')[3] + "='" + str(subcategory) + "', " + tbl_customer_data_dtls.get('columns')[4] + "='" + company + "', " + tbl_customer_data_dtls.get('columns')[6] + "='" + address + "', " + tbl_customer_data_dtls.get('columns')[7] + "='" + mobile +"'," + tbl_customer_data_dtls.get('columns')[8] + "='" + phone + "' WHERE " + tbl_customer_data_dtls.get('columns')[0] + "='" + str(id) +"'")
+	
+	cursor.execute("UPDATE " +  tbl_user_dtls.get('name') + " SET " +  tbl_user_dtls.get('columns')[0] + "='" + username + "', " + tbl_user_dtls.get('columns')[2] + "='" + email + "', " + tbl_user_dtls.get('columns')[9] + "='" + mobile + "' WHERE " + tbl_user_dtls.get('columns')[5] + "='" + str(user_id) + "'")
+	conn.commit()
+	
+	conn.close()
+	
+	return data
+
+def getcity():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	cursor.execute("SELECT * FROM " + tbl_city_dtls.get('name'))
+	results = cursor.fetchall()
+	conn.close()
+	return results
+
+def getpack():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	cursor.execute("SELECT * FROM " + tbl_pack_dtls.get('name'))
+	results = cursor.fetchall()
+	conn.close()
+	return results
+
