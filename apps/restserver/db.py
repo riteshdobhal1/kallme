@@ -9,7 +9,7 @@ mysql.init_app(app)
 # Description of user table
 tbl_user_dtls = {
   'name': 'user',
-  'columns': ['username', 'password', 'email', 'type', 'user_admin','user_id','active','firstname','lastname','mobile']
+  'columns': ['username', 'password', 'email', 'type', 'user_admin','user_id','active','firstname','lastname','mobile','pack_id']
 }
 
 # Description of contactus table
@@ -56,7 +56,7 @@ tbl_postfreeuser_info_dtls = {
 # Description of pack table
 tbl_pack_dtls = {
   'name' : 'pack',                
-  'columns': ['pack_id', 'name','monthly_price','quartely_price','discounted_quartely_price','halfyearly_price','discounted_halfyearly_price','yearly_price','discounted_yearly_price']
+  'columns': ['pack_id', 'pack_name','monthly_price','quartely_price','discounted_quartely_price','halfyearly_price','discounted_halfyearly_price','yearly_price','discounted_yearly_price']
 }
 tbl_agent = "agent"
 tbl_vendor = "vendor"

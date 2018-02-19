@@ -3,6 +3,7 @@ import {NgClass} from '@angular/common';
 import {Category} from './category';
 import {PostFree} from './postfree';
 import {User} from './user';
+import {Userlist} from './userlist';
 import {SignUp} from './signup';
 import {Login} from './login';
 import {AddUser} from './adduser';
@@ -44,10 +45,19 @@ export class AppComponent implements OnInit,AfterViewInit {
     private loginFailureMsg: boolean = false;
     private showChild: boolean = false;
     private addvendor: boolean = false;
+    private packSelected: string = "1";
+    private login_user: string = "";
+    private filterargs: string = "";
+    private usersList: Userlist[];
+    private statusUser: string = "all";
+    private typeUser: string = "all";
+    private userIds: string = "";
     
     categoryItems: Array<Object>;
     subCategoryItems: Array<Object>;
-    usersList: Array<Object>;
+    // usersList: Array<Object>;
+    usersFilteredList: Array<Object>;
+    allUsersList: Array<Object>;
     vendorsList: Array<Object>;
     contentList: Array<Object>;
     userDetails: Array<Object>;
@@ -137,6 +147,7 @@ export class AppComponent implements OnInit,AfterViewInit {
         this.deleteStatus = {};
         this.vendorAdmin = {};
         this.userData = {};
+        
         
     };
 
@@ -411,6 +422,7 @@ export class AppComponent implements OnInit,AfterViewInit {
         this.loginFailureMsg = false;
         this.appService.loginUser(this.login).subscribe(response => {
                             console.log(response);
+                            this.login_user = response[0];
                             this.user_id = response[4];
                             this.admin_id = response[4];
                             this.type = response[3].toString();
@@ -468,6 +480,7 @@ export class AppComponent implements OnInit,AfterViewInit {
         this.appService.getUser().subscribe(usersList => {
             
                 this.usersList = usersList;
+                this.allUsersList = this.usersList;
                 this.spinner = false;
                 this.showUsersList = true;
                 console.log(this.usersList);
@@ -550,12 +563,16 @@ export class AppComponent implements OnInit,AfterViewInit {
             });       
         
     }
+    logRadio(element:HTMLInputElement):void{
+            this.packSelected = element.value;
+            
+    }
     editUserDetails(): void{
         this.spinner = true;
-        
+        this.userDetails['pack'] = this.packSelected;
+        console.log(this.userDetails);       
         this.appService.updateUserDetails(this.userDetails).subscribe(user_data => {
-            
-                
+                            
                 this.spinner = false;
                 this.editUserMsg = true;
                 this.userInfo = false;
@@ -595,6 +612,11 @@ export class AppComponent implements OnInit,AfterViewInit {
     }
     deleteUser(user_id,type): void{
         
+        if(!confirm("Are you sure to delete ")){
+            
+            return ;
+        }
+        
         this.spinner = true;
         this.deleteStatus['user_id'] = user_id;
         this.appService.deleteSelectedUser(this.deleteStatus).subscribe(response => {
@@ -615,4 +637,81 @@ export class AppComponent implements OnInit,AfterViewInit {
                 });
         
     }
+    deleteMultipleUser():void {
+        if(this.userIds == ""){
+            
+            alert("Please select the checkbox to delete multiple users");
+            return;
+        }
+        
+    }
+    changeUsersStatus(status):void{
+        
+        if(this.userIds == ""){
+            
+            alert("Please select the checkbox to " + status + " multiple users");
+            return;
+        }
+        
+    }
+    
+    selectDeselectUser(user_id):void{
+        
+        console.log(user_id);
+    }
+    
+    filterByStatus(userStatus): void {
+        
+         
+        if(userStatus == "activated"){
+            
+            this.usersFilteredList = this.allUsersList.filter((user:Userlist) => user.active === 1);
+            this.usersList =  this.usersFilteredList;
+            this.statusUser = "activated";
+                   
+        }else if(userStatus == "deactivated"){
+            
+           this.usersFilteredList = this.allUsersList.filter((user:Userlist) => user.active === 0);
+           this.usersList =  this.usersFilteredList;
+           this.statusUser = "deactivated";
+            
+        }else{
+            
+            this.statusUser = "all";
+            this.usersList = this.allUsersList;
+        }
+                
+        if(this.typeUser == "agent" || this.typeUser == "vendor" ){
+                   
+            this.usersList = this.usersList.filter((user:Userlist) => user.type === this.typeUser);
+        }   
+    }
+    filterByUser(userType): void {
+        
+        if(userType == "all"){
+            
+            this.usersList = this.allUsersList;
+            
+                        
+        }else{
+            
+            this.usersFilteredList = this.allUsersList.filter((user:Userlist) => user.type === userType);
+            this.usersList =  this.usersFilteredList;
+            this.typeUser = userType; 
+                
+        }
+        
+        if(this.statusUser == "activated"){
+                
+                this.usersList = this.usersList.filter((user:Userlist) => user.active === 1);
+        }else if(this.statusUser == "deactivated"){
+                
+                this.usersList = this.usersList.filter((user:Userlist) => user.active === 0);
+        }        
+        
+               
+    }
+    
+    
+    
 }

@@ -21,6 +21,7 @@ def adduserdata(data):
 	category = data.get('category_id')
 	subcategory = data.get('subcategory_id')
 	user_admin = data.get('admin_id')
+	pack_id = data.get('pack')
 	type = data.get('type')
 	conn = mysql.connect()
 	cursor = conn.cursor()
@@ -35,7 +36,10 @@ def adduserdata(data):
 		if type == "vendor":
 			cursor.execute("INSERT INTO " +  tbl_postfreeuser_info_dtls.get('name') +" (" + tbl_postfreeuser_info_dtls.get('columns')[0] + "," + tbl_postfreeuser_info_dtls.get('columns')[2]+ "," + tbl_postfreeuser_info_dtls.get('columns')[3] + "," + tbl_postfreeuser_info_dtls.get('columns')[4] + "," + tbl_postfreeuser_info_dtls.get('columns')[5] + "," + tbl_postfreeuser_info_dtls.get('columns')[6] + "," + tbl_postfreeuser_info_dtls.get('columns')[7] + "," + tbl_postfreeuser_info_dtls.get('columns')[8] +") VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",(company,email,mobile,phone,city,address,category,subcategory))
 		
-		cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[2] + "," + tbl_user_dtls.get('columns')[3]+ "," + tbl_user_dtls.get('columns')[4] + "," + tbl_user_dtls.get('columns')[9] + ") VALUES (%s,%s,%s,%s,%s)",(company,email,type,user_admin,mobile))
+		if type == "agent":
+			cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[2] + "," + tbl_user_dtls.get('columns')[3]+ "," + tbl_user_dtls.get('columns')[4] + "," + tbl_user_dtls.get('columns')[9] + ") VALUES (%s,%s,%s,%s,%s)",(company,email,type,user_admin,mobile))
+		else:
+			cursor.execute("INSERT INTO " +  tbl_user_dtls.get('name') +" (" + tbl_user_dtls.get('columns')[0] + "," + tbl_user_dtls.get('columns')[2] + "," + tbl_user_dtls.get('columns')[3]+ "," + tbl_user_dtls.get('columns')[4] + "," + tbl_user_dtls.get('columns')[9] + "," + tbl_user_dtls.get('columns')[10] + ") VALUES (%s,%s,%s,%s,%s,%s)",(company,email,type,user_admin,mobile,pack_id))
 	
 	conn.commit()
 	conn.close()
@@ -118,7 +122,8 @@ def	loginuser(data):
 		conn.commit() 
 		conn.close()
 		##type = results[3]
-		return results
+		user = results
+		return user
 			
 	else:
 		return "msg_6"
@@ -127,7 +132,7 @@ def	loginuser(data):
 def listuser():
 	conn = mysql.connect()
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
-	cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + " WHERE type!='admin'")
+	cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + "," + tbl_postfreeuser_info_dtls.get('name') + " WHERE " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[9] + "=" + tbl_postfreeuser_info_dtls.get('name') + "." + tbl_postfreeuser_info_dtls.get('columns')[3] + " AND type!='admin'")
 	results = cursor.fetchall()
 	conn.close()
 	return results
@@ -189,9 +194,9 @@ def getuser(data):
 		cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + " WHERE " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[5] + " = " + str(uid) + " AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[3] + " = '" + str(type) +"'")
 	else:
 		if mode == "active":
-			cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + "," + tbl_customer_data_dtls.get('name') + " WHERE " + tbl_user_dtls.get('columns')[5] + " = " + str(uid) + " AND " + tbl_user_dtls.get('columns')[3] + " = '" + str(type) +"' AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[9] + "=" + tbl_customer_data_dtls.get('name') + "." + tbl_customer_data_dtls.get('columns')[7])
+			cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + "," + tbl_customer_data_dtls.get('name') + "," + tbl_pack_dtls.get('name') + " WHERE " + tbl_user_dtls.get('columns')[5] + " = " + str(uid) + " AND " + tbl_user_dtls.get('columns')[3] + " = '" + str(type) +"' AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[9] + "=" + tbl_customer_data_dtls.get('name') + "." + tbl_customer_data_dtls.get('columns')[7] + " AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[10] + "=" + tbl_pack_dtls.get('name') + "." + tbl_pack_dtls.get('columns')[0]) 
 		else:
-			cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + "," + tbl_postfreeuser_info_dtls.get('name') + " WHERE " + tbl_user_dtls.get('columns')[5] + " = " + str(uid) + " AND " + tbl_user_dtls.get('columns')[3] + " = '" + str(type) +"' AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[9] + "=" + tbl_postfreeuser_info_dtls.get('name') + "." + tbl_postfreeuser_info_dtls.get('columns')[3])
+			cursor.execute("SELECT * FROM " + tbl_user_dtls.get('name') + "," + tbl_postfreeuser_info_dtls.get('name') + "," + tbl_pack_dtls.get('name') + " WHERE " + tbl_user_dtls.get('columns')[5] + " = " + str(uid) + " AND " + tbl_user_dtls.get('columns')[3] + " = '" + str(type) +"' AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[9] + "=" + tbl_postfreeuser_info_dtls.get('name') + "." + tbl_postfreeuser_info_dtls.get('columns')[3] + " AND " + tbl_user_dtls.get('name') + "." + tbl_user_dtls.get('columns')[10] + "=" + tbl_pack_dtls.get('name') + "." + tbl_pack_dtls.get('columns')[0])
 
 	results = cursor.fetchone()
 	conn.close()
@@ -210,13 +215,14 @@ def updateuser(data):
 	id = data.get('id')
 	user_id = data.get('user_id')
 	type = data.get('type')
+	pack_id = data.get('pack')
 	conn = mysql.connect()
 	
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 	if type == "vendor":
 		cursor.execute("UPDATE " +  tbl_customer_data_dtls.get('name') + " SET " + tbl_customer_data_dtls.get('columns')[1] + "='" + str(city) + "', " + tbl_customer_data_dtls.get('columns')[2] + "='" + str(category) + "', " + tbl_customer_data_dtls.get('columns')[3] + "='" + str(subcategory) + "', " + tbl_customer_data_dtls.get('columns')[4] + "='" + company + "', " + tbl_customer_data_dtls.get('columns')[6] + "='" + address + "', " + tbl_customer_data_dtls.get('columns')[7] + "='" + mobile +"'," + tbl_customer_data_dtls.get('columns')[8] + "='" + phone + "' WHERE " + tbl_customer_data_dtls.get('columns')[0] + "='" + str(id) +"'")
 	
-	cursor.execute("UPDATE " +  tbl_user_dtls.get('name') + " SET " +  tbl_user_dtls.get('columns')[0] + "='" + username + "', " + tbl_user_dtls.get('columns')[2] + "='" + email + "', " + tbl_user_dtls.get('columns')[9] + "='" + mobile + "' WHERE " + tbl_user_dtls.get('columns')[5] + "='" + str(user_id) + "'")
+	cursor.execute("UPDATE " +  tbl_user_dtls.get('name') + " SET " +  tbl_user_dtls.get('columns')[0] + "='" + username + "', " + tbl_user_dtls.get('columns')[2] + "='" + email + "', " + tbl_user_dtls.get('columns')[9] + "='" + mobile + "'," + tbl_user_dtls.get('columns')[10] + "='" + pack_id + "' WHERE " + tbl_user_dtls.get('columns')[5] + "='" + str(user_id) + "'")
 	conn.commit()
 	
 	conn.close()
