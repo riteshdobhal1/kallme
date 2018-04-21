@@ -95,8 +95,8 @@ export class AppService {
     signUpUser(signUp):Observable<Response> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        
-        return this.http.post(`${globalval.rest_api_domain}/user/signup`, signUp,headers)
+        options.withCredentials = true;
+        return this.http.post(`${globalval.rest_api_domain}/user/signup`, signUp,options)
                 .map((res: Response) => res.json())
                 .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
                    
@@ -137,6 +137,15 @@ export class AppService {
         let options = new RequestOptions({ headers: headers });
         options.withCredentials = true;
         return this.http.post(`${globalval.rest_api_domain}/user/deleteuser`, deleteStatus,options)
+                .map((res: Response) => res.json());
+                  
+    }
+    deleteMultiUser(userIds):Observable<Response> {
+        
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        options.withCredentials = true;
+        return this.http.post(`${globalval.rest_api_domain}/user/deletemultiuser`, userIds,options)
                 .map((res: Response) => res.json());
                   
     }

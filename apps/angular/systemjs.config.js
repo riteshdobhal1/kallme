@@ -29,6 +29,7 @@
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
             'jquery': 'npm:jquery',
             'ng2-completer': 'npm:ng2-completer',
+	  'angular2-select': 'npm:angular2-select',
             'angular2-fontawesome': 'npm:angular2-fontawesome'
         },
         // packages tells the System loader how to load when no filename and/or no extension
@@ -54,6 +55,10 @@
             },
             'ng2-completer': {
                 main: 'ng2-completer.umd.js',
+                defaultExtension: 'js'
+            },
+	    'angular2-select': {
+                main: 'index.js',
                 defaultExtension: 'js'
             },
             'angular2-fontawesome': {

@@ -22,7 +22,7 @@
 .funkyradio input[type="radio"]:empty ~ label, .funkyradio input[type="checkbox"]:empty ~ label {
     position: relative;
     line-height: 2.0em;
-    text-indent: 2.75em;
+    text-indent: 1.5em;
     margin-top: 0.5em;
     cursor: pointer;
     -webkit-user-select: none;
@@ -673,7 +673,9 @@ span:nth-last-child(3) {
 .margin-top-46 {
     margin-top: 46px !important;
 }
-
+.margin-top-100 {
+    margin-top: 100px !important;
+}
 .height-30 {
     height: 30px !important;
 }

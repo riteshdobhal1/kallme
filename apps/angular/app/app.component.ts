@@ -1,4 +1,6 @@
 import {Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SelectModule} from 'angular2-select';
 import {NgClass} from '@angular/common';
 import {Category} from './category';
 import {PostFree} from './postfree';
@@ -52,6 +54,11 @@ export class AppComponent implements OnInit,AfterViewInit {
     private statusUser: string = "all";
     private typeUser: string = "all";
     private userIds: string = "";
+    private selectedCityId = "";
+    private smsStatus = false;
+    private neft = false;
+    private cheque = false;
+    private paytm = false;
     
     categoryItems: Array<Object>;
     subCategoryItems: Array<Object>;
@@ -90,6 +97,7 @@ export class AppComponent implements OnInit,AfterViewInit {
     suggestions: CompleterData;
     citiesData:Array<Object>;
     packData:Array<Object>;
+    userSelected:Array<String>;
     user_id: number;
     msg_1: string;
     msg_2: string;    
@@ -113,6 +121,14 @@ export class AppComponent implements OnInit,AfterViewInit {
     uid: number;
     type: string;
     admin_id:number;
+    user_ids:Object;
+    form: FormGroup;
+    options0: Array<any> = [];
+    options1: Array<any> = [];
+    options2: Array<any> = [];
+    options3: Array<any> = [];
+    options4: Array<any> = [];
+    options5: Array<any> = [];
     constructor(private appService: AppService, private completerService: CompleterService) {
         this.home = globalval.home;
         this.contact = globalval.contact;
@@ -147,8 +163,12 @@ export class AppComponent implements OnInit,AfterViewInit {
         this.deleteStatus = {};
         this.vendorAdmin = {};
         this.userData = {};
+        this.userSelected = [];
+        this.user_ids = {};
+        // let numOptions = 100;
         
-        
+
+              
     };
 
     loadContents(contentList): void {
@@ -255,6 +275,26 @@ export class AppComponent implements OnInit,AfterViewInit {
     }
 
     ngOnInit(): void {
+        
+               
+        this.form = new FormGroup({});
+        this.form.addControl('username', new FormControl());
+        this.form.addControl('city_id', new FormControl());
+        this.form.addControl('email', new FormControl());
+        this.form.addControl('mobile', new FormControl());
+        this.form.addControl('phone', new FormControl());
+        this.form.addControl('address', new FormControl());
+        this.form.addControl('pack', new FormControl());
+        this.form.addControl('company', new FormControl());
+        this.form.addControl('type', new FormControl());
+        this.form.addControl('category_id', new FormControl());
+        this.form.addControl('subcategory_id', new FormControl());
+        this.form.addControl('sms', new FormControl());
+        this.form.addControl('chequenumber', new FormControl());
+        this.form.addControl('bankname', new FormControl());
+        this.form.addControl('bankaddress', new FormControl());
+        this.form.addControl('transactionnumber', new FormControl());
+        this.form.addControl('utrnumber', new FormControl());
         this.getCategoryItems();
         this.getSuggestionItems();
         this.getCities();
@@ -274,9 +314,22 @@ export class AppComponent implements OnInit,AfterViewInit {
     }
     
     getCities():void {
-        
+        let opts = new Array();
         this.appService.getCitiesList().subscribe(response => {
+                
                 this.citiesData = response;
+                for (let i = 0; i < this.citiesData.length; i++) {
+                    
+                opts[i] = {
+                value: this.citiesData[i]['id'],
+                label: this.citiesData[i]['name']
+                };
+               }
+
+               this.options0 = opts.slice(0);
+               this.options1 = opts.slice(0);
+               
+                               
           },
             err => {
                 console.log(err);
@@ -299,29 +352,56 @@ export class AppComponent implements OnInit,AfterViewInit {
     }    
         
     getCategoryItems(): void {
+        let opts = new Array();
         this.appService.getCategory().subscribe(categoryItems => {
+                    
                 this.categoryItems = categoryItems;
-                console.log(this.categoryItems);
+                for (let i = 0; i < this.categoryItems.length; i++) {
+                    
+                opts[i] = {
+                value: this.categoryItems[i]['id'],
+                label: this.categoryItems[i]['name']
+                };
+               }
+
+               this.options2 = opts.slice(0);
+               this.options3 = opts.slice(0);
+                
+                
+                //console.log(this.categoryItems);
             },
             err => {
                 console.log(err);
                 return false;
             });
     }
-    loadSubcategory(category_id):void {
-         this.post_free_data.subcategory_id = "undefined";
-         
+    loadSubcategory(categoryObj):void {
+         let opts = new Array();
+         var category_id = categoryObj;
+         if(typeof(categoryObj) === "object"){
+             
+             category_id = categoryObj.value;
+         }              
          this.categoryItems.forEach(category => {
              var cat = category["id"];
              if(cat == category_id){
                 this.subCategoryItems = category["sub_categories"];
-                this.subcategoryloaded=true;
+                for (let i = 0; i < this.subCategoryItems.length; i++) {
+                    
+                opts[i] = {
+                value: this.subCategoryItems[i]['id'],
+                label: this.subCategoryItems[i]['name']
+                };
+               }
+
+               this.options4 = opts.slice(0);
+               this.options5 = opts.slice(0);
+                
+                
+               this.subcategoryloaded=true;
             }
         });
-        
-         
-        
-        
+   
     }
     
     addPostFree(): void {
@@ -331,6 +411,7 @@ export class AppComponent implements OnInit,AfterViewInit {
         this.spinner = true;
         this.appService.addPostFreeData(this.post_free_data).subscribe(response => {
                             
+                            this.ngOnInit();
                             if(response.toString() === "msg_5"){
                                 this.postFreeErrorMsg = true;
                                 this.error_msg = this.msg_5;
@@ -361,17 +442,37 @@ export class AppComponent implements OnInit,AfterViewInit {
             this.adduser['type'] = "vendor";
             
         }
+        if(this.smsStatus == true){
+            
+            this.adduser['sms'] = "1";
+        }else{
+            this.adduser['sms'] = "0";
+        }
+        
+        if(this.neft == true){
+            this.adduser['payment_mode'] = "NEFT";
+        }else if(this.paytm == true){
+            this.adduser['payment_mode'] = "PAYTM";
+        }else if(this.cheque == true){
+            this.adduser['payment_mode'] = "CHEQUE";
+        }else{
+            this.adduser['payment_mode'] = "FREE";
+        }
+        
+        
         console.log(this.adduser);
         this.appService.addUserData(this.adduser).subscribe(response => {
                             this.signupUserSuccessMsg = true;
+                            this.ngOnInit();
                             if(response.toString() === "msg_6"){
                                 
                                 this.success_msg = this.msg_6;
-                                                               
+                                this.smsStatus = false;                               
                                 this.showForm = false; 
                                 
                             }else if(response.toString() === "msg_5"){
                                 this.success_msg = this.msg_5;
+                                
                                 
                             }else{
                                 
@@ -456,6 +557,7 @@ export class AppComponent implements OnInit,AfterViewInit {
                     this.loginFailureMsg = true;
                     this.showManageTab = false;
                     this.error_msg = this.msg_4;
+                    
                     return false;
                 });
      }  
@@ -498,7 +600,9 @@ export class AppComponent implements OnInit,AfterViewInit {
         this.appService.getVendor(this.vendorAdmin).subscribe(response => {
                 
                 //console.log(vendorsList);
+                
                 this.vendorsList = response;
+                this.usersList = this.vendorsList;
                 this.spinner = false;
                 this.showUsersList = true;
                 // console.log(this.vendorsList);
@@ -533,6 +637,8 @@ export class AppComponent implements OnInit,AfterViewInit {
         
     }
     editUser(uid,type,mode): void{
+        
+        //this.ngOnInit();
         this.spinner = true;
         console.log(uid,type);
         this.userData['user_id'] = uid;
@@ -540,8 +646,15 @@ export class AppComponent implements OnInit,AfterViewInit {
         this.userData['mode'] = mode; 
         
         this.appService.getUserDetails(this.userData).subscribe(userDetails => {
-            
+                         
                 this.userDetails = userDetails;
+                if(this.userDetails['sms'] == 0){
+            
+                    this.smsStatus = false;
+                }else{
+                    this.smsStatus = true;
+                }
+                
                 this.spinner = false;
                 this.userInfo = false;
                 if(mode !== "active"){
@@ -551,6 +664,8 @@ export class AppComponent implements OnInit,AfterViewInit {
                 
                 this.showUsersList = false;
                 this.editUserMsg = false;
+                //this.selectedCityId = [this.userDetails['city_id']];                          
+                
                 console.log(this.userDetails)
                 
                 this.loadSubcategory(this.userDetails['category_id']);
@@ -570,12 +685,20 @@ export class AppComponent implements OnInit,AfterViewInit {
     editUserDetails(): void{
         this.spinner = true;
         this.userDetails['pack'] = this.packSelected;
-        console.log(this.userDetails);       
+        console.log(this.userDetails);
+        
+        if(this.smsStatus == true){
+            
+            this.userDetails['sms'] = "1";
+        }else{
+            this.userDetails['sms'] = "0";
+        }       
         this.appService.updateUserDetails(this.userDetails).subscribe(user_data => {
                             
                 this.spinner = false;
                 this.editUserMsg = true;
                 this.userInfo = false;
+                this.smsStatus = false;
                 
                 console.log(user_data);
             },
@@ -637,17 +760,43 @@ export class AppComponent implements OnInit,AfterViewInit {
                 });
         
     }
-    deleteMultipleUser():void {
-        if(this.userIds == ""){
-            
+    deleteMultipleUser(type):void {
+        
+        
+        if(this.userSelected.length == 0){
+                        
             alert("Please select the checkbox to delete multiple users");
             return;
+        }else{
+            
+            this.spinner = true;
+            
+            this.user_ids['user_ids'] = this.userSelected.join(",");
+            this.appService.deleteMultiUser(this.user_ids).subscribe(response => {
+                            
+                            if(type == "admin"){
+                                
+                                this.allUsers();
+                                
+                            }else{
+                                
+                                this.allVendors();
+                                                                
+                            }
+                            this.spinner = false;
+                            this.userSelected = [];            
+                            },
+                err => {
+                    
+                    return false;
+                });
+        
         }
         
     }
     changeUsersStatus(status):void{
         
-        if(this.userIds == ""){
+        if(this.userSelected.length == 0){
             
             alert("Please select the checkbox to " + status + " multiple users");
             return;
@@ -657,7 +806,25 @@ export class AppComponent implements OnInit,AfterViewInit {
     
     selectDeselectUser(user_id):void{
         
-        console.log(user_id);
+        if(this.userSelected.length == 0){
+            
+            this.userSelected.push(user_id);
+        }
+        else if(this.userSelected.length > 0){
+            
+            if(this.userSelected.find(x => x === user_id)){
+                
+                var indexUserId = this.userSelected.indexOf(user_id); 
+                this.userSelected.splice(indexUserId, 1);
+                
+            }else{
+                
+                this.userSelected.push(user_id);
+            }
+            
+            
+        }
+               
     }
     
     filterByStatus(userStatus): void {

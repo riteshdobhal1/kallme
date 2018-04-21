@@ -32,7 +32,7 @@ def add():
 def delete():
         deleteuser()
         return "User deleted"
-
+       
 @user.route('/update', methods=['POST'])
 def update():
 	updateuser()
@@ -115,6 +115,16 @@ def deleteuser():
 	if is_session:
 		json = request.json
 		response = deleteselecteduser(json)
+		return jsonify(response)
+	else:
+		return "invalid_session"
+	
+@user.route('/deletemultiuser', methods=['POST'])
+def deletemultiuser():
+	is_session = check_session()
+	if is_session:
+		json = request.json
+		response = deletemultipleuser(json)
 		return jsonify(response)
 	else:
 		return "invalid_session"

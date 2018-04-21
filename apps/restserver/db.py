@@ -9,7 +9,7 @@ mysql.init_app(app)
 # Description of user table
 tbl_user_dtls = {
   'name': 'user',
-  'columns': ['username', 'password', 'email', 'type', 'user_admin','user_id','active','firstname','lastname','mobile','pack_id']
+  'columns': ['username', 'password', 'email', 'type', 'user_admin','user_id','active','name','lastname','mobile','pack_id','sms','payment_mode','chequenumber','bankname','bankaddress','transactionnumber','utrnumber']
 }
 
 # Description of contactus table

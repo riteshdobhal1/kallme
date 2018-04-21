@@ -19,7 +19,16 @@
                             </button>
                         </span> 
                 </li>&nbsp;
-        </ul>	    
+        </ul>
+        <ul class="navbar-nav ml-auto" *ngIf="!showHome">
+        	<li class="nav-item" >        		
+        				<span class="navbar-btn">
+                            <button type="button" class="btn btn-login" (click)="goToHome()">
+                                Back
+                            </button>
+                        </span> 
+                </li>&nbsp;
+        </ul>      	    
        <div class="container">
             <div class="input-group" >
                 <ng2-completer inputClass="form-control width-100-per" placeholder="Search" class="width-125-per" [(ngModel)]="search" [datasource]="suggestions" [minSearchLength]="1" (keyup.enter)="searchCategories()" (selected)="searchCategories()"></ng2-completer>
@@ -32,10 +41,10 @@
         </div>  
         <div class="collapse navbar-collapse" id="navbarExample">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active" *ngIf="!showHome">
-
-                    <a class="nav-link" href="#home" (click)="goToHome()">{{home}}<span class="sr-only">(current)</span></a>
-                </li>&nbsp;
+                <!-- <li class="nav-item active" *ngIf="!showHome">
+					
+                    <a class="nav-link" href="#home" (click)="goToHome()">Back<span class="sr-only">(current)</span></a>
+                </li>&nbsp; -->
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#services">{{services}}</a>
                 </li> -->
@@ -55,7 +64,7 @@
                 </li>&nbsp; -->                                
                 <li class="nav-item" *ngIf="!showManageTab && showHome">
                         <span class="navbar-btn">
-                            <button type="button" class="btn btn-login" data-toggle="modal" (click)="isAgentVendorForm=false;isagent=false;isAgentVendor=false;loginActive=true;signupUserSuccessMsg = false;signupUserFailureMsg = false;showForm = true;signup={};" data-target="#exampleModal">
+                            <button type="button" class="btn btn-login" data-toggle="modal" (click)="isAgentVendorForm=false;isagent=false;isadmin=false;isAgentVendor=false;loginActive=true;signupUserSuccessMsg = false;signupUserFailureMsg = false;showForm = true;signup={};" data-target="#exampleModal">
                                 {{login_signup}}
                             </button>
                         </span>
@@ -64,7 +73,7 @@
                                 
                 <li class="nav-item" *ngIf="showManageTab">
                         <span class="navbar-btn" *ngIf="isadmin">
-                            <button type="button" class="btn btn-login" data-toggle="modal" (click)="isAgentVendorForm=false;isAgentVendor=true;loginActive=false;signupUserSuccessMsg = false;signupUserFailureMsg = false;showForm = true;signup={};addvendor=false;adduser={}" data-target="#exampleModal">
+                            <button type="button" class="btn btn-login" data-toggle="modal" (click)="isAgentVendorForm=false;isAgentVendor=true;loginActive=false;signupUserSuccessMsg = false;signupUserFailureMsg = false;showForm = true;signup={};addvendor=false;adduser={};subcategoryloaded=false" data-target="#exampleModal">
                                 + Agent/Vendor
                             </button>
                         </span>
@@ -89,12 +98,12 @@
                 </li>&nbsp;
                 <li class="nav-item" *ngIf="showManageTab && (isagent || isadmin)" (click)="myinfo=true">
                         <button type="button" class="btn btn-login" data-toggle="modal" (click) = "editUser(user_id,type,'active')" data-target="#listUserModal">
-                                {{myprofile}}
+                               Logged in as <strong>{{login_user}}</strong>
                          </button>
                 </li>
                 <li class="nav-item" *ngIf="showManageTab && !(isagent || isadmin)" (click)="myinfo=true">
                         <button type="button" class="btn btn-login" data-toggle="modal" (click) = "editUser(user_id,type,'active')" data-target="#listVendorModal">
-                                {{myprofile}}
+                               Logged in as <strong>{{login_user}}</strong> 
                          </button>
                 </li>&nbsp;
                                 
@@ -102,8 +111,7 @@
                         <span class="navbar-btn">
                             <button type="button" class="btn btn-login" data-toggle="modal" (click)="logoutUser()">
                                 Logout
-                            </button>
-                            
+                            </button>                          
                             
                         </span>
                 </li>&nbsp;
@@ -115,7 +123,7 @@
 
 <div *ngIf="!showHome">
     <section>
-        <div class="container-fluid margin-top-46" id="contents">
+        <div class="container-fluid margin-top-100" id="contents">
             <div class="row">
                 <div class="col-sm-12 col-md-3 col-lg-2">
                     Filters:
@@ -244,7 +252,7 @@
     <section id="categorySection" style="background-color: #f6f6f6">
     	
      <div class="text-center">  
-            <button [disabled]="!getSubCategories().length" *ngIf="!!categoryItems && !!categoryItems.length" type="button" class="btn btn-primary search-cat-button" (click)="searchSubCategories()">Select Category(s) & Click here</button>
+            <button [hidden]="!getSubCategories().length" *ngIf="!!categoryItems && !!categoryItems.length" type="button" class="btn btn-primary search-cat-button" style="position:fixed;z-index:3" (click)="searchSubCategories()"><i class="fa fa-search" aria-hidden="true"></i></button>
      </div>	
         <div class="container-fluid" id="categories" >
             <div class="row"  >
@@ -276,9 +284,9 @@
                 
             </div>
         </div> 
-        <div class="text-center">  
+        <!-- <div class="text-center">  
             <button [disabled]="!getSubCategories().length" *ngIf="!!categoryItems && !!categoryItems.length" type="button" class="btn btn-primary search-cat-button" (click)="searchSubCategories()">Select Category(s) & Click here</button>
-        </div>
+        </div> -->
     </section>
 
     <hr/>
@@ -385,6 +393,7 @@
                         <b *ngIf="isadmin">Add Agent/Vendor</b>
                         <b *ngIf="isagent">Add Vendor </b>
                     </li>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </ul> 
                 <ul class="nav nav-tabs nav-fill" id="myTab" *ngIf="!showManageTab && !spinner">
                     <li class="nav-item">
@@ -422,8 +431,13 @@
                 		<div align="center" class="alert alert-failure" *ngIf="signupUserFailureMsg" >
                       		{{error_msg}}
                 		</div>
+                		
                     	<form class="row form-group" (ngSubmit)="signUpUser()" #signUp="ngForm" *ngIf="showForm && !(isagent || isadmin)">
-                            <div class="col-md-12">
+                            <div class="col-md-12 ">         
+                            	<label for="name" hidden="true">Name</label>                       
+                            	<input class="form-control" type="text" id="name" maxlength="100" [(ngModel)]="signup.name" name="name" [(ngModel)]= "signup.name" placeholder="Company/Name" required="true"/>
+                        	</div>
+                            <div class="col-md-12 row-space">
                                 <label for="username" hidden="true">Username</label>
                                 <input class="form-control" type="text" id="username" name="username" [(ngModel)]="signup.username" placeholder="Username" required="true" />
                             </div>
@@ -446,8 +460,8 @@
                             </div>
                             <div class="col-md-12 row-space" align="center" *ngIf="!isagent">
                             	<!-- <input type="hidden" id="user_id" name="user_id" [(ngModel)]="signup.user_id" value="{{user_id}}"/> -->
-                            	<input type="radio" id="type" name="type" [(ngModel)]="signup.type" value="agent" required="true" /> Agent
-                            	<input type="radio" id="type" name="type" [(ngModel)]="signup.type" value="vendor" required="true" /> Vendor
+                            	<input type="radio"  name="type" [(ngModel)]="signup.type" value="agent" required="true" /> Agent
+                            	<input type="radio"  name="type" [(ngModel)]="signup.type" value="vendor" required="true" /> Vendor
                             </div>
                             <div class="col-md-12 row-space" align="center" *ngIf="isagent">
                             	<input type="hidden" id="type" name="type" [(ngModel)]="signup.type" value="vendor"/>
@@ -457,7 +471,121 @@
                             	<button type="submit" [disabled]="!signUp.form.valid" class="btn btn-login-sec">Submit</button>
                             </div>
                     	</form>
-                    	<form class="row form-group"  (ngSubmit)="addUser()" #addUserFrm="ngForm" *ngIf="showForm && (isagent || isadmin)">
+                    	<form [formGroup]="form" class="row form-group" (ngSubmit)="addUser()" #addUserFrm="ngForm" *ngIf="showForm && (isagent || isadmin)">
+                    	<div style="width:100%;height:250px;overflow-y:auto">
+                    		<div class="col-md-12 row-space">	
+                    			<input class="form-control" type="email" placeholder="Email" id="email" [(ngModel)]= "adduser.email" formControlName="email"  required="false"/>	
+                    		</div> 
+                    		<div class="col-md-12 row-space">
+                               	<input class="form-control" type="mobile" placeholder="Mobile" id="mobile" [(ngModel)]= "adduser.mobile" formControlName="mobile" required="true"/>
+                        	</div>
+                        	<div class="col-md-12 row-space">                                
+                            	<input class="form-control" type="text" id="company" maxlength="100" formControlName="company" [(ngModel)]= "adduser.company" placeholder="Company/Name" required="true"/>
+                        	</div>
+                        	<div class="col-md-12 row-space" align="center" *ngIf="isadmin">
+	                        	<input type="radio" id="type" formControlName="type"  value="agent" [(ngModel)]= "adduser.type" required="true" (click)="addVendor(0)"/> Agent
+	                            <input type="radio" id="type" formControlName="type" value="vendor" [(ngModel)]= "adduser.type" required="true" (click)="addVendor(1)"/> Vendor 
+                        	</div>
+                       		<div class="col-md-12 row-space" *ngIf="addvendor"> 	
+                    			
+                    				<ng-select [options]="options0" placeholder="Select City" formControlName="city_id" [(ngModel)]= "adduser.city_id" [allowClear]="true" required="true">
+                        			</ng-select>  
+                        		
+                        	</div>	    
+                        	<div class="col-md-12 row-space" *ngIf="addvendor">                                
+                                <input class="form-control" type="text" id="phone" maxlength="50"  [(ngModel)]= "adduser.phone" formControlName="phone" placeholder="Landline" required="false" />
+                        	</div>
+                        	<div class="col-md-12 row-space" *ngIf="addvendor">                                
+                                <input class="form-control" type="text" id="address" maxlength="200" formControlName="address" [(ngModel)]= "adduser.address" placeholder="Location/Address" required="true" />
+                        	</div>
+                        	<div class="col-md-12 row-space" *ngIf="addvendor">
+                        		
+                        		<ng-select [options]="options2" placeholder="Select Category" (selected)="loadSubcategory($event)" formControlName="category_id" [(ngModel)]= "adduser.category_id" [allowClear]="true" required="true">
+                        		</ng-select>
+                        		                                
+                                <!-- <select class="form-control" #t (change)="loadSubcategory(t.value)" id="category_id"  [(ngModel)]= "adduser.category_id" formControlName="category_id" placeholder="Category" required="true">
+                                	<option [value]="undefined" selected disabled >Select Category</option>
+                                	<option *ngFor="let cat of categoryItems" [value]="cat.id">{{cat.name}}</option>
+                               </select> -->
+                        	</div>
+                        	<div class="col-md-12 row-space" *ngIf="subcategoryloaded && addvendor">
+                                
+                                <ng-select [options]="options4" placeholder="Select Sub Category" formControlName="subcategory_id" [(ngModel)]= "adduser.subcategory_id" [allowClear]="true" required="true">
+                        		</ng-select>
+                                <!-- <select class="form-control" id="subcategory_id"  formControlName="subcategory_id" [(ngModel)]= "adduser.subcategory_id" placeholder="Sub Category" required="true" >
+                                	<option [value]="undefined" selected disabled >Select Sub-Category</option>
+                                	<option *ngFor="let subcategory of subCategoryItems" [value]="subcategory.id">{{subcategory.name}}</option>
+                               </select> -->
+                        	</div>
+                        	<div *ngIf="addvendor">
+                           		<div class="funkyradio" > 
+                          		 	<div *ngFor="let pack_dtl of packData">
+                           				<div *ngIf = "pack_dtl.pack_id == 1" class="funkyradio-primary">	
+                            				<input type="radio" formControlName="pack"  id="1" [(ngModel)]= "adduser.pack" value="1" />
+                            				<label for="1" style="background-color:#000 ;color:white"><i class="fa fa-inr"></i>&nbsp; 0 (15 Days Free Ad)</label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 2" class="funkyradio-default">	
+                            				<input type="radio" formControlName="pack" id="2" [(ngModel)]= "adduser.pack" value="2" />
+                            				<label for="2" style="background-color:#ccc ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 3" class="funkyradio-info">
+                            				<input type="radio" formControlName="pack" id="3" [(ngModel)]= "adduser.pack" value="3" />
+                            				<label for="3" style="background-color:#5bc0de ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 4" class="funkyradio-warning">
+                            				<input type="radio" formControlName="pack" id="4" [(ngModel)]= "adduser.pack" value="4" />
+                            				<label for="4" style="background-color:#f0ad4e ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 5" class="funkyradio-danger">
+                            				<input type="radio" formControlName="pack" id="5" [(ngModel)]= "adduser.pack" value="5" />
+                            				<label for="5" style="background-color:#d9534f ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 6" class="funkyradio-success">
+                            				<input type="radio" formControlName="pack" id="6" [(ngModel)]= "adduser.pack" value="6" />
+                            				<label for="6" style="background-color:#5cb85c ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>               		
+                            		</div>                        		
+                   				</div>
+                   				
+                         	 </div>
+                         	 
+                         	 
+                         	 <div class="col-md-12 row-space" align="center" *ngIf="addvendor">
+                         	 	<b>SMS&nbsp;<i class="fa fa-inr"></i>&nbsp;100&nbsp;</b><i class="fa fa-mobile user-inactive" aria-hidden="true" title="Enable SMS pack" *ngIf="!smsStatus" (click)= "smsStatus=true;adduser.sms=1">&nbsp;</i>
+                         	 	<i class="fa fa-mobile user-active" aria-hidden="true" title="Disable SMS pack"  *ngIf="smsStatus" (click)= "smsStatus=false;adduser.sms=0">&nbsp;</i><i class="fa fa-check user-active" (click)= "smsStatus=false;adduser.sms=0" *ngIf="smsStatus" aria-hidden="true"></i>
+                         	 	<!-- <input type="radio" id="sms" formControlName="sms"  value="1" required="false" />Yes&nbsp;&nbsp; -->
+                            	<input type="hidden" id="sms" formControlName="sms" [(ngModel)]= "adduser.sms"/>
+                            	                           	
+                            	<!-- <h6>SMS PACK</h6>&nbsp;&nbsp;
+                            	<input type="radio" id="sms" formControlName="sms"  value="1" required="false" />Yes -->
+                            	<!-- <i class="fa fa-envelope" aria-hidden="true" title="SMS pack"></i>
+                            	<input type="radio" id="sms" formControlName="sms"  value="0" required="false" checked/>No -->
+                            </div>
+                            <div class="col-md-12 row-space" align="center" *ngIf="addvendor">
+                            	<i class="user-active" aria-hidden="true" (click) = "neft=true;cheque=false;paytm=false"><img src="../img/neftmin.png" alt="Pay by Neft"/></i>&nbsp;<i class="fa fa-check user-active" *ngIf="neft"></i>&nbsp;&nbsp;&nbsp;<i class="user-active" (click) = "neft=false;cheque=false;paytm=true" aria-hidden="true"><img src="../img/paytmmin.png" alt="Pay by Paytm"/></i>&nbsp;<i class="fa fa-check user-active" *ngIf="paytm"></i>&nbsp;&nbsp;&nbsp;<i class="user-active" (click) = "neft=false;cheque=true;paytm=false" aria-hidden="true"><img src="../img/chequemin.png" alt="Pay by cheque"/></i>&nbsp;<i class="fa fa-check user-active" *ngIf="cheque"></i>   
+                            </div>
+                            <div class="col-md-12 row-space" align="center" *ngIf="addvendor && cheque" >
+                            	<input class="form-control"  type="text" id="chequenumber" maxlength="100" formControlName="chequenumber" [(ngModel)]= "adduser.chequenumber" placeholder="Cheque No." required="false"/>
+                            </div>	
+                            <div class="col-md-12 row-space" align="center" *ngIf="addvendor && cheque" >
+                            	<input class="form-control"  type="text" id="bankname" maxlength="100" formControlName="bankname" [(ngModel)]= "adduser.bankname" placeholder="Bank Name" required="false"/>
+                            </div>
+                            <div class="col-md-12 row-space" align="center" *ngIf="addvendor && cheque" >	
+                            	<input class="form-control"  type="text" id="bankaddress" maxlength="100" formControlName="bankaddress" [(ngModel)]= "adduser.bankaddress" placeholder="Bank Address" required="false"/>
+                            </div>
+                            <div class="col-md-12 row-space" align="center" *ngIf="addvendor && neft" >	
+                            	<input class="form-control" type="text" id="utrnumber" maxlength="100" formControlName="utrnumber" [(ngModel)]= "adduser.utrnumber" placeholder="UTR No." required="false"/>
+                            </div>
+                            <div class="col-md-12 row-space" align="center" *ngIf="addvendor && paytm" >	
+                            	<input class="form-control" type="text" id="transactionnumber" maxlength="100" formControlName="transactionnumber" [(ngModel)]= "adduser.transactionnumber" placeholder="Transaction No." required="false"/>
+                            </div>                                                              
+                        	</div> 
+                            <div class="col-md-12 row-space">
+                            	<button type="submit" [disabled]="!addUserFrm.form.valid" class="btn btn-login-sec">Submit</button>
+                            </div>	
+                        </form>    	
+                            	
+                    	<!----- <form [formGroup]="form" class="row form-group"  (ngSubmit)="addUser()" #addUserFrm="ngForm" *ngIf="showForm && (isagent || isadmin)">
                             <div style="width:100%;height:250px;overflow-y:auto">
                             <div class="col-md-12 row-space">
                             	
@@ -470,7 +598,7 @@
                             <div class="col-md-12 row-space">                                
                                 <input class="form-control" type="text" id="company" maxlength="100" [(ngModel)]="adduser.company" name="company" placeholder="Company/Name" required="true"/>
                             </div>
-                            <div class="col-md-12 row-space" align="center" *ngIf="isadmin">
+                            <div class="col-md-12 row-space" align="center" *ngIf="isadmin"> ------>
                             	<!-- <input type="hidden" id="user_id" name="user_id" [(ngModel)]="signup.user_id" value="{{user_id}}"/> -->
                             	
                             	
@@ -497,16 +625,21 @@
         							</div>
         						</div> -->
                             	
-                            	<input type="radio" id="type" name="type" [(ngModel)]="adduser.type" value="agent" required="true" (click)="addVendor(0)"/> Agent
+                            	<!-----<input type="radio" id="type" name="type" [(ngModel)]="adduser.type" value="agent" required="true" (click)="addVendor(0)"/> Agent
                             	<input type="radio" id="type" name="type" [(ngModel)]="adduser.type" value="vendor" required="true" (click)="addVendor(1)"/> Vendor 
-                            </div>
+                            </div> ----->
                             <!-- <div class="col-md-12 row-space" align="center" *ngIf="isagent">
                             	<input type="hidden" id="type" name="type" value ="{{adduser.type}}"/>
                             	                            	
                             </div> --> 
                             
-                            <div class="col-md-12 row-space" *ngIf="addvendor">                            
-                                <select class="form-control" id="city_id" [(ngModel)]="adduser.city_id" name="city_id" placeholder="City" required="true">
+                            <!----- <div class="col-md-12 row-space" *ngIf="addvendor"> ------->
+                            	
+                            	<!-- <ng-select [options]="options0" placeholder="Select City" formControlName="selectSingle" [allowClear]="true">
+                            	
+                            	
+                            	</ng-select>  -->                      
+                                <!----- <select class="form-control" id="city_id" [(ngModel)]="adduser.city_id" name="city_id" placeholder="City" required="true">
                                 	                       	
                                 		<option [value]="undefined" selected disabled >Select City</option>
                                 		<option *ngFor="let city of citiesData" [value]="city.id" >{{city.name}}</option>
@@ -579,8 +712,8 @@
                                                      	
                             <div class="col-md-12 row-space">
                             	<button type="submit" [disabled]="!addUserFrm.form.valid" class="btn btn-login-sec">Submit</button>
-                            </div>
-                    	</form>
+                            </div> 
+                    	</form> -------->
                 </div>		
             </div>
             <!-- <div style="height:50px" align="center" *ngIf="spinner">
@@ -599,11 +732,15 @@
             <div class="modal-content">
             	
                 <ul class="nav nav-tabs nav-fill" id="myTab">
+                	<i title="Show Post free form" *ngIf="postFreeMsg" data-dismiss="modal" class="user-active fa fa-backward" aria-hidden="true" (click) = "postFreeMsg=false;postFreeForm=true;post_free_data={};ngOnInit()"></i>	
                     <li class="nav-item">
                         <b>Post Your business for Free</b>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </li>
                 </ul> 
                 <div align="center" class="alert alert-success" *ngIf="postFreeMsg">
+                
+                	
                       Your request has been sent successfully.<br><strong>Our support team will contact you soon.</strong>
                 </div>
                 
@@ -616,57 +753,61 @@
     			</div>
                 <div class="tab-content" >
                     <!-- <div class="tab-pane" [ngClass]="{'active': loginActive}" role="tabpanel"> -->
-                        <form (ngSubmit)="addPostFree()" class="row form-group" #postFree="ngForm" *ngIf="postFreeForm">
+                        <form [formGroup]="form" (ngSubmit)="addPostFree()" class="row form-group" #postFree="ngForm" *ngIf="!postFreeMsg">
                         	<div style="width:100%;height:300px;overflow-y:auto">
                             <div class="col-md-12">
                                 <label for="company" hidden="true">Company/Name</label>
-                                <input class="form-control" type="text" id="company" maxlength="100" [(ngModel)]="post_free_data.company" name="company" placeholder="Company/Name" required="true"/>
+                                <input class="form-control" type="text" id="company" maxlength="100" [(ngModel)]="post_free_data.company" formControlName="company" placeholder="Company/Name" required="true"/>
                             </div>
                                         
                             <!-- <div class="col-md-12 row-space">
                                 <label for="name" hidden="true">Name</label>
                                 <input class="form-control" type="text" id="name" maxlength="50" [(ngModel)]="post_free_data.name" name="name" placeholder="Name" required="true" />
                             </div> -->
-                            <div class="col-md-12 row-space">
+                            <div class="col-md-12 row-space form-group">
+                            	
+                            	
+                            	
                                 <label for="city" hidden="true">City</label>
                                 
-                                <select class="form-control" id="city_id" [(ngModel)]="post_free_data.city_id" name="city_id" placeholder="City" required="true">
-                                	                       	
-                                		<option [value]="undefined" selected disabled >Select City</option>
-                                		<option *ngFor="let city of citiesData" [value]="city.id" >{{city.name}}</option>
-                                	
-                                </select>
+                                <ng-select [options]="options0" placeholder="Select City" formControlName="city_id" [(ngModel)]="post_free_data.city_id" [allowClear]="true" required="true">
+                        		</ng-select>
                                                                
                              </div>
                             <div class="col-md-12 row-space">
                                 <label for="email" hidden="true">Email</label>
-                                <input class="form-control" type="text" id="email" maxlength="50" [(ngModel)]="post_free_data.email" name="email" placeholder="Email" required="false" />
+                                <input class="form-control" type="text" id="email" maxlength="50" [(ngModel)]="post_free_data.email" formControlName="email" placeholder="Email" required="false" />
                             </div>
                             <div class="col-md-12 row-space">
                                 <label for="mobile" hidden="true">Mobile</label>
-                                <input class="form-control" type="text" focus=true id="mobile" maxlength="50" [(ngModel)]="post_free_data.mobile" name="mobile" placeholder="Mobile" required="true" />
+                                <input class="form-control" type="text" id="mobile" maxlength="50" [(ngModel)]="post_free_data.mobile" formControlName="mobile" placeholder="Mobile" required="true" />
                             </div>
                             <div class="col-md-12 row-space">
                                 <label for="phone" hidden="true">Landline</label>
-                                <input class="form-control" type="text" id="phone" maxlength="50" [(ngModel)]="post_free_data.phone" name="phone" placeholder="Landline" required="false" />
+                                <input class="form-control" type="text" id="phone" maxlength="50" [(ngModel)]="post_free_data.phone" formControlName="phone" placeholder="Landline" required="false" />
                             </div>
                             <div class="col-md-12 row-space">
                                 <label for="address" hidden="true">Location/Address</label>
-                                <input class="form-control" type="text" id="address" maxlength="200" [(ngModel)]="post_free_data.address" name="address" placeholder="Location/Address" required="true" />
+                                <input class="form-control" type="text" id="address" maxlength="200" [(ngModel)]="post_free_data.address" formControlName="address" placeholder="Location/Address" required ="false" />
                             </div>
                             <div class="col-md-12 row-space">
                                 <label for="Category" hidden="false">Category</label>
-                                <select class="form-control" #t (change)="loadSubcategory(t.value)" id="category_id" [(ngModel)]="post_free_data.category_id" name="category_id" placeholder="Category" required="true">
+                                <!-- <select class="form-control" #t (change)="loadSubcategory(t.value)" id="category_id" [(ngModel)]="post_free_data.category_id" name="category_id" placeholder="Category" required="true">
                                 	<option [value]="undefined" selected disabled >Select Category</option>
                                 	<option *ngFor="let cat of categoryItems" [value]="cat.id">{{cat.name}}</option>
-                               </select>
+                               </select> -->
+                               <ng-select [options]="options2" placeholder="Select Category" (selected)="loadSubcategory($event)" formControlName="category_id" [(ngModel)]= "post_free_data.category_id" [allowClear]="true" required="true">
+                        		</ng-select>
                             </div>
                             <div class="col-md-12 row-space" *ngIf="subcategoryloaded">
                                 <label for="Sub Category" hidden="true">Sub Category</label>
-                                <select class="form-control" id="subcategory_id" [(ngModel)]="post_free_data.subcategory_id" name="subcategory_id" placeholder="Sub Category" required="true" >
+                                
+                                <ng-select [options]="options4" placeholder="Select Sub Category" formControlName="subcategory_id" [(ngModel)]= "post_free_data.subcategory_id" [allowClear]="true" required="true">
+                        		</ng-select>
+                                <!-- <select class="form-control" id="subcategory_id" [(ngModel)]="post_free_data.subcategory_id" name="subcategory_id" placeholder="Sub Category" required="true" >
                                 	<option [value]="undefined" selected disabled >Select Sub-Category</option>
                                 	<option *ngFor="let subcategory of subCategoryItems" [value]="subcategory.id">{{subcategory.name}}</option>
-                               </select>
+                               </select> -->
                             </div>      
                             </div>            
                             <div class="col-md-12 row-space">
@@ -682,17 +823,25 @@
 <div class="modal fade" id="listUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
             <div class="modal-content" >
+            	
             	<div class="container" *ngIf="!spinner && showUsersList">
+            		<div class="modal-header">
+  								<h6 class="modal-title" style="text-align:center"  id="myModalLabel">Total Users : {{usersList.length}}</h6>
+  								<i title="Delete Multiple" (click) = "deleteMultipleUser('admin')" class="user-inactive fa fa-trash" aria-hidden="true"></i><i (click) = "changeUsersStatus('deactivate')" title="De-activate Multiple" class="user-active fa fa-user" aria-hidden="true"></i><i (click) = "changeUsersStatus('activate')" title="Activate Multiple" class="user-inactive fa fa-user-times" aria-hidden="true"></i>
+      			  				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>     
+							</div>
   					<table class="table table-fixed table-hover">
   						<thead>
+  							
+  							
 			    			<!--- <tr class="table-header">
 			    					<th colspan=4 style="text-align:center">Manage Users</th>
 			    			</tr> --->
-							<tr >
-			    				<td colspan=4 style="text-align:center">Total Users : {{usersList.length}}</td>
+							<!---- <tr > --->
+			    				<!-- <td colspan=4 style="text-align:center"></td> -->
 			    					    				
-			    				<td><i title="Delete Multiple" (click) = "deleteMultipleUser()" class="user-inactive fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;<i (click) = "changeUsersStatus('deactivate')" title="De-activate Multiple" class="user-active fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><i (click) = "changeUsersStatus('activate')" title="Activate Multiple" class="user-inactive fa fa-user-times" aria-hidden="true"></i></td>
-			    			</tr>
+			    				<!--- <td colspan=5 style="text-align:center"><i title="Delete Multiple" (click) = "deleteMultipleUser('admin')" class="user-inactive fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;<i (click) = "changeUsersStatus('deactivate')" title="De-activate Multiple" class="user-active fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><i (click) = "changeUsersStatus('activate')" title="Activate Multiple" class="user-inactive fa fa-user-times" aria-hidden="true"></i></td>
+			    			</tr>  --->
 
 			    			<tr >
 			    				<td colspan=5 style="text-align:center"><div>Users:<select (change) = "filterByUser($event.target.value)" class="form-control" style="display:inline-block;width:30%"><option value="all">All</option><option value="agent">Agent</option><option value="vendor">Vendor</option></select>
@@ -703,6 +852,7 @@
 			    					<th style="text-align:left">Name</th>
 			    					<th style="text-align:left">Address</th>
 			    					<th style="text-align:left">Type</th>
+			    					<!-- <th style="text-align:left">SMS</th> -->
 			    					<th style="text-align:left">Manage</th>
 			    			</tr>
     					</thead>
@@ -713,6 +863,8 @@
 			    				<td >{{users.username}}</td>			    				
 			    				<td >{{users.address}}</td>
 			    				<td >{{users.type}}</td>
+			    				<!-- <td align="center"><i class="fa fa-mobile user-inactive" title="Disabled" aria-hidden="true" *ngIf="users.sms == 0" ></i><i class="fa fa-mobile user-active" title="Enabled" aria-hidden="true" *ngIf="users.sms == 1" ></i></td> -->
+			    		
 			    				<td *ngIf="users.active==0"><i title="Delete" (click) = "deleteUser(users.user_id,'admin')" class="user-inactive fa fa-minus-circle" aria-hidden="true"></i>&nbsp;<i title="View Details" (click) = "editUser(users.user_id,users.type,'inactive')" class="user-inactive fa fa-info-circle" aria-hidden="true"></i>&nbsp;<i title="Activate" (click) = "changeState(users.user_id,1,users.type,users.mobile,'all')" class="user-inactive fa fa-user-times" aria-hidden="true"></i></td>
 			    				<td *ngIf="users.active==1"><i title="Delete" (click) = "deleteUser(users.user_id,'admin')" class="user-inactive fa fa-minus-circle" aria-hidden="true"></i>&nbsp;<i title="Edit Details" (click) = "editUser(users.user_id,users.type,'active')" class="user-active fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;<i title="De-activate" (click) = "changeState(users.user_id,0,users.type,users.mobile,'all')" class="user-active fa fa-user" aria-hidden="true"></i></td>
 			        	    </tr> 
@@ -729,6 +881,7 @@
                    			<li class="nav-item" *ngIf="userInfo">
                     	   		<b>View Details </b>
                    			</li>
+                   			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 		</ul>
                 		<div align="center" class="alert alert-success" *ngIf="editUserMsg">
                       			User Details updated successfully
@@ -765,6 +918,10 @@
 			    					<td >{{userDetails.address}}</td>
 			        			</tr>
 			        			<tr >
+			    					<td width="30%" class="table-header">SMS</td>
+			    					<td ><i class="fa fa-mobile user-inactive" title="Disabled" aria-hidden="true" *ngIf="userDetails.sms == 0" ></i><i class="fa fa-mobile user-active" title="Enabled" aria-hidden="true" *ngIf="userDetails.sms == 1" ></i></td>
+			        			</tr>		
+			        			<tr >
 			    					<td width="30%" class="table-header">City</td>
 			    					<td *ngFor="let city of citiesData" [hidden] = "!(userDetails.city_id == city.id)">{{city.name}}</td>
 			        			</tr>
@@ -784,9 +941,7 @@
 	                                <label for="username" hidden="false">Username</label>
 	                                <input class="form-control" type="text" id="username" [(ngModel)]="userDetails.username" maxlength="50"  name="username" placeholder="Username" required="true" />
 	                            </div>
-	                            
-	                            
-	                            
+	                                                       
 	                            <div class="col-md-12 row-space">
 	                                <label for="email" hidden="false">Email</label>
 	                                <input class="form-control" type="text" id="email" [(ngModel)]="userDetails.email" maxlength="50" name="email" placeholder="Email" required="false"/>
@@ -802,7 +957,7 @@
 	                                            
 	                            <div class="col-md-12 row-space" >
 	                                <label for="phone" hidden="false">Landline</label>
-	                                <input class="form-control" type="text" id="phone" [(ngModel)]="userDetails.phone" maxlength="50" name="phone" placeholder="Landline" required="true" />
+	                                <input class="form-control" type="text" id="phone" [(ngModel)]="userDetails.phone" maxlength="50" name="phone" placeholder="Landline" required="false" />
 	                            </div>
 	                            <div class="col-md-12 row-space" >
 	                                <label for="address" hidden="false">Location/Address</label>
@@ -810,6 +965,9 @@
 	                            </div>
 	                            <div class="col-md-12 row-space" >
 	                                <label for="city" hidden="false">City</label>
+	                                
+	                                <!-- <ng-select [options]="options0" placeholder="Select City" formControlName="city_id" [(ngModel)]="selectedCityId" [allowClear]="true" required="true">
+                        			</ng-select> -->
 	                                <select class="form-control" id="city_id" [(ngModel)]="userDetails.city_id" name="city_id" placeholder="City" required="true">
                                 	
                                 		<option [value]="undefined" selected disabled >Select City</option>
@@ -822,6 +980,9 @@
 	                                <select class="form-control" #t (change)="loadSubcategory(t.value)" id="category_id" [(ngModel)]="userDetails.category_id" name="category_id" placeholder="Category" required="true">
 	                                	   	<option *ngFor="let cat of categoryItems" [value]="cat.id" [selected]="userDetails.category_id == cat_id">{{cat.name}}</option>
 	                               </select>
+	                               <!-- <ng-select [options]="options2" placeholder="Select Category" formControlName="category_id" (selected)="loadSubcategory($event)" [allowClear]="true" required="true">
+                        		   </ng-select> -->
+	                               
 	                            </div>
 	                            <div class="col-md-12 row-space" >
 	                                <label for="Sub Category" hidden="false">Sub Category</label>
@@ -830,41 +991,76 @@
 	                                	<option *ngFor="let subcategory of subCategoryItems" [value]="subcategory.id" [selected]="userDetails.subcategory_id == subcategory.id">{{subcategory.name}}</option>
 	                               </select>
 	                               
+	                               <!-- <ng-select [options]="options4" placeholder="Select Sub Category" formControlName="subcategory_id" [allowClear]="true" required="true">
+                        		   </ng-select> -->
+	                               
 	                            </div>
 	                            
-	                            <div class="funkyradio" > 
+	                            <div class="funkyradio" >
+	                            	
+	                            	<!-- <div *ngFor="let pack_dtl of packData">
+                           				<div *ngIf = "pack_dtl.pack_id == 1" class="funkyradio-primary">	
+                            				<input type="radio" formControlName="pack"  id="1" [(ngModel)]= "adduser.pack" value="1" />
+                            				<label for="1" style="background-color:#000 ;color:white"><i class="fa fa-inr"></i>&nbsp; 0 (15 Days Free Ad)</label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 2" class="funkyradio-default">	
+                            				<input type="radio" formControlName="pack" id="2" [(ngModel)]= "adduser.pack" value="2" />
+                            				<label for="2" style="background-color:#ccc ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 3" class="funkyradio-info">
+                            				<input type="radio" formControlName="pack" id="3" [(ngModel)]= "adduser.pack" value="3" />
+                            				<label for="3" style="background-color:#5bc0de ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 4" class="funkyradio-warning">
+                            				<input type="radio" formControlName="pack" id="4" [(ngModel)]= "adduser.pack" value="4" />
+                            				<label for="4" style="background-color:#f0ad4e ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 5" class="funkyradio-danger">
+                            				<input type="radio" formControlName="pack" id="5" [(ngModel)]= "adduser.pack" value="5" />
+                            				<label for="5" style="background-color:#d9534f ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>
+                            			<div *ngIf = "pack_dtl.pack_id == 6" class="funkyradio-success">
+                            				<input type="radio" formControlName="pack" id="6" [(ngModel)]= "adduser.pack" value="6" />
+                            				<label for="6" style="background-color:#5cb85c ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			</div>               		
+                            		</div> -->    
                             		 <div *ngFor="let pack_dtl of packData">
                             		 	                            		 	                    			
                             			<div *ngIf = "pack_dtl.pack_id == 1" class="funkyradio-primary">	
                             			<input #r1 type="radio" name="pack" id="1" [checked]="(userDetails.pack_id == 1)" (change)="logRadio(r1)" value="1" />
-                            			<label for="1" style="background-color:#000 ;color:white">Free Ad</label>
+                            			<label for="1" style="background-color:#000 ;color:white"><i class="fa fa-inr"></i>&nbsp; 0 (15 Days Free Ad)</label>
                             			</div> 
                             			<div *ngIf = "pack_dtl.pack_id == 2" class="funkyradio-default">	
                             			<input #r2 type="radio" name="pack" id="2" [checked]="(userDetails.pack_id == 2)" (change)="logRadio(r2)" value="2" />
-                            			<label for="2" style="background-color:#ccc ;color:white">{{pack_dtl.monthly_price}}/MO- {{pack_dtl.discounted_quartely_price}}/QY - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
-                            			</div>
+                            			<label for="2" style="background-color:#ccc ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                             			</div>
                             			<div *ngIf = "pack_dtl.pack_id == 3" class="funkyradio-info">
                             			<input #r3 type="radio" name="pack" id="3" [checked]="(userDetails.pack_id == 3)" (change)="logRadio(r3)" value="3" />
-                            			<label for="3" style="background-color:#5bc0de ;color:white">{{pack_dtl.monthly_price}}/MO- {{pack_dtl.discounted_quartely_price}}/QY - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			<label for="3" style="background-color:#5bc0de ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
                             			</div>
                             			
                             			<div *ngIf = "pack_dtl.pack_id == 4" class="funkyradio-warning">
                             			<input #r4 type="radio" name="pack" id="4" [checked]="(userDetails.pack_id == 4)" (change)="logRadio(r4)" value="4" />
-                            			<label for="4" style="background-color:#f0ad4e ;color:white">{{pack_dtl.monthly_price}}/MO- {{pack_dtl.discounted_quartely_price}}/QY - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			<label for="4" style="background-color:#f0ad4e ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
                             			</div>
                             			
                             			<div *ngIf = "pack_dtl.pack_id == 5" class="funkyradio-danger">
                             			<input #r5 type="radio" name="pack" id="5" [checked]="(userDetails.pack_id == 5)" (change)="logRadio(r5)" value="5" />
-                            			<label for="5" style="background-color:#d9534f ;color:white">{{pack_dtl.monthly_price}}/MO- {{pack_dtl.discounted_quartely_price}}/QY - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			<label for="5" style="background-color:#d9534f ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
                             			</div>
                             			
                             			<div *ngIf = "pack_dtl.pack_id == 6" class="funkyradio-success">
                             			<input #r6 type="radio" name="pack" id="6" [checked]="(userDetails.pack_id == 6)" (change)="logRadio(r6)" value="6" />
-                            			<label for="6" style="background-color:#5cb85c ;color:white">{{pack_dtl.monthly_price}}/MO- {{pack_dtl.discounted_quartely_price}}/QY - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
+                            			<label for="6" style="background-color:#5cb85c ;color:white"><i class="fa fa-inr"></i>&nbsp;{{pack_dtl.monthly_price}}/M- {{pack_dtl.discounted_quartely_price}}/Q - {{pack_dtl.discounted_halfyearly_price}}/HY - {{pack_dtl.discounted_yearly_price}}/Y </label>
                             			</div>               		
                             	                  			
-                            		</div>                        		
-                            		 
+                            		</div>  
+                            		
+                            		<div class="col-md-12 row-space" align="center" >
+                         	 			<b>SMS&nbsp;<i class="fa fa-inr"></i>&nbsp;100&nbsp;</b><i class="fa fa-mobile user-inactive" aria-hidden="true" title="Enable SMS pack" *ngIf="!smsStatus" (click)= "smsStatus=true;adduser.sms=1">&nbsp;</i>
+                         	 				<i class="fa fa-mobile user-active" aria-hidden="true" title="Disable SMS pack"  *ngIf="smsStatus" (click)= "smsStatus=false;adduser.sms=0">&nbsp;</i><i class="fa fa-check user-active" (click)= "smsStatus=false;adduser.sms=0" *ngIf="smsStatus" aria-hidden="true"></i>
+                         	 	   		<input class="form-control" type="hidden" id="sms" name="sms" [(ngModel)]="userDetails.sms"/>
+                            	    </div>                            		                		 
         						</div>
 	                            	                                  
 	                        </div>
@@ -901,16 +1097,29 @@
       <div class="modal-dialog" role="document">
             <div class="modal-content" >
             	<div class="container" *ngIf="!spinner && showUsersList">
+            		
+            		<div class="modal-header">
+  								<h6 class="modal-title" style="text-align:center"  id="myModalLabel">Total Users : {{usersList.length}}</h6>
+  								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>     
+					</div>
+            		
   					<table class="table table-fixed table-hover">
 						<thead>
+							<!---  <tr >
+			    				<td colspan=3 style="text-align:center">Total Users : {{usersList.length}}</td> ---->
+			    					    				
+			    				<!-- <td><i title="Delete Multiple" (click) = "deleteMultipleUser('admin')" class="user-inactive fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;<i (click) = "changeUsersStatus('deactivate')" title="De-activate Multiple" class="user-active fa fa-user" aria-hidden="true">&nbsp;&nbsp;</i><i (click) = "changeUsersStatus('activate')" title="Activate Multiple" class="user-inactive fa fa-user-times" aria-hidden="true"></i></td> -->
+			    			<!---- </tr> --->
 							<tr class="table-header" align="center">
-								<th style="text-align:center" colspan=3 >Manage Vendors</th>
+								<th style="text-align:center" >Name</th>
+								<th style="text-align:center" >Address</th>
+								<th style="text-align:center" >Manage</th>
 		   					</tr> 
 						</thead> 
 						<tbody class="table-bordered">
 							<tr *ngFor="let users of vendorsList" >
 								<td>{{users.username}}</td>
-								<!-- <td>{{users.type}}</td> -->
+								<td>{{users.address}}</td>
 								<td *ngIf="users.active==0"><!-- <i title="Delete" (click) = "deleteUser(users.user_id,'agent')" class="user-inactive fa fa-minus-circle" aria-hidden="true"></i> -->&nbsp;&nbsp;&nbsp;<i title="View Details" (click) = "editUser(users.user_id,users.type,'inactive')" class="user-inactive fa fa-info-circle" aria-hidden="true"></i><!-- &nbsp;&nbsp;&nbsp;<i title="Activate" (click) = "changeState(users.user_id,1,users.type,users.mobile,'vendor')" class="user-inactive fa fa-user-times" aria-hidden="true"></i> --></td>
 			    				<td *ngIf="users.active==1"><!-- <i title="Delete" (click) = "deleteUser(users.user_id,'agent')" class="user-inactive fa fa-minus-circle" aria-hidden="true"></i> -->&nbsp;&nbsp;&nbsp;<i title="Edit Details" (click) = "editUser(users.user_id,users.type,'active')" class="user-active fa fa-pencil-square-o" aria-hidden="true"></i><!-- &nbsp;&nbsp;&nbsp;<i title="De-activate" (click) = "changeState(users.user_id,0,users.type,users.mobile,'vendor')" class="user-active fa fa-user" aria-hidden="true"></i> --></td>
 
@@ -928,6 +1137,7 @@
                    			<li class="nav-item" *ngIf="userInfo">
                     	   		<b>View Details </b>
                    			</li>
+                   			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 		</ul>
                 		<div align="center" class="alert alert-success" *ngIf="editUserMsg">
                       			User Details updated successfully
@@ -998,7 +1208,7 @@
 	                                  
 	                            <div class="col-md-12 row-space" >
 	                                <label for="phone" hidden="false">Landline</label>
-	                                <input class="form-control" type="text" id="phone" [(ngModel)]="userDetails.phone" maxlength="50" name="phone" placeholder="Landline" required="true" />
+	                                <input class="form-control" type="text" id="phone" [(ngModel)]="userDetails.phone" maxlength="50" name="phone" placeholder="Landline" required="false" />
 	                            </div>
 	                            <div class="col-md-12 row-space" >
 	                                <label for="address" hidden="false">Location/Address</label>
