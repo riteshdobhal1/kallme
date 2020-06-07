@@ -1,5 +1,0 @@
-# Ignore all created js files from ts files
-*.js
-
-# Ignore all created js.map files from ts files
-*.js.map

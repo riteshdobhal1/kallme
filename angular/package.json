@@ -1,0 +1,32 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "systemjs.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@angular/common": "^6.0.3",
+    "@angular/compiler": "^6.0.3",
+    "@angular/core": "^6.0.3",
+    "@angular/platform-browser": "^6.0.3",
+    "@angular/platform-browser-dynamic": "^6.0.3",
+    "core-js": "^2.5.7",
+    "live-server": "^1.2.0",
+    "rxjs": "^5.5.11",
+    "systemjs": "^0.20.19",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
+    "typescript": "^2.8.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

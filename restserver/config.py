@@ -1,0 +1,13 @@
+DEBUG = True # Turns on debugging features in Flask
+MAIL_FROM_EMAIL = "kallme@klubibn.com" # For use in application emails
+MYSQL_DATABASE_USER = "ritesh"
+MYSQL_DATABASE_PASSWORD = "pmlh@ritesh"
+MYSQL_DATABASE_DB = "mydb"
+MYSQL_DATABASE_HOST = "205.147.100.86"
+MAIL_SERVER = "smtp@gmail.com"
+MAIL_PORT = 465
+MAIL_USE_SSL = True
+MAIL_SENDER = "akjain@kallme.in"
+MAIL_RECIPIENTS = "loveedoval@gmail.com"
+MAIL_BODY1 = "Dear Kallme Team, \r\n"
+MAIL_BODY2 = "This is system generated email, please donot reply."
